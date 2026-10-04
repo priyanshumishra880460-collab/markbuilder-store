@@ -1,5 +1,6 @@
 <html lang="en" style="color-scheme: only light;">
 <head>
+  <base href="/">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="color-scheme" content="only light">
@@ -1150,10 +1151,41 @@
     let favorites = [];
     let activeListingId = 'saas';
 
-    // ================= SAFE ROUTING & ALWAYS 100% CLEAN URL (markbuilder.in ONLY) =================
+    // ================= FLIPKART-STYLE PAGE SLUG ROUTER =================
+    const routeSlugs = {
+      saas: '/50-micro-saas',
+      brain: '/the-hidden-tricks-your-brain-plays-on-you'
+    };
+
+    function getProdIdFromCurrentUrl() {
+      const p = (window.location.pathname || '').toLowerCase();
+      const h = (window.location.hash || '').toLowerCase();
+      const s = (window.location.search || '').toLowerCase();
+
+      if (p.includes('saas') || p.includes('50-micro') || h.includes('saas') || s.includes('saas')) return 'saas';
+      if (p.includes('brain') || p.includes('trick') || h.includes('brain') || s.includes('brain')) return 'brain';
+      return null;
+    }
+
+    function isCartUrl() {
+      const p = (window.location.pathname || '').toLowerCase();
+      const h = (window.location.hash || '').toLowerCase();
+      const s = (window.location.search || '').toLowerCase();
+      return p.includes('cart') || h.includes('cart') || s.includes('cart');
+    }
+
     window.addEventListener('DOMContentLoaded', () => {
-      // Clean URL immediately: Remove any '?', query strings, or '#' completely from address bar
-      history.replaceState({ view: 'home' }, '', window.location.pathname);
+      // 1. Initial Route Detection
+      const prodId = getProdIdFromCurrentUrl();
+      if (prodId && catalog[prodId]) {
+        openListing(prodId, false);
+      } else if (isCartUrl()) {
+        navigateTo('cart', false);
+      } else {
+        // Clean Homepage: ensure URL is clean '/'
+        history.replaceState({ view: 'home' }, '', '/');
+        navigateTo('home', false);
+      }
 
       loadFavoritesFromStorage();
       renderPrices();
@@ -1166,14 +1198,25 @@
         openListing(e.state.id, false);
       } else if (e.state && e.state.view === 'cart') {
         navigateTo('cart', false);
-      } else {
+      } else if (e.state && e.state.view === 'home') {
         navigateTo('home', false);
+      } else {
+        // Fallback from URL
+        const prodId = getProdIdFromCurrentUrl();
+        if (prodId && catalog[prodId]) {
+          openListing(prodId, false);
+        } else if (isCartUrl()) {
+          navigateTo('cart', false);
+        } else {
+          navigateTo('home', false);
+        }
       }
     });
 
     function navigateTo(view, pushState = true) {
       if (pushState) {
-        history.pushState({ view: view }, '', window.location.pathname);
+        const targetUrl = view === 'cart' ? '/cart' : '/';
+        history.pushState({ view: view }, '', targetUrl);
       }
       document.getElementById('view-catalog').style.display = view === 'home' ? 'block' : 'none';
       document.getElementById('view-listing').style.display = view === 'listing' ? 'block' : 'none';
@@ -1201,7 +1244,7 @@
       if (window.history.length > 1) {
         window.history.back();
       } else {
-        navigateTo('home', false);
+        navigateTo('home', true);
       }
     }
 
@@ -1211,7 +1254,8 @@
       if (!item) return;
 
       if (pushState) {
-        history.pushState({ view: 'listing', id: prodId }, '', window.location.pathname);
+        const targetUrl = routeSlugs[prodId] || ('/' + prodId);
+        history.pushState({ view: 'listing', id: prodId }, '', targetUrl);
       }
 
       // Populate PDP
