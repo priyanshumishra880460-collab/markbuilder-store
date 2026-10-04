@@ -100,99 +100,189 @@
 
   <!-- ================= ETSY-STYLE MAIN HEADER ================= -->
   <header class="bg-white border-b border-gray-200 sticky top-0 z-40">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-2.5 sm:py-3 flex flex-wrap sm:flex-nowrap items-center justify-between gap-y-2.5 gap-x-4">
+    <div class="max-w-6xl mx-auto px-3 sm:px-6 py-2.5 sm:py-3">
       
-      <!-- Brand Logo / Home Trigger -->
-      <a href="javascript:void(0)" onclick="navigateTo('home')" class="flex items-center gap-2 sm:gap-2.5 flex-shrink-0 group">
-        <img src="markbuilder-icon.png" alt="MarkBuilder Logo" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-105 transition" />
-        <span class="font-serif-title text-2xl sm:text-3xl font-bold tracking-tight text-[#222222] group-hover:text-[#F1641E] transition">
-          MarkBuilder<span class="text-[#F1641E]">.</span>
-        </span>
-      </a>
+      <!-- Top Row: ALWAYS Side-by-Side (Logo on Left, Actions on Right) on ALL Screen Sizes! -->
+      <div class="flex items-center justify-between gap-2 sm:gap-4 w-full">
+        
+        <!-- Brand Logo / Home Trigger -->
+        <a href="javascript:void(0)" onclick="navigateTo('home')" class="flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0 group">
+          <img src="markbuilder-icon.png" alt="MarkBuilder Logo" class="w-7 h-7 sm:w-9 sm:h-9 object-contain transform group-hover:scale-105 transition" />
+          <span class="font-serif-title text-xl sm:text-3xl font-bold tracking-tight text-[#222222] group-hover:text-[#F1641E] transition">
+            MarkBuilder<span class="text-[#F1641E]">.</span>
+          </span>
+        </a>
 
-      <!-- Large Pill Search Bar (Full-width on mobile row 2, centered on desktop) -->
-      <div class="order-last sm:order-none w-full sm:flex-1 sm:max-w-xl relative">
+        <!-- Desktop Search Bar (Hidden on mobile top row, centered on desktop) -->
+        <div class="hidden sm:block flex-1 max-w-xl mx-4 relative">
+          <input 
+            id="global-search"
+            type="text" 
+            oninput="handleSearchInput(this.value)"
+            placeholder="Search 50 Micro-SaaS, Brain Hacks..." 
+            class="w-full bg-[#F4F4F4] hover:bg-[#EAEAEA] focus:bg-white text-xs sm:text-sm text-[#222222] pl-4 sm:pl-5 pr-16 sm:pr-20 py-2 sm:py-2.5 rounded-full border border-gray-300 focus:border-[#222222] focus:outline-none transition shadow-inner"
+          />
+          <!-- Clear (X) Cut Button -->
+          <button 
+            id="search-clear-btn" 
+            onclick="clearSearch()" 
+            class="hidden absolute right-11 top-2 w-6 h-6 rounded-full hover:bg-gray-200 text-gray-400 hover:text-black flex items-center justify-center text-xs font-bold transition cursor-pointer"
+            title="Clear search"
+          >
+            ✕
+          </button>
+          <!-- Search Trigger Icon Button -->
+          <button onclick="executeSearchClick()" class="absolute right-1 top-1 bottom-1 w-8 h-8 rounded-full bg-[#F1641E] hover:bg-[#d95314] text-white flex items-center justify-center transition shadow-xs cursor-pointer">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </button>
+        </div>
+
+        <!-- Right Header Actions (Currency Selector, Favorites, Cart) - ALWAYS on the right side of MarkBuilder! -->
+        <div class="flex items-center gap-1.5 sm:gap-3 flex-shrink-0">
+          
+          <!-- Multi-Currency Selector Dropdown -->
+          <div class="relative">
+            <button 
+              id="currency-btn"
+              onclick="toggleCurrencyDropdown()" 
+              class="flex items-center gap-1 text-xs font-bold text-gray-800 hover:text-black py-1.5 px-2 sm:px-2.5 rounded-full bg-gray-100 hover:bg-gray-200 transition border border-gray-200 cursor-pointer"
+              title="Change Country & Currency"
+            >
+              <span id="nav-flag" class="text-sm">🇮🇳</span>
+              <span id="nav-curr-code" class="text-[11px] font-bold">INR</span>
+              <svg class="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+
+            <!-- Dropdown Menu (Opens inwards smoothly, no clipping!) -->
+            <div id="currency-menu" class="hidden absolute right-0 mt-2 w-64 max-w-[calc(100vw-24px)] bg-white border border-gray-200 rounded-2xl shadow-2xl py-2 z-50 text-xs overflow-hidden max-h-[80vh] overflow-y-auto">
+              <div class="px-4 py-2 text-[10px] font-bold text-gray-400 uppercase tracking-wider border-b border-gray-100 bg-gray-50 flex items-center justify-between">
+                <span>Select Country / Currency</span>
+                <span>🌍 Global</span>
+              </div>
+              
+              <!-- 1. India -->
+              <button onclick="setCurrency('INR', '🇮🇳', '₹')" class="w-full text-left px-4 py-2.5 hover:bg-orange-50 flex items-center justify-between font-bold text-gray-900 transition border-b border-gray-50 cursor-pointer">
+                <span class="flex items-center gap-2.5">
+                  <span class="text-base">🇮🇳</span>
+                  <span>India <span class="text-gray-500 font-normal text-[11px]">(INR ₹)</span></span>
+                </span>
+                <span class="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-bold">UPI / Cards</span>
+              </button>
+
+              <!-- 2. United States -->
+              <button onclick="setCurrency('USD', '🇺🇸', '$')" class="w-full text-left px-4 py-2.5 hover:bg-orange-50 flex items-center justify-between font-medium text-gray-800 transition border-b border-gray-50 cursor-pointer">
+                <span class="flex items-center gap-2.5">
+                  <span class="text-base">🇺🇸</span>
+                  <span>United States <span class="text-gray-500 font-normal text-[11px]">(USD $)</span></span>
+                </span>
+                <span class="text-[10px] bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded font-medium">Global</span>
+              </button>
+
+              <!-- 3. United Kingdom -->
+              <button onclick="setCurrency('GBP', '🇬🇧', '£')" class="w-full text-left px-4 py-2.5 hover:bg-orange-50 flex items-center justify-between font-medium text-gray-800 transition border-b border-gray-50 cursor-pointer">
+                <span class="flex items-center gap-2.5">
+                  <span class="text-base">🇬🇧</span>
+                  <span>United Kingdom <span class="text-gray-500 font-normal text-[11px]">(GBP £)</span></span>
+                </span>
+              </button>
+
+              <!-- 4. Europe -->
+              <button onclick="setCurrency('EUR', '🇪🇺', '€')" class="w-full text-left px-4 py-2.5 hover:bg-orange-50 flex items-center justify-between font-medium text-gray-800 transition border-b border-gray-50 cursor-pointer">
+                <span class="flex items-center gap-2.5">
+                  <span class="text-base">🇪🇺</span>
+                  <span>Europe / Eurozone <span class="text-gray-500 font-normal text-[11px]">(EUR €)</span></span>
+                </span>
+              </button>
+
+              <!-- 5. Canada -->
+              <button onclick="setCurrency('CAD', '🇨🇦', 'CA$')" class="w-full text-left px-4 py-2.5 hover:bg-orange-50 flex items-center justify-between font-medium text-gray-800 transition border-b border-gray-50 cursor-pointer">
+                <span class="flex items-center gap-2.5">
+                  <span class="text-base">🇨🇦</span>
+                  <span>Canada <span class="text-gray-500 font-normal text-[11px]">(CAD CA$)</span></span>
+                </span>
+              </button>
+
+              <!-- 6. Australia -->
+              <button onclick="setCurrency('AUD', '🇦🇺', 'AU$')" class="w-full text-left px-4 py-2.5 hover:bg-orange-50 flex items-center justify-between font-medium text-gray-800 transition border-b border-gray-50 cursor-pointer">
+                <span class="flex items-center gap-2.5">
+                  <span class="text-base">🇦🇺</span>
+                  <span>Australia <span class="text-gray-500 font-normal text-[11px]">(AUD AU$)</span></span>
+                </span>
+              </button>
+
+              <!-- 7. UAE / Dubai -->
+              <button onclick="setCurrency('AED', '🇦🇪', 'AED ')" class="w-full text-left px-4 py-2.5 hover:bg-orange-50 flex items-center justify-between font-medium text-gray-800 transition border-b border-gray-50 cursor-pointer">
+                <span class="flex items-center gap-2.5">
+                  <span class="text-base">🇦🇪</span>
+                  <span>UAE / Dubai <span class="text-gray-500 font-normal text-[11px]">(AED)</span></span>
+                </span>
+              </button>
+
+              <!-- 8. Singapore -->
+              <button onclick="setCurrency('SGD', '🇸🇬', 'S$')" class="w-full text-left px-4 py-2.5 hover:bg-orange-50 flex items-center justify-between font-medium text-gray-800 transition border-b border-gray-50 cursor-pointer">
+                <span class="flex items-center gap-2.5">
+                  <span class="text-base">🇸🇬</span>
+                  <span>Singapore <span class="text-gray-500 font-normal text-[11px]">(SGD S$)</span></span>
+                </span>
+              </button>
+
+              <!-- 9. Germany -->
+              <button onclick="setCurrency('EUR', '🇩🇪', '€')" class="w-full text-left px-4 py-2.5 hover:bg-orange-50 flex items-center justify-between font-medium text-gray-800 transition border-b border-gray-50 cursor-pointer">
+                <span class="flex items-center gap-2.5">
+                  <span class="text-base">🇩🇪</span>
+                  <span>Germany <span class="text-gray-500 font-normal text-[11px]">(EUR €)</span></span>
+                </span>
+              </button>
+
+              <!-- 10. Japan -->
+              <button onclick="setCurrency('JPY', '🇯🇵', '¥')" class="w-full text-left px-4 py-2.5 hover:bg-orange-50 flex items-center justify-between font-medium text-gray-800 transition cursor-pointer">
+                <span class="flex items-center gap-2.5">
+                  <span class="text-base">🇯🇵</span>
+                  <span>Japan <span class="text-gray-500 font-normal text-[11px]">(JPY ¥)</span></span>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Favorites (Heart) Icon with Dynamic Counter -->
+          <button onclick="openFavoritesModal()" class="p-1.5 sm:p-2 text-gray-700 hover:text-black hover:bg-gray-100 rounded-full transition relative cursor-pointer" title="View Saved Favorites">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+            <span id="header-fav-badge" class="hidden absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-red-500 text-white text-[10px] font-bold items-center justify-center">0</span>
+          </button>
+
+          <!-- Cart Button with Dynamic Badge -->
+          <button onclick="navigateTo('cart')" class="p-1.5 sm:p-2 text-gray-700 hover:text-black hover:bg-gray-100 rounded-full transition relative flex items-center cursor-pointer" title="Shopping Cart">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+            <span id="header-cart-badge" class="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-[#F1641E] text-white text-[10px] font-bold flex items-center justify-center">0</span>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Mobile-Only Search Bar (Row 2, full-width) -->
+      <div class="block sm:hidden w-full mt-2 relative">
         <input 
-          id="global-search"
+          id="global-search-mobile"
           type="text" 
           oninput="handleSearchInput(this.value)"
           placeholder="Search 50 Micro-SaaS, Brain Hacks..." 
-          class="w-full bg-[#F4F4F4] hover:bg-[#EAEAEA] focus:bg-white text-xs sm:text-sm text-[#222222] pl-4 sm:pl-5 pr-16 sm:pr-20 py-2 sm:py-2.5 rounded-full border border-gray-300 focus:border-[#222222] focus:outline-none transition shadow-inner"
+          class="w-full bg-[#F4F4F4] hover:bg-[#EAEAEA] focus:bg-white text-xs text-[#222222] pl-4 pr-16 py-2 rounded-full border border-gray-300 focus:border-[#222222] focus:outline-none transition shadow-inner"
         />
-        <!-- Clear (X) Cut Button -->
+        <!-- Clear (X) Cut Button Mobile -->
         <button 
-          id="search-clear-btn" 
+          id="search-clear-btn-mobile" 
           onclick="clearSearch()" 
-          class="hidden absolute right-9 sm:right-11 top-1.5 sm:top-2 w-6 h-6 rounded-full hover:bg-gray-200 text-gray-400 hover:text-black flex items-center justify-center text-xs font-bold transition cursor-pointer"
+          class="hidden absolute right-9 top-1.5 w-6 h-6 rounded-full hover:bg-gray-200 text-gray-400 hover:text-black flex items-center justify-center text-xs font-bold transition cursor-pointer"
           title="Clear search"
         >
           ✕
         </button>
-        <!-- Search Trigger Icon Button -->
-        <button onclick="executeSearchClick()" class="absolute right-1 top-1 bottom-1 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#F1641E] hover:bg-[#d95314] text-white flex items-center justify-center transition shadow-xs cursor-pointer">
-          <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        <!-- Search Trigger Icon Button Mobile -->
+        <button onclick="executeSearchClick()" class="absolute right-1 top-1 bottom-1 w-7 h-7 rounded-full bg-[#F1641E] hover:bg-[#d95314] text-white flex items-center justify-center transition shadow-xs cursor-pointer">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
         </button>
       </div>
 
-      <!-- Right Header Actions (Currency, Favorites, Cart) -->
-      <div class="flex items-center gap-1.5 sm:gap-4 flex-shrink-0">
-        
-        <!-- Multi-Currency Selector Dropdown -->
-        <div class="relative">
-          <button 
-            id="currency-btn"
-            onclick="toggleCurrencyDropdown()" 
-            class="flex items-center gap-1.5 text-xs font-semibold text-gray-700 hover:text-black py-2 px-2.5 rounded-full hover:bg-gray-100 transition"
-          >
-            <span id="nav-flag">🇮🇳</span>
-            <span id="nav-curr-code" class="hidden sm:inline">INR (₹)</span>
-            <svg class="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-          </button>
-
-          <!-- Dropdown -->
-          <div id="currency-menu" class="hidden absolute right-0 mt-2 w-56 bg-white border border-gray-200 rounded-2xl shadow-2xl py-2 z-50 text-xs">
-            <div class="px-4 py-1.5 text-[10px] font-bold text-gray-400 uppercase tracking-wider border-b border-gray-100 mb-1">
-              Select Currency
-            </div>
-            <button onclick="setCurrency('INR', '🇮🇳', '₹')" class="w-full text-left px-4 py-2 hover:bg-orange-50 flex items-center justify-between font-bold text-gray-900 transition">
-              <span class="flex items-center gap-2"><span>🇮🇳</span> India (INR ₹)</span>
-              <span class="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-bold">UPI</span>
-            </button>
-            <div class="my-1 border-t border-gray-100"></div>
-            <button onclick="setCurrency('USD', '🇺🇸', '$')" class="w-full text-left px-4 py-2 hover:bg-orange-50 flex items-center justify-between font-medium text-gray-700 transition">
-              <span class="flex items-center gap-2"><span>🇺🇸</span> United States (USD $)</span>
-            </button>
-            <button onclick="setCurrency('EUR', '🇪🇺', '€')" class="w-full text-left px-4 py-2 hover:bg-orange-50 flex items-center justify-between font-medium text-gray-700 transition">
-              <span class="flex items-center gap-2"><span>🇪🇺</span> Europe (EUR €)</span>
-            </button>
-            <button onclick="setCurrency('GBP', '🇬🇧', '£')" class="w-full text-left px-4 py-2 hover:bg-orange-50 flex items-center justify-between font-medium text-gray-700 transition">
-              <span class="flex items-center gap-2"><span>🇬🇧</span> United Kingdom (GBP £)</span>
-            </button>
-            <button onclick="setCurrency('CAD', '🇨🇦', 'CA$')" class="w-full text-left px-4 py-2 hover:bg-orange-50 flex items-center justify-between font-medium text-gray-700 transition">
-              <span class="flex items-center gap-2"><span>🇨🇦</span> Canada (CAD $)</span>
-            </button>
-            <button onclick="setCurrency('AUD', '🇦🇺', 'AU$')" class="w-full text-left px-4 py-2 hover:bg-orange-50 flex items-center justify-between font-medium text-gray-700 transition">
-              <span class="flex items-center gap-2"><span>🇦🇺</span> Australia (AUD $)</span>
-            </button>
-            <button onclick="setCurrency('AED', '🇦🇪', 'AED ')" class="w-full text-left px-4 py-2 hover:bg-orange-50 flex items-center justify-between font-medium text-gray-700 transition">
-              <span class="flex items-center gap-2"><span>🇦🇪</span> UAE (AED)</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Favorites (Heart) Icon with Dynamic Counter -->
-        <button onclick="openFavoritesModal()" class="p-2 text-gray-700 hover:text-black hover:bg-gray-100 rounded-full transition relative" title="View Saved Favorites">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-          <span id="header-fav-badge" class="hidden absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-red-500 text-white text-[10px] font-bold items-center justify-center">0</span>
-        </button>
-
-        <!-- Cart Button with Dynamic Badge -->
-        <button onclick="navigateTo('cart')" class="p-2 text-gray-700 hover:text-black hover:bg-gray-100 rounded-full transition relative flex items-center" title="Shopping Cart">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
-          <span id="header-cart-badge" class="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-[#F1641E] text-white text-[10px] font-bold flex items-center justify-center">0</span>
-        </button>
-
-      </div>
     </div>
 
     <!-- Category Sub-Nav (Etsy Style Clean Text Links) -->
@@ -730,7 +820,9 @@
           GBP: { price: 7.99, orig: 24.99, symbol: '£' },
           CAD: { price: 13.99, orig: 39.99, symbol: 'CA$' },
           AUD: { price: 14.99, orig: 44.99, symbol: 'AU$' },
-          AED: { price: 36.99, orig: 110.00, symbol: 'AED ' }
+          AED: { price: 36.99, orig: 110.00, symbol: 'AED ' },
+          SGD: { price: 13.50, orig: 39.00, symbol: 'S$' },
+          JPY: { price: 1490, orig: 4490, symbol: '¥' }
         },
         links: {
           domestic: 'https://rzp.io/rzp/8a339TK',
@@ -774,7 +866,9 @@
           GBP: { price: 7.99, orig: 32.99, symbol: '£' },
           CAD: { price: 13.99, orig: 52.99, symbol: 'CA$' },
           AUD: { price: 14.99, orig: 59.99, symbol: 'AU$' },
-          AED: { price: 36.99, orig: 145.00, symbol: 'AED ' }
+          AED: { price: 36.99, orig: 145.00, symbol: 'AED ' },
+          SGD: { price: 13.50, orig: 49.00, symbol: 'S$' },
+          JPY: { price: 1490, orig: 5900, symbol: '¥' }
         },
         links: {
           domestic: 'https://rzp.io/rzp/brain-tricks',
@@ -948,17 +1042,22 @@
 
     function setCurrency(code, flag, symbol) {
       activeCurrency = code;
-      document.getElementById('nav-flag').innerText = flag;
-      document.getElementById('nav-curr-code').innerText = `${code} (${symbol})`;
-      document.getElementById('label-currency').innerText = `${code} (${symbol})`;
-      document.getElementById('footer-curr').innerText = `${flag} ${code} (${symbol})`;
-      document.getElementById('currency-menu').classList.add('hidden');
+      const navFlag = document.getElementById('nav-flag');
+      if (navFlag) navFlag.innerText = flag;
+      const navCode = document.getElementById('nav-curr-code');
+      if (navCode) navCode.innerText = code;
+      const labelCurr = document.getElementById('label-currency');
+      if (labelCurr) labelCurr.innerText = `${code} (${symbol})`;
+      const footerCurr = document.getElementById('footer-curr');
+      if (footerCurr) footerCurr.innerText = `${flag} ${code} (${symbol})`;
+      const menu = document.getElementById('currency-menu');
+      if (menu) menu.classList.add('hidden');
 
       renderPrices();
       if (!document.getElementById('view-cart').classList.contains('hidden')) {
         renderCartPage();
       }
-      showToast(`Currency changed to ${code} (${symbol})`);
+      showToast(`Currency changed to ${flag} ${code} (${symbol})`);
     }
 
     function renderPrices() {
@@ -1225,40 +1324,52 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Search Input Handler (Live typing on desktop & mobile virtual keyboards)
+    // Search Input Handler (Live typing on desktop & mobile)
     function handleSearchInput(val) {
-      const clearBtn = document.getElementById('search-clear-btn');
-      if (clearBtn) {
+      const inpDesk = document.getElementById('global-search');
+      const inpMob = document.getElementById('global-search-mobile');
+      if (inpDesk && inpDesk.value !== val) inpDesk.value = val;
+      if (inpMob && inpMob.value !== val) inpMob.value = val;
+
+      const clearBtnDesk = document.getElementById('search-clear-btn');
+      const clearBtnMob = document.getElementById('search-clear-btn-mobile');
+      [clearBtnDesk, clearBtnMob].forEach(btn => {
+        if (!btn) return;
         if (val && val.trim().length > 0) {
-          clearBtn.classList.remove('hidden');
-          clearBtn.classList.add('flex');
+          btn.classList.remove('hidden');
+          btn.classList.add('flex');
         } else {
-          clearBtn.classList.add('hidden');
-          clearBtn.classList.remove('flex');
+          btn.classList.add('hidden');
+          btn.classList.remove('flex');
         }
-      }
+      });
       searchProducts(val);
     }
 
     // Clear (X) Cut Button Handler
     function clearSearch() {
-      const input = document.getElementById('global-search');
-      if (input) {
-        input.value = '';
-        input.focus();
-      }
-      const clearBtn = document.getElementById('search-clear-btn');
-      if (clearBtn) {
-        clearBtn.classList.add('hidden');
-        clearBtn.classList.remove('flex');
-      }
+      const inpDesk = document.getElementById('global-search');
+      const inpMob = document.getElementById('global-search-mobile');
+      if (inpDesk) inpDesk.value = '';
+      if (inpMob) inpMob.value = '';
+
+      const clearBtnDesk = document.getElementById('search-clear-btn');
+      const clearBtnMob = document.getElementById('search-clear-btn-mobile');
+      [clearBtnDesk, clearBtnMob].forEach(btn => {
+        if (btn) {
+          btn.classList.add('hidden');
+          btn.classList.remove('flex');
+        }
+      });
       searchProducts('');
     }
 
     // Search Icon Click Handler
     function executeSearchClick() {
-      const input = document.getElementById('global-search');
-      if (input) searchProducts(input.value);
+      const inpDesk = document.getElementById('global-search');
+      const inpMob = document.getElementById('global-search-mobile');
+      const val = (inpMob && inpMob.value) || (inpDesk && inpDesk.value) || '';
+      searchProducts(val);
     }
 
     // Live Multi-token Search Engine
