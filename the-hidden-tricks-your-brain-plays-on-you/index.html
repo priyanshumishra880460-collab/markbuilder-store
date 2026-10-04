@@ -1177,14 +1177,38 @@
     window.addEventListener('DOMContentLoaded', () => {
       // 1. Initial Route Detection
       const prodId = getProdIdFromCurrentUrl();
+      const urlParams = new URLSearchParams(window.location.search);
+      const previewParam = urlParams.get('preview');
+      const imageParam = urlParams.get('image');
+      const categoryParam = urlParams.get('category');
+      const modalParam = urlParams.get('modal');
+
       if (prodId && catalog[prodId]) {
         openListing(prodId, false);
+        if (previewParam) {
+          const slideNum = Math.max(0, parseInt(previewParam, 10) - 1);
+          openLightbox(slideNum, false);
+        } else if (imageParam) {
+          const slideNum = Math.max(0, parseInt(imageParam, 10) - 1);
+          const item = catalog[prodId];
+          if (item && item.photos[slideNum]) {
+            const thumbBtns = document.querySelectorAll('#listing-thumb-rail button');
+            setListingPhoto(item.photos[slideNum], thumbBtns[slideNum], false);
+          }
+        }
       } else if (isCartUrl()) {
         navigateTo('cart', false);
       } else {
-        // Clean Homepage: ensure URL is clean '/'
-        history.replaceState({ view: 'home' }, '', '/');
-        navigateTo('home', false);
+        if (categoryParam) {
+          filterCat(categoryParam, false);
+        } else {
+          history.replaceState({ view: 'home' }, '', '/');
+          navigateTo('home', false);
+        }
+      }
+
+      if (modalParam === 'favorites') {
+        openFavoritesModal(false);
       }
 
       loadFavoritesFromStorage();
@@ -1194,6 +1218,31 @@
     });
 
     window.addEventListener('popstate', (e) => {
+      // 1. If Lightbox is open and user pressed Back button
+      const lightboxModal = document.getElementById('lightbox-modal');
+      const isLightboxOpen = lightboxModal && lightboxModal.style.display === 'flex';
+      if (isLightboxOpen && (!e.state || e.state.view !== 'lightbox')) {
+        document.getElementById('lightbox-modal').style.display = 'none';
+        document.body.style.overflow = '';
+      }
+
+      // 2. If Favorites modal is open and user pressed Back button
+      const favModal = document.getElementById('fav-modal');
+      const isFavOpen = favModal && favModal.style.display === 'flex';
+      if (isFavOpen && (!e.state || e.state.modal !== 'favorites')) {
+        document.getElementById('fav-modal').style.display = 'none';
+      }
+
+      // 3. If popping INTO lightbox
+      if (e.state && e.state.view === 'lightbox') {
+        if (e.state.id && catalog[e.state.id]) {
+          openListing(e.state.id, false);
+          openLightbox((e.state.slide || 1) - 1, false);
+        }
+        return;
+      }
+
+      // 4. Normal view switching
       if (e.state && e.state.view === 'listing') {
         openListing(e.state.id, false);
       } else if (e.state && e.state.view === 'cart') {
@@ -1201,7 +1250,6 @@
       } else if (e.state && e.state.view === 'home') {
         navigateTo('home', false);
       } else {
-        // Fallback from URL
         const prodId = getProdIdFromCurrentUrl();
         if (prodId && catalog[prodId]) {
           openListing(prodId, false);
@@ -1301,7 +1349,7 @@
 
     let currentSlideIdx = 0;
 
-    function setListingPhoto(src, btn) {
+    function setListingPhoto(src, btn, updateUrl = true) {
       document.getElementById('listing-main-photo').src = src;
       const item = catalog[activeListingId];
       if (item) {
@@ -1315,6 +1363,13 @@
         });
         btn.classList.remove('border-gray-200');
         btn.classList.add('border-black', 'ring-1', 'ring-black', 'shadow-xs');
+      }
+
+      // Action URL Sync: Updates URL when user clicks different product photos
+      if (updateUrl && activeListingId && document.getElementById('view-listing').style.display === 'block') {
+        const productPath = routeSlugs[activeListingId] || ('/' + activeListingId);
+        const targetUrl = currentSlideIdx > 0 ? `${productPath}?image=${currentSlideIdx + 1}` : productPath;
+        history.replaceState({ view: 'listing', id: activeListingId, slide: currentSlideIdx + 1 }, '', targetUrl);
       }
     }
 
@@ -1577,13 +1632,19 @@
 
     function scrollToReviews() {
       const section = document.getElementById('product-reviews-section');
-      if (section) section.scrollIntoView({ behavior: 'smooth' });
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+        const productPath = routeSlugs[activeListingId] || ('/' + activeListingId);
+        history.replaceState({ view: 'listing', id: activeListingId, section: 'reviews' }, '', `${productPath}#reviews`);
+      }
     }
 
     function scrollToReviewsAndRate() {
       const section = document.getElementById('product-reviews-section');
       if (section) {
         section.scrollIntoView({ behavior: 'smooth' });
+        const productPath = routeSlugs[activeListingId] || ('/' + activeListingId);
+        history.replaceState({ view: 'listing', id: activeListingId, section: 'rate' }, '', `${productPath}#rate-product`);
         setTimeout(() => {
           toggleReviewForm(true);
         }, 350);
@@ -1704,7 +1765,7 @@
       }
     }
 
-    function openFavoritesModal() {
+    function openFavoritesModal(pushHistory = true) {
       document.getElementById('fav-modal-count').innerText = favorites.length;
       const list = document.getElementById('fav-items-list');
 
@@ -1732,7 +1793,7 @@
                 <button onclick="addToCart('${id}'); closeFavoritesModal();" class="px-3 py-1.5 bg-[#222222] hover:bg-black text-white text-[11px] font-bold rounded-full">
                   Add to cart
                 </button>
-                <button onclick="toggleFavorite('${id}'); openFavoritesModal();" class="text-gray-400 hover:text-red-500 p-1 text-xs" title="Remove">
+                <button onclick="toggleFavorite('${id}'); openFavoritesModal(false);" class="text-gray-400 hover:text-red-500 p-1 text-xs" title="Remove">
                   ✕
                 </button>
               </div>
@@ -1742,10 +1803,19 @@
       }
 
       document.getElementById('fav-modal').style.display = 'flex';
+      if (pushHistory) {
+        history.pushState({ modal: 'favorites' }, '', '?modal=favorites');
+      }
     }
 
-    function closeFavoritesModal() {
+    function closeFavoritesModal(triggerHistoryBack = false) {
       document.getElementById('fav-modal').style.display = 'none';
+      if (triggerHistoryBack && window.history.state && window.history.state.modal === 'favorites') {
+        window.history.back();
+      } else {
+        const curPath = activeListingId && document.getElementById('view-listing').style.display === 'block' ? (routeSlugs[activeListingId] || '/') : '/';
+        history.replaceState({ view: 'home' }, '', curPath);
+      }
     }
 
     // ================= NATIVE ETSY CART PAGE ENGINE =================
@@ -1851,10 +1921,18 @@
     }
 
     // Filter Categories
-    function filterCat(cat) {
+    function filterCat(cat, pushHistory = true) {
       // 1. If currently on listing or cart page, navigate back to home
       if (document.getElementById('view-catalog').style.display === 'none') {
-        navigateTo('home');
+        navigateTo('home', false);
+      }
+
+      // Update Action URL
+      if (pushHistory) {
+        let catUrl = '/';
+        if (cat === 'saas') catUrl = '/?category=no-code';
+        if (cat === 'psychology') catUrl = '/?category=psychology';
+        history.pushState({ view: 'home', category: cat }, '', catUrl);
       }
 
       // 2. Clear global search bar and clear button if filtering by category
@@ -2012,7 +2090,7 @@
     }
 
     // ================= ETSY FULLSCREEN IMAGE LIGHTBOX ENGINE =================
-    function openLightbox(idx = null) {
+    function openLightbox(idx = null, pushHistory = true) {
       const item = catalog[activeListingId];
       if (!item) return;
 
@@ -2024,20 +2102,33 @@
         currentSlideIdx = found !== -1 ? found : 0;
       }
 
-      updateLightboxDisplay();
+      updateLightboxDisplay(false);
       document.getElementById('lightbox-modal').style.display = 'flex';
       document.body.style.overflow = 'hidden';
+
+      // Action URL: Changes URL dynamically to ?preview=X on photo zoom/fullscreen preview
+      if (pushHistory) {
+        const productPath = routeSlugs[activeListingId] || ('/' + activeListingId);
+        history.pushState({ view: 'lightbox', id: activeListingId, slide: currentSlideIdx + 1 }, '', `${productPath}?preview=${currentSlideIdx + 1}`);
+      }
     }
 
-    function closeLightbox(e) {
+    function closeLightbox(e, triggerHistoryBack = false) {
       if (e && e.target && e.target !== document.getElementById('lightbox-modal') && e.target.tagName !== 'BUTTON') {
         return;
       }
       document.getElementById('lightbox-modal').style.display = 'none';
       document.body.style.overflow = '';
+
+      const productPath = routeSlugs[activeListingId] || ('/' + activeListingId);
+      if (triggerHistoryBack && window.history.state && window.history.state.view === 'lightbox') {
+        window.history.back();
+      } else {
+        history.replaceState({ view: 'listing', id: activeListingId }, '', productPath);
+      }
     }
 
-    function updateLightboxDisplay() {
+    function updateLightboxDisplay(updateHistory = true) {
       const item = catalog[activeListingId];
       if (!item) return;
 
@@ -2052,7 +2143,7 @@
       // Bottom thumbnail strip
       const strip = document.getElementById('lightbox-thumb-strip');
       strip.innerHTML = item.photos.map((p, i) => `
-        <button onclick="currentSlideIdx = ${i}; updateLightboxDisplay();" class="w-12 h-12 rounded-xl border-2 overflow-hidden transition cursor-pointer flex-shrink-0 bg-white p-0.5 ${i === currentSlideIdx ? 'border-black ring-2 ring-black scale-105' : 'border-gray-200 opacity-60 hover:opacity-100'}">
+        <button onclick="currentSlideIdx = ${i}; updateLightboxDisplay(true);" class="w-12 h-12 rounded-xl border-2 overflow-hidden transition cursor-pointer flex-shrink-0 bg-white p-0.5 ${i === currentSlideIdx ? 'border-black ring-2 ring-black scale-105' : 'border-gray-200 opacity-60 hover:opacity-100'}">
           <img src="${p}" class="w-full h-full object-contain bg-white" />
         </button>
       `).join('');
@@ -2060,18 +2151,25 @@
       // Keep PDP main photo & thumbnails in sync
       const thumbBtns = document.querySelectorAll('#listing-thumb-rail button');
       if (thumbBtns[currentSlideIdx]) {
-        setListingPhoto(photoSrc, thumbBtns[currentSlideIdx]);
+        setListingPhoto(photoSrc, thumbBtns[currentSlideIdx], false);
+      }
+
+      // Update URL dynamically as user switches slides in lightbox
+      const modal = document.getElementById('lightbox-modal');
+      if (updateHistory && modal && modal.style.display === 'flex') {
+        const productPath = routeSlugs[activeListingId] || ('/' + activeListingId);
+        history.replaceState({ view: 'lightbox', id: activeListingId, slide: currentSlideIdx + 1 }, '', `${productPath}?preview=${currentSlideIdx + 1}`);
       }
     }
 
     function nextLightboxSlide() {
       currentSlideIdx++;
-      updateLightboxDisplay();
+      updateLightboxDisplay(true);
     }
 
     function prevLightboxSlide() {
       currentSlideIdx--;
-      updateLightboxDisplay();
+      updateLightboxDisplay(true);
     }
 
     // Keyboard listener (Escape, ArrowLeft, ArrowRight)
