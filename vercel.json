@@ -1,12 +1,8 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
-    { "source": "/50-micro-saas", "destination": "/index.html" },
-    { "source": "/the-hidden-tricks-your-brain-plays-on-you", "destination": "/index.html" },
-    { "source": "/brain-tricks", "destination": "/index.html" },
-    { "source": "/micro-saas", "destination": "/index.html" },
-    { "source": "/cart", "destination": "/index.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
