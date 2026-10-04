@@ -1150,29 +1150,10 @@
     let favorites = [];
     let activeListingId = 'saas';
 
-    // ================= SAFE ROUTING & CLEAN BROWSER HISTORY (NO '#' IN URL) =================
+    // ================= SAFE ROUTING & ALWAYS 100% CLEAN URL (markbuilder.in ONLY) =================
     window.addEventListener('DOMContentLoaded', () => {
-      // 1. Support direct deep linking via clean params or legacy hash
-      const urlParams = new URLSearchParams(window.location.search);
-      const prodParam = urlParams.get('product');
-      const viewParam = urlParams.get('view');
-      const hash = window.location.hash;
-
-      if (prodParam && catalog[prodParam]) {
-        openListing(prodParam, false);
-      } else if (viewParam === 'cart') {
-        navigateTo('cart', false);
-      } else if (hash.startsWith('#listing-')) {
-        const prodId = hash.replace('#listing-', '');
-        if (catalog[prodId]) {
-          openListing(prodId, false);
-        }
-      } else if (hash === '#cart') {
-        navigateTo('cart', false);
-      } else {
-        // Clean Homepage URL: Strips any '#' completely from the browser address bar!
-        history.replaceState({ view: 'home' }, '', window.location.pathname);
-      }
+      // Clean URL immediately: Remove any '?', query strings, or '#' completely from address bar
+      history.replaceState({ view: 'home' }, '', window.location.pathname);
 
       loadFavoritesFromStorage();
       renderPrices();
@@ -1192,8 +1173,7 @@
 
     function navigateTo(view, pushState = true) {
       if (pushState) {
-        const cleanUrl = view === 'cart' ? '?view=cart' : window.location.pathname;
-        history.pushState({ view: view }, '', cleanUrl);
+        history.pushState({ view: view }, '', window.location.pathname);
       }
       document.getElementById('view-catalog').style.display = view === 'home' ? 'block' : 'none';
       document.getElementById('view-listing').style.display = view === 'listing' ? 'block' : 'none';
@@ -1231,7 +1211,7 @@
       if (!item) return;
 
       if (pushState) {
-        history.pushState({ view: 'listing', id: prodId }, '', '?product=' + prodId);
+        history.pushState({ view: 'listing', id: prodId }, '', window.location.pathname);
       }
 
       // Populate PDP
