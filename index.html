@@ -1315,6 +1315,10 @@
     }
 
     window.addEventListener('DOMContentLoaded', () => {
+      // 0. Load storage states first
+      loadCartFromStorage();
+      loadFavoritesFromStorage();
+
       // 1. Initial Route Detection
       const prodId = getProdIdFromCurrentUrl();
       const urlParams = new URLSearchParams(window.location.search);
@@ -1351,7 +1355,6 @@
         openFavoritesModal(false);
       }
 
-      loadFavoritesFromStorage();
       renderPrices();
       updateCartBadge();
       updateHomeReviewCounts();
@@ -1406,9 +1409,22 @@
         const targetUrl = view === 'cart' ? '/cart' : '/';
         history.pushState({ view: view }, '', targetUrl);
       }
-      document.getElementById('view-catalog').style.display = view === 'home' ? 'block' : 'none';
-      document.getElementById('view-listing').style.display = view === 'listing' ? 'block' : 'none';
-      document.getElementById('view-cart').style.display = view === 'cart' ? 'block' : 'none';
+      const vCat = document.getElementById('view-catalog');
+      const vList = document.getElementById('view-listing');
+      const vCart = document.getElementById('view-cart');
+
+      if (vCat) {
+        vCat.style.display = view === 'home' ? 'block' : 'none';
+        vCat.classList.toggle('hidden', view !== 'home');
+      }
+      if (vList) {
+        vList.style.display = view === 'listing' ? 'block' : 'none';
+        vList.classList.toggle('hidden', view !== 'listing');
+      }
+      if (vCart) {
+        vCart.style.display = view === 'cart' ? 'block' : 'none';
+        vCart.classList.toggle('hidden', view !== 'cart');
+      }
 
       // Control Mobile Sticky Buy Bar
       const stickyBar = document.getElementById('mobile-sticky-buy-bar');
@@ -1481,9 +1497,13 @@
 
       renderPrices();
 
-      document.getElementById('view-catalog').style.display = 'none';
-      document.getElementById('view-cart').style.display = 'none';
-      document.getElementById('view-listing').style.display = 'block';
+      const vCat = document.getElementById('view-catalog');
+      const vList = document.getElementById('view-listing');
+      const vCart = document.getElementById('view-cart');
+
+      if (vCat) { vCat.style.display = 'none'; vCat.classList.add('hidden'); }
+      if (vCart) { vCart.style.display = 'none'; vCart.classList.add('hidden'); }
+      if (vList) { vList.style.display = 'block'; vList.classList.remove('hidden'); }
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -1832,9 +1852,7 @@
       if (menu) menu.classList.add('hidden');
 
       renderPrices();
-      if (!document.getElementById('view-cart').classList.contains('hidden')) {
-        renderCartPage();
-      }
+      renderCartPage();
       showToast(`Currency changed to ${flag} ${code} (${symbol})`);
     }
 
@@ -1959,10 +1977,27 @@
     }
 
     // ================= NATIVE ETSY CART PAGE ENGINE =================
+    function saveCartToStorage() {
+      try {
+        localStorage.setItem('markbuilder_cart_ids', JSON.stringify(cart.map(i => i.id)));
+      } catch(e) {}
+    }
+
+    function loadCartFromStorage() {
+      try {
+        const saved = localStorage.getItem('markbuilder_cart_ids');
+        if (saved) {
+          const ids = JSON.parse(saved);
+          cart = ids.map(id => catalog[id]).filter(Boolean);
+        }
+      } catch(e) { cart = []; }
+    }
+
     function addToCart(prodId) {
       const item = catalog[prodId];
       if (!cart.some(i => i.id === prodId)) {
         cart.push(item);
+        saveCartToStorage();
         showToast(`Added to your cart!`);
       } else {
         showToast(`Already in your cart!`);
@@ -1973,6 +2008,7 @@
 
     function removeFromCart(prodId) {
       cart = cart.filter(i => i.id !== prodId);
+      saveCartToStorage();
       updateCartBadge();
       renderCartPage();
     }
