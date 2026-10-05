@@ -3,34 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Client Acquisition & Contract Vault | MarkBuilder Labs</title>
+  <title>The Client Acquisition &amp; Contract Vault | MarkBuilder Labs</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; color: #f3f4f6; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #080c14; color: #f1f5f9; }
     code, pre { font-family: 'JetBrains Mono', monospace; }
-    .glass-card { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
-    .script-box { background: #070a12; border: 1px solid rgba(255, 255, 255, 0.1); }
+    .glass-card { background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
+    .script-box { background: #0b1120; border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.2s ease; }
+    .script-box:hover { border-color: rgba(245, 158, 11, 0.3); }
+    .var-badge { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); font-weight: 600; padding: 1px 5px; border-radius: 4px; }
   </style>
 </head>
-<body class="min-h-screen selection:bg-orange-500 selection:text-white pb-20">
+<body class="min-h-screen selection:bg-amber-500 selection:text-white pb-24">
 
-  <!-- Top Sticky Navigation -->
-  <header class="sticky top-0 z-50 bg-[#0b0f19]/90 backdrop-blur-md border-b border-white/10 px-6 py-4">
-    <div class="max-w-5xl mx-auto flex items-center justify-between">
+  <!-- Sticky Header -->
+  <header class="sticky top-0 z-50 bg-[#080c14]/90 backdrop-blur-md border-b border-white/10 px-4 sm:px-8 py-3.5">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
       <div class="flex items-center gap-3">
         <img src="markbuilder-icon.png" alt="MarkBuilder" class="w-8 h-8 rounded-lg shadow">
         <div>
           <span class="font-bold text-white text-sm tracking-wide">MARKBUILDER LABS</span>
-          <span class="block text-[10px] text-orange-400 font-mono uppercase tracking-wider">Official Digital Arsenal</span>
+          <span class="block text-[10px] text-amber-400 font-mono uppercase tracking-wider">Official Digital Arsenal</span>
         </div>
       </div>
-      <div class="flex items-center gap-3">
-        <button onclick="window.print()" class="px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-white/10 hover:bg-white/20 text-white transition flex items-center gap-1.5">
-          <span>🖨️ Export to PDF</span>
-        </button>
-        <a href="https://www.markbuilder.in" target="_blank" class="px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-orange-600 hover:bg-orange-500 text-white transition shadow-lg shadow-orange-600/30">
+      <div class="flex items-center gap-2.5">
+        <a href="client-acquisition-vault.pdf" download class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-white/10 hover:bg-white/20 text-white transition flex items-center gap-1.5">
+          <span>📥 Download PDF (28p)</span>
+        </a>
+        <a href="https://www.markbuilder.in" target="_blank" class="px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold transition shadow-lg shadow-amber-500/20">
           Store Front ↗
         </a>
       </div>
@@ -38,285 +40,2127 @@
   </header>
 
   <!-- Hero Header -->
-  <section class="max-w-5xl mx-auto px-6 pt-12 pb-8">
-    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs font-medium mb-4">
-      <span>⚡ 30+ Tested Outreach Scripts • Legal Master Agreement • Proposal Framework</span>
+  <section class="max-w-6xl mx-auto px-4 sm:px-8 pt-10 pb-6">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-medium mb-3">
+      <span>⚡ 44 Tested Scripts • 4 Legal Agreements • 1-Page Proposal • Crisis Playbook</span>
     </div>
-    <h1 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
-      The Client Acquisition &amp; <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-yellow-400">Contract Vault</span>
+    <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+      The Client Acquisition &amp; <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-300 to-yellow-400">Contract Vault</span>
     </h1>
-    <p class="mt-4 text-gray-400 text-sm md:text-base max-w-2xl leading-relaxed">
-      A battle-tested operational toolkit for developers, designers, no-code builders, and creative agencies to close high-ticket clients and protect cash flow.
+    <p class="mt-3 text-slate-400 text-sm sm:text-base max-w-3xl leading-relaxed">
+      A battle-tested operational toolkit for developers, designers, no-code builders, and creative agencies to close high-ticket clients, enforce 50% upfront payments, and eliminate unpaid scope creep.
     </p>
-    
-    <div class="mt-6 flex flex-wrap gap-4 text-xs font-mono text-gray-400 border-t border-b border-white/10 py-3">
-      <div><span class="text-gray-500">Curated By:</span> <strong class="text-gray-200">Priyanshu Mishra (Founder)</strong></div>
+
+    <!-- Metadata Bar -->
+    <div class="mt-5 flex flex-wrap gap-4 text-xs font-mono text-slate-400 border-t border-b border-white/10 py-3">
+      <div><span class="text-slate-500">Curated By:</span> <strong class="text-slate-200">Priyanshu Mishra (Founder)</strong></div>
       <div>•</div>
-      <div><span class="text-gray-500">Publisher:</span> <strong class="text-orange-400">MarkBuilder Labs</strong></div>
+      <div><span class="text-slate-500">Publisher:</span> <strong class="text-amber-400">MarkBuilder Labs</strong></div>
       <div>•</div>
-      <div><span class="text-gray-500">License:</span> <strong class="text-emerald-400">Commercial End-User License Granted</strong></div>
+      <div><span class="text-slate-500">License:</span> <strong class="text-emerald-400">Commercial End-User License Granted</strong></div>
+    </div>
+
+    <!-- Live Search Filter -->
+    <div class="mt-6 relative">
+      <input 
+        id="search-input"
+        type="text" 
+        oninput="filterArsenal(this.value)" 
+        placeholder="Search scripts, niches, keywords (e.g. 'Shopify', 'React', 'discount', 'contract')..."
+        class="w-full bg-[#0f172a] text-sm text-white pl-10 pr-4 py-3 rounded-xl border border-white/10 focus:border-amber-400 focus:outline-none transition shadow-inner"
+      />
+      <span class="absolute left-3.5 top-3.5 text-slate-400 text-sm">🔍</span>
     </div>
   </section>
 
-  <!-- Quick Category Filter -->
-  <div class="max-w-5xl mx-auto px-6 mb-8">
-    <div class="flex flex-wrap gap-2 text-xs">
-      <a href="#dev" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 transition">💻 Web &amp; Software (1-5)</a>
-      <a href="#nocode" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 transition">🧩 No-Code &amp; SaaS (6-10)</a>
-      <a href="#design" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 transition">🎨 UI/UX &amp; Brand (11-15)</a>
-      <a href="#video" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 transition">🎬 Video &amp; Media (16-20)</a>
-      <a href="#ai" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 transition">🤖 AI Automation (21-25)</a>
-      <a href="#dms" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 transition">💬 LinkedIn &amp; DMs (26-30)</a>
-      <a href="#followup" class="px-3 py-1.5 rounded-lg bg-orange-500/20 text-orange-300 border border-orange-500/30 transition">🔁 5-Step Follow-Up</a>
-      <a href="#contract" class="px-3 py-1.5 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 transition">⚖️ Legal Contract</a>
+  <!-- Main Content Tabs -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-8 space-y-10 mt-6" id="arsenal-container">
+
+    <!-- Foreword Card -->
+    <div class="glass-card rounded-2xl p-6 border-l-4 border-amber-500">
+      <h3 class="text-sm font-bold text-amber-400 uppercase tracking-wider mb-2">Founder Foreword • Priyanshu Mishra</h3>
+      <p class="text-xs sm:text-sm text-slate-300 leading-relaxed italic">
+        "Most talented builders fail not because their technical skill is lacking, but because their client acquisition and contract engine is broken. Clients do not buy skills. Clients buy outcomes, speed, and risk elimination. This vault is an operational arsenal designed to put cash in your bank account and legally protect your time. Fill in the variables, hit send, and run your pipeline like an executive."
+      </p>
     </div>
-  </div>
 
-  <main class="max-w-5xl mx-auto px-6 space-y-12">
+    <!-- Category Header -->
+    <div class="flex items-center justify-between border-b border-white/10 pb-3">
+      <h2 class="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
+        <span>⚡</span> Module 2: The 44 Battle-Tested Outreach Scripts
+      </h2>
+      <span class="text-xs font-mono bg-amber-500/20 text-amber-300 px-2.5 py-1 rounded">44 Scripts</span>
+    </div>
 
-    <!-- Category A: Web Dev -->
-    <section id="dev" class="glass-card rounded-2xl p-6 md:p-8">
-      <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+    <!-- Scripts Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5" id="scripts-grid">
+
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 01 the "speed optimization & lost revenue" angle e-commerce stores, b2b saas, content platforms. quick note regarding `[company name]`'s mobile load time hi `[first name]`,  
+i was testing `[company name]`'s checkout flow on mobile yesterday, and noticed that the product page takes approximately `[x.x seconds]` to fully render on standard 4g connections.  
+google’s benchmark data shows that every additional 1-second mobile delay drops conversion rates by roughly 7%. on your estimated traffic, that could be costing hundreds of lost orders each month.  
+i put together a quick 3-point checklist of what’s slowing down your asset delivery (mostly unoptimized hero scripts and layout shifts).  
+would you be open to me sending over the 2-minute breakdown? no cost or pitch—just thought it would help your engineering team.  
+best regards,  
+`[your name]` • `[your portfolio link]`">
         <div>
-          <h2 class="text-xl font-bold text-white flex items-center gap-2">
-            <span>💻</span> Category A: Web &amp; Software Development
-          </h2>
-          <p class="text-xs text-gray-400 mt-1">High-converting cold email angles for front-end, full-stack, and infrastructure devs.</p>
-        </div>
-        <span class="text-xs font-mono bg-blue-500/20 text-blue-300 px-2.5 py-1 rounded">5 Scripts</span>
-      </div>
-
-      <!-- Script 1 -->
-      <div class="script-box rounded-xl p-5 mb-6">
-        <div class="flex items-center justify-between mb-3">
-          <span class="text-xs font-bold text-orange-400 uppercase tracking-wider">Script 01 • Speed Optimization &amp; Lost Revenue</span>
-          <button onclick="copySnippet('script1')" class="text-xs bg-white/10 hover:bg-white/20 text-gray-300 hover:text-white px-2.5 py-1 rounded transition flex items-center gap-1">
-            <span>📋 Copy</span>
-          </button>
-        </div>
-        <div class="text-xs font-mono text-gray-400 mb-2"><strong>Subject:</strong> Quick note regarding [Company Name]'s mobile load time</div>
-        <pre id="script1" class="text-xs text-gray-300 whitespace-pre-wrap leading-relaxed">Hi [First Name],
-
-I was checking out [Company Name]'s checkout flow on mobile yesterday, and noticed that the product page takes approximately [X.X seconds] to fully render on standard 4G connections.
-
-Google’s benchmark data shows that every additional 1-second mobile delay drops conversion rates by roughly 7%. On your estimated traffic, that could be costing hundreds of lost orders each month.
-
-I put together a quick 3-point checklist of what’s slowing down your asset delivery (mostly unoptimized hero scripts and layout shifts).
-
-Would you be open to me sending over the 2-minute breakdown? No cost or pitch—just thought it would help your engineering team.
-
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 01: The "Speed Optimization & Lost Revenue" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> E-commerce stores, B2B SaaS, content platforms.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Quick note regarding `<span class="var-badge">[Company Name]</span>`'s mobile load time
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+I was testing `<span class="var-badge">[Company Name]</span>`'s checkout flow on mobile yesterday, and noticed that the product page takes approximately `<span class="var-badge">[X.X seconds]</span>` to fully render on standard 4G connections.  
+Google’s benchmark data shows that every additional 1-second mobile delay drops conversion rates by roughly 7%. On your estimated traffic, that could be costing hundreds of lost orders each month.  
+I put together a quick 3-point checklist of what’s slowing down your asset delivery (mostly unoptimized hero scripts and layout shifts).  
+Would you be open to me sending over the 2-minute breakdown? No cost or pitch—just thought it would help your engineering team.  
 Best regards,  
-[Your Name]  
-[Your Portfolio Link]</pre>
-      </div>
-
-      <!-- Script 2 -->
-      <div class="script-box rounded-xl p-5 mb-6">
-        <div class="flex items-center justify-between mb-3">
-          <span class="text-xs font-bold text-orange-400 uppercase tracking-wider">Script 02 • The Broken Feature / Bug Catcher</span>
-          <button onclick="copySnippet('script2')" class="text-xs bg-white/10 hover:bg-white/20 text-gray-300 hover:text-white px-2.5 py-1 rounded transition flex items-center gap-1">
-            <span>📋 Copy</span>
-          </button>
+`<span class="var-badge">[Your Name]</span>` • `<span class="var-badge">[Your Portfolio Link]</span>`
+          </div>
         </div>
-        <div class="text-xs font-mono text-gray-400 mb-2"><strong>Subject:</strong> Found a small UX issue on [Page Name / Feature]</div>
-        <pre id="script2" class="text-xs text-gray-300 whitespace-pre-wrap leading-relaxed">Hi [First Name],
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Quick note regarding `[Company Name]`&#39;s mobile load time
 
-Huge congratulations on the recent launch of [Product / Feature Name]. The UI looks remarkably clean.
-
-While testing it out today, I ran into a minor glitch where [describe specific bug, e.g., the sign-up modal button unresponsive on Safari / mobile dropdown overflowing]. 
-
-Took a quick 45-second screen recording demonstrating the exact console error and how your dev team can fix it with a 2-line CSS/JS tweak: [Loom Link].
-
-I specialize in front-end performance and modern web builds. If you ever need an extra pair of hands to squash bugs or ship new features quickly, I’d love to support [Company Name].
-
-Rooting for your growth!
-
-Cheers,  
-[Your Name]</pre>
-      </div>
-
-      <!-- Script 3 -->
-      <div class="script-box rounded-xl p-5">
-        <div class="flex items-center justify-between mb-3">
-          <span class="text-xs font-bold text-orange-400 uppercase tracking-wider">Script 03 • Legacy Tech Stack Migration</span>
-          <button onclick="copySnippet('script3')" class="text-xs bg-white/10 hover:bg-white/20 text-gray-300 hover:text-white px-2.5 py-1 rounded transition flex items-center gap-1">
-            <span>📋 Copy</span>
-          </button>
-        </div>
-        <div class="text-xs font-mono text-gray-400 mb-2"><strong>Subject:</strong> Upgrading [Company Name]'s digital infrastructure</div>
-        <pre id="script3" class="text-xs text-gray-300 whitespace-pre-wrap leading-relaxed">Hi [First Name],
-
-[Company Name]'s brand identity is top-tier, but noticed your web interface is still running on an older [WordPress/PHP] build that feels slightly clunky on mobile devices.
-
-We recently rebuilt a similar platform in [Industry] over to a modern stack ([Next.js / Tailwind / Supabase]). Result: Page speeds dropped under 0.8s, and organic search bounce rates decreased by 34%.
-
-I drafted a quick 1-page architecture roadmap showing how your current features could be ported with zero downtime.
-
-Worth sending over for your thoughts?
-
-Best,  
-[Your Name]</pre>
-      </div>
-    </section>
-
-    <!-- Category B: No-Code -->
-    <section id="nocode" class="glass-card rounded-2xl p-6 md:p-8">
-      <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
-        <div>
-          <h2 class="text-xl font-bold text-white flex items-center gap-2">
-            <span>🧩</span> Category B: No-Code &amp; SaaS Prototyping
-          </h2>
-          <p class="text-xs text-gray-400 mt-1">Pitching MVPs, internal tooling, and client portals built on Bubble, FlutterFlow, and Airtable.</p>
-        </div>
-        <span class="text-xs font-mono bg-purple-500/20 text-purple-300 px-2.5 py-1 rounded">5 Scripts</span>
-      </div>
-
-      <!-- Script 6 -->
-      <div class="script-box rounded-xl p-5 mb-6">
-        <div class="flex items-center justify-between mb-3">
-          <span class="text-xs font-bold text-orange-400 uppercase tracking-wider">Script 06 • The 48-Hour MVP Pitch</span>
-          <button onclick="copySnippet('script6')" class="text-xs bg-white/10 hover:bg-white/20 text-gray-300 hover:text-white px-2.5 py-1 rounded transition flex items-center gap-1">
-            <span>📋 Copy</span>
-          </button>
-        </div>
-        <div class="text-xs font-mono text-gray-400 mb-2"><strong>Subject:</strong> Building [Their Startup Idea] in 14 days without code</div>
-        <pre id="script6" class="text-xs text-gray-300 whitespace-pre-wrap leading-relaxed">Hi [First Name],
-
-Loved your post regarding [Concept / Problem they talked about on Twitter or LinkedIn]. The market opportunity is massive.
-
-Most non-technical founders waste 6 months and $15,000+ trying to hire agencies who over-engineer features that users never touch.
-
-Using modern visual frameworks ([Bubble / FlutterFlow / Supabase]), we build fully functional, Stripe-integrated web and mobile apps in under 14 days for a fraction of traditional dev costs.
-
-I took the liberty of mapping out a lean feature-architecture for your concept: [1-sentence summary or link].
-
-Open to taking a look?
-
-Best,  
-[Your Name]</pre>
-      </div>
-
-      <!-- Script 7 -->
-      <div class="script-box rounded-xl p-5">
-        <div class="flex items-center justify-between mb-3">
-          <span class="text-xs font-bold text-orange-400 uppercase tracking-wider">Script 07 • Replacing Spreadsheets with a Custom Portal</span>
-          <button onclick="copySnippet('script7')" class="text-xs bg-white/10 hover:bg-white/20 text-gray-300 hover:text-white px-2.5 py-1 rounded transition flex items-center gap-1">
-            <span>📋 Copy</span>
-          </button>
-        </div>
-        <div class="text-xs font-mono text-gray-400 mb-2"><strong>Subject:</strong> Replacing your internal spreadsheets with a custom portal</div>
-        <pre id="script7" class="text-xs text-gray-300 whitespace-pre-wrap leading-relaxed">Hi [First Name],
-
-Quick question: Is your internal team still tracking client deliverables and invoices across multiple Google Sheets?
-
-We build custom internal client portals and dashboards on [Softr / Airtable] that give your clients real-time visibility into their project status—eliminating 90% of back-and-forth status update emails.
-
-Built one for [Similar Client] in 5 days; their client retention rate jumped by 25%.
-
-Happy to send over a 90-second video demo of how it works if you're interested.
-
+Hi `[First Name]`,  
+I was testing `[Company Name]`&#39;s checkout flow on mobile yesterday, and noticed that the product page takes approximately `[X.X seconds]` to fully render on standard 4G connections.  
+Google’s benchmark data shows that every additional 1-second mobile delay drops conversion rates by roughly 7%. On your estimated traffic, that could be costing hundreds of lost orders each month.  
+I put together a quick 3-point checklist of what’s slowing down your asset delivery (mostly unoptimized hero scripts and layout shifts).  
+Would you be open to me sending over the 2-minute breakdown? No cost or pitch—just thought it would help your engineering team.  
 Best regards,  
-[Your Name]</pre>
-      </div>
-    </section>
-
-    <!-- Module 4: High Converting Proposal -->
-    <section id="proposal" class="glass-card rounded-2xl p-6 md:p-8">
-      <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
-        <div>
-          <h2 class="text-xl font-bold text-white flex items-center gap-2">
-            <span>📑</span> Module 4: The 1-Page High-Converting Proposal Template
-          </h2>
-          <p class="text-xs text-gray-400 mt-1">Never send 15-page PDF proposals. Executives approve 1-page clarity.</p>
+`[Your Name]` • `[Your Portfolio Link]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
         </div>
-        <button onclick="copySnippet('proposalText')" class="text-xs bg-orange-600 hover:bg-orange-500 text-white px-3 py-1.5 rounded-lg transition font-semibold">
-          📋 Copy Full Proposal
-        </button>
       </div>
-
-      <pre id="proposalText" class="script-box rounded-xl p-5 text-xs text-gray-300 whitespace-pre-wrap leading-relaxed">PROJECT PROPOSAL &amp; SCOPE OF WORK
-
-CLIENT: [Client Company Name]
-DATE: [Date]
-PREPARED BY: [Your Name / Agency Name]
-PROJECT: [E.g., Custom Responsive Web Platform &amp; Payment Gateway]
-
-1. TARGET OBJECTIVE
-Deliver a production-ready, high-converting digital platform within 21 business days to increase lead conversions by an estimated 25-30%.
-
-2. 3-PHASE EXECUTION TIMELINE
-• Phase 1: Wireframing &amp; UX Approval (Days 1–5)
-• Phase 2: Core Development &amp; Integrations (Days 6–16)
-• Phase 3: QA, Performance Audit &amp; Deployment (Days 17–21)
-
-3. DELIVERABLES &amp; SCOPE
-• Included: Fully responsive mobile/desktop application, Stripe/Razorpay integration, CMS setup, and 14 days of post-launch bug support.
-• Revisions: 2 rounds of consolidated feedback per phase.
-• Excluded: Unplanned third-party API subscription costs, features requested outside written scope.
-
-4. INVESTMENT &amp; PAYMENT TERMS
-• Total Project Fee: [Amount: ₹XX,XXX / $X,XXX]
-• Milestone 1: 50% non-refundable deposit prior to project kick-off.
-• Milestone 2: 50% upon final acceptance prior to code/DNS handover.
-• Validity: This proposal is valid for 7 business days.</pre>
-    </section>
-
-    <!-- Module 5: Master Contract -->
-    <section id="contract" class="glass-card rounded-2xl p-6 md:p-8 border-emerald-500/30">
-      <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 02 the "broken feature & bug catcher" angle recently launched apps, startups, feature updates. found a small ux issue on `[page name / feature]` hi `[first name]`,  
+huge congratulations on the recent launch of `[product / feature name]`. the ui looks remarkably clean.  
+while testing it out today, i ran into a minor glitch where `[describe specific bug, e.g., the sign-up modal button is unresponsive on safari / mobile dropdown overflowing]`.  
+took a quick 45-second screen recording demonstrating the exact console error and how your dev team can fix it with a 2-line css/js tweak: `[loom link]`.  
+i specialize in front-end performance and modern web builds. if you ever need an extra pair of hands to squash bugs or ship new features quickly, i’d love to support `[company name]`.  
+rooting for your growth!  
+cheers, `[your name]`">
         <div>
-          <h2 class="text-xl font-bold text-emerald-400 flex items-center gap-2">
-            <span>⚖️</span> Module 5: Master Freelance &amp; Agency Service Agreement
-          </h2>
-          <p class="text-xs text-gray-400 mt-1">Standard legal contract template. Protects your IP, prevents scope creep, and guarantees payment.</p>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 02: The "Broken Feature & Bug Catcher" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Recently launched apps, startups, feature updates.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Found a small UX issue on `<span class="var-badge">[Page Name / Feature]</span>`
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+Huge congratulations on the recent launch of `<span class="var-badge">[Product / Feature Name]</span>`. The UI looks remarkably clean.  
+While testing it out today, I ran into a minor glitch where `<span class="var-badge">[describe specific bug, e.g., the sign-up modal button is unresponsive on Safari / mobile dropdown overflowing]</span>`.  
+Took a quick 45-second screen recording demonstrating the exact console error and how your dev team can fix it with a 2-line CSS/JS tweak: `<span class="var-badge">[Loom Link]</span>`.  
+I specialize in front-end performance and modern web builds. If you ever need an extra pair of hands to squash bugs or ship new features quickly, I’d love to support `<span class="var-badge">[Company Name]</span>`.  
+Rooting for your growth!  
+Cheers, `<span class="var-badge">[Your Name]</span>`
+          </div>
         </div>
-        <button onclick="copySnippet('contractText')" class="text-xs bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-lg transition font-semibold">
-          📋 Copy Legal Agreement
-        </button>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Found a small UX issue on `[Page Name / Feature]`
+
+Hi `[First Name]`,  
+Huge congratulations on the recent launch of `[Product / Feature Name]`. The UI looks remarkably clean.  
+While testing it out today, I ran into a minor glitch where `[describe specific bug, e.g., the sign-up modal button is unresponsive on Safari / mobile dropdown overflowing]`.  
+Took a quick 45-second screen recording demonstrating the exact console error and how your dev team can fix it with a 2-line CSS/JS tweak: `[Loom Link]`.  
+I specialize in front-end performance and modern web builds. If you ever need an extra pair of hands to squash bugs or ship new features quickly, I’d love to support `[Company Name]`.  
+Rooting for your growth!  
+Cheers, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 03 the "modern tech stack migration" angle companies stuck on legacy wordpress, wix, or old php. upgrading `[company name]`'s digital infrastructure hi `[first name]`,  
+`[company name]`'s brand identity is top-tier, but noticed your web interface is still running on an older `[wordpress/php]` build that feels slightly clunky on mobile devices.  
+we recently rebuilt a similar platform in `[industry]` over to a modern stack (`[next.js / tailwind / supabase]`). result: page speeds dropped under 0.8s, and organic search bounce rates decreased by 34%.  
+i drafted a quick 1-page architecture roadmap showing how your current features could be ported with zero downtime.  
+worth sending over for your thoughts?  
+best, `[your name]`">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 03: The "Modern Tech Stack Migration" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Companies stuck on legacy WordPress, Wix, or old PHP.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Upgrading `<span class="var-badge">[Company Name]</span>`'s digital infrastructure
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+`<span class="var-badge">[Company Name]</span>`'s brand identity is top-tier, but noticed your web interface is still running on an older `<span class="var-badge">[WordPress/PHP]</span>` build that feels slightly clunky on mobile devices.  
+We recently rebuilt a similar platform in `<span class="var-badge">[Industry]</span>` over to a modern stack (`<span class="var-badge">[Next.js / Tailwind / Supabase]</span>`). Result: Page speeds dropped under 0.8s, and organic search bounce rates decreased by 34%.  
+I drafted a quick 1-page architecture roadmap showing how your current features could be ported with zero downtime.  
+Worth sending over for your thoughts?  
+Best, `<span class="var-badge">[Your Name]</span>`
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Upgrading `[Company Name]`&#39;s digital infrastructure
+
+Hi `[First Name]`,  
+`[Company Name]`&#39;s brand identity is top-tier, but noticed your web interface is still running on an older `[WordPress/PHP]` build that feels slightly clunky on mobile devices.  
+We recently rebuilt a similar platform in `[Industry]` over to a modern stack (`[Next.js / Tailwind / Supabase]`). Result: Page speeds dropped under 0.8s, and organic search bounce rates decreased by 34%.  
+I drafted a quick 1-page architecture roadmap showing how your current features could be ported with zero downtime.  
+Worth sending over for your thoughts?  
+Best, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 04 the "api & workflow integration" angle real estate, logistics, agencies, operations-heavy teams. automating `[specific manual workflow]` for `[company name]` hi `[first name]`,  
+saw that your team is actively scaling `[service / department]`.  
+most founders in `[industry]` lose 10–15 hours every week manually exporting leads from `[crm / tool a]` and syncing them into `[tool b / database]`.  
+we build custom api integrations that bridge these workflows completely on autopilot—saving teams thousands of dollars in manual administrative overhead.  
+could i share a 1-minute flowchart of how we automated this for a similar company last month?  
+best regards, `[your name]`">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 04: The "API & Workflow Integration" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Real estate, logistics, agencies, operations-heavy teams.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Automating `<span class="var-badge">[Specific Manual Workflow]</span>` for `<span class="var-badge">[Company Name]</span>`
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+Saw that your team is actively scaling `<span class="var-badge">[Service / Department]</span>`.  
+Most founders in `<span class="var-badge">[Industry]</span>` lose 10–15 hours every week manually exporting leads from `<span class="var-badge">[CRM / Tool A]</span>` and syncing them into `<span class="var-badge">[Tool B / Database]</span>`.  
+We build custom API integrations that bridge these workflows completely on autopilot—saving teams thousands of dollars in manual administrative overhead.  
+Could I share a 1-minute flowchart of how we automated this for a similar company last month?  
+Best regards, `<span class="var-badge">[Your Name]</span>`
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Automating `[Specific Manual Workflow]` for `[Company Name]`
+
+Hi `[First Name]`,  
+Saw that your team is actively scaling `[Service / Department]`.  
+Most founders in `[Industry]` lose 10–15 hours every week manually exporting leads from `[CRM / Tool A]` and syncing them into `[Tool B / Database]`.  
+We build custom API integrations that bridge these workflows completely on autopilot—saving teams thousands of dollars in manual administrative overhead.  
+Could I share a 1-minute flowchart of how we automated this for a similar company last month?  
+Best regards, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 05 the "freelance developer overflow" angle busy dev agencies, creative shops, tech consultancies. extra front-end bandwidth for `[agency name]`? hi `[first name]`,  
+love the client work you recently shipped for `[their client name]`.  
+i know agency schedules can get slammed when multiple client milestones land in the same sprint.  
+i run a specialized freelance dev studio (`[react / next.js / typescript]`). we act as invisible white-label bench support for agencies when internal teams are at max capacity.  
+zero onboarding overhead. plug-and-play day rates or fixed sprint estimates.  
+could i send over 2 recent agency-partner builds we shipped under nda?  
+best, `[your name]`
+
+---">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 05: The "Freelance Developer Overflow" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Busy dev agencies, creative shops, tech consultancies.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Extra front-end bandwidth for `<span class="var-badge">[Agency Name]</span>`?
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+Love the client work you recently shipped for `<span class="var-badge">[Their Client Name]</span>`.  
+I know agency schedules can get slammed when multiple client milestones land in the same sprint.  
+I run a specialized freelance dev studio (`<span class="var-badge">[React / Next.js / TypeScript]</span>`). We act as invisible white-label bench support for agencies when internal teams are at max capacity.  
+Zero onboarding overhead. Plug-and-play day rates or fixed sprint estimates.  
+Could I send over 2 recent agency-partner builds we shipped under NDA?  
+Best, `<span class="var-badge">[Your Name]</span>`
+
+---
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Extra front-end bandwidth for `[Agency Name]`?
+
+Hi `[First Name]`,  
+Love the client work you recently shipped for `[Their Client Name]`.  
+I know agency schedules can get slammed when multiple client milestones land in the same sprint.  
+I run a specialized freelance dev studio (`[React / Next.js / TypeScript]`). We act as invisible white-label bench support for agencies when internal teams are at max capacity.  
+Zero onboarding overhead. Plug-and-play day rates or fixed sprint estimates.  
+Could I send over 2 recent agency-partner builds we shipped under NDA?  
+Best, `[Your Name]`
+
+---`)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 06 the "shopify mobile checkout friction" angle dtc e-commerce brands doing $20k–$100k/mo. quick observation on `[brand name]`'s mobile cart flow hi `[first name]`,  
+huge fan of `[brand name]`'s latest drop.  
+was reviewing your mobile shop today and noticed that your dynamic cart drawer is experiencing layout shifts on ios safari, pushing the "checkout" button below the fold on several devices.  
+we specialize in shopify plus conversion optimization. we recently fixed a similar issue for `[similar brand]`, which recovered an estimated 8.4% in abandoned cart revenue.  
+i recorded a 60-second screen audit pointing out the exact styling conflict: `[loom link]`.  
+hope this is helpful for your tech team!  
+best, `[your name]`">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 06: The "Shopify Mobile Checkout Friction" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> DTC e-commerce brands doing $20k–$100k/mo.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Quick observation on `<span class="var-badge">[Brand Name]</span>`'s mobile cart flow
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+Huge fan of `<span class="var-badge">[Brand Name]</span>`'s latest drop.  
+Was reviewing your mobile shop today and noticed that your dynamic cart drawer is experiencing layout shifts on iOS Safari, pushing the "Checkout" button below the fold on several devices.  
+We specialize in Shopify Plus conversion optimization. We recently fixed a similar issue for `<span class="var-badge">[Similar Brand]</span>`, which recovered an estimated 8.4% in abandoned cart revenue.  
+I recorded a 60-second screen audit pointing out the exact styling conflict: `<span class="var-badge">[Loom Link]</span>`.  
+Hope this is helpful for your tech team!  
+Best, `<span class="var-badge">[Your Name]</span>`
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Quick observation on `[Brand Name]`&#39;s mobile cart flow
+
+Hi `[First Name]`,  
+Huge fan of `[Brand Name]`&#39;s latest drop.  
+Was reviewing your mobile shop today and noticed that your dynamic cart drawer is experiencing layout shifts on iOS Safari, pushing the &quot;Checkout&quot; button below the fold on several devices.  
+We specialize in Shopify Plus conversion optimization. We recently fixed a similar issue for `[Similar Brand]`, which recovered an estimated 8.4% in abandoned cart revenue.  
+I recorded a 60-second screen audit pointing out the exact styling conflict: `[Loom Link]`.  
+Hope this is helpful for your tech team!  
+Best, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 07 the "webflow / framer interactive upgrade" angle b2b saas companies with static websites. elevating `[company name]`'s interactive product demo hi `[first name]`,  
+`[product name]` solves a massive problem in `[industry]`, but your current landing page relies mostly on static png screenshots to explain how the software works.  
+modern saas buyers convert 3x higher when they can interact with a live product simulator or high-fps micro-interaction on the hero section.  
+i built a quick interactive prototype of what your hero section could look like in framer/webflow: `[live demo link]`.  
+open to checking it out?  
+cheers, `[your name]`">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 07: The "Webflow / Framer Interactive Upgrade" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> B2B SaaS companies with static websites.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Elevating `<span class="var-badge">[Company Name]</span>`'s interactive product demo
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+`<span class="var-badge">[Product Name]</span>` solves a massive problem in `<span class="var-badge">[Industry]</span>`, but your current landing page relies mostly on static PNG screenshots to explain how the software works.  
+Modern SaaS buyers convert 3x higher when they can interact with a live product simulator or high-fps micro-interaction on the hero section.  
+I built a quick interactive prototype of what your hero section could look like in Framer/Webflow: `<span class="var-badge">[Live Demo Link]</span>`.  
+Open to checking it out?  
+Cheers, `<span class="var-badge">[Your Name]</span>`
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Elevating `[Company Name]`&#39;s interactive product demo
+
+Hi `[First Name]`,  
+`[Product Name]` solves a massive problem in `[Industry]`, but your current landing page relies mostly on static PNG screenshots to explain how the software works.  
+Modern SaaS buyers convert 3x higher when they can interact with a live product simulator or high-fps micro-interaction on the hero section.  
+I built a quick interactive prototype of what your hero section could look like in Framer/Webflow: `[Live Demo Link]`.  
+Open to checking it out?  
+Cheers, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 08 the "14-day mvp sprint" angle non-technical startup founders who raised pre-seed or bootstrap. turning `[startup idea]` into a working mvp in 14 days hi `[first name]`,  
+saw your post regarding the launch roadmap for `[product name]`. the value proposition is brilliant.  
+most founders spend 6 months and $30k+ hiring full-stack dev teams for v1, only to realize they needed to iterate faster based on user feedback.  
+we build full-stack, scalable mvps using modern no-code architectures (`[bubble / flutterflow / supabase]`) within 14 business days—complete with stripe payments, auth, and database architecture.  
+here is a live mvp we shipped 2 weeks ago that just onboarded its first 500 users: `[link]`.  
+would you be open to seeing a 1-page sprint breakdown for `[product name]`?  
+best regards, `[your name]`">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 08: The "14-Day MVP Sprint" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Non-technical startup founders who raised pre-seed or bootstrap.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Turning `<span class="var-badge">[Startup Idea]</span>` into a working MVP in 14 days
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+Saw your post regarding the launch roadmap for `<span class="var-badge">[Product Name]</span>`. The value proposition is brilliant.  
+Most founders spend 6 months and $30k+ hiring full-stack dev teams for v1, only to realize they needed to iterate faster based on user feedback.  
+We build full-stack, scalable MVPs using modern no-code architectures (`<span class="var-badge">[Bubble / FlutterFlow / Supabase]</span>`) within 14 business days—complete with Stripe payments, auth, and database architecture.  
+Here is a live MVP we shipped 2 weeks ago that just onboarded its first 500 users: `<span class="var-badge">[Link]</span>`.  
+Would you be open to seeing a 1-page sprint breakdown for `<span class="var-badge">[Product Name]</span>`?  
+Best regards, `<span class="var-badge">[Your Name]</span>`
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Turning `[Startup Idea]` into a working MVP in 14 days
+
+Hi `[First Name]`,  
+Saw your post regarding the launch roadmap for `[Product Name]`. The value proposition is brilliant.  
+Most founders spend 6 months and $30k+ hiring full-stack dev teams for v1, only to realize they needed to iterate faster based on user feedback.  
+We build full-stack, scalable MVPs using modern no-code architectures (`[Bubble / FlutterFlow / Supabase]`) within 14 business days—complete with Stripe payments, auth, and database architecture.  
+Here is a live MVP we shipped 2 weeks ago that just onboarded its first 500 users: `[Link]`.  
+Would you be open to seeing a 1-page sprint breakdown for `[Product Name]`?  
+Best regards, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 09 the "legacy cms port" angle businesses complaining about wordpress maintenance/crashes. eliminating wordpress plugin maintenance for `[company name]` hi `[first name]`,  
+checked out your company blog today and noticed your site is running into frequent database caching timeouts and plugin version conflicts.  
+we help scaling brands migrate their legacy wordpress sites over to webflow with 100% seo preservation, zero plugin maintenance, and sub-second load speeds.  
+migrated `[previous client]` last month with zero downtime and a 40% boost in organic google lighthouse scores.  
+could i send over our 3-step zero-downtime migration checklist?  
+best, `[your name]`">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 09: The "Legacy CMS Port" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Businesses complaining about WordPress maintenance/crashes.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Eliminating WordPress plugin maintenance for `<span class="var-badge">[Company Name]</span>`
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+Checked out your company blog today and noticed your site is running into frequent database caching timeouts and plugin version conflicts.  
+We help scaling brands migrate their legacy WordPress sites over to Webflow with 100% SEO preservation, zero plugin maintenance, and sub-second load speeds.  
+Migrated `<span class="var-badge">[Previous Client]</span>` last month with zero downtime and a 40% boost in organic Google Lighthouse scores.  
+Could I send over our 3-step zero-downtime migration checklist?  
+Best, `<span class="var-badge">[Your Name]</span>`
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Eliminating WordPress plugin maintenance for `[Company Name]`
+
+Hi `[First Name]`,  
+Checked out your company blog today and noticed your site is running into frequent database caching timeouts and plugin version conflicts.  
+We help scaling brands migrate their legacy WordPress sites over to Webflow with 100% SEO preservation, zero plugin maintenance, and sub-second load speeds.  
+Migrated `[Previous Client]` last month with zero downtime and a 40% boost in organic Google Lighthouse scores.  
+Could I send over our 3-step zero-downtime migration checklist?  
+Best, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 10 the "bubble.io database optimization" angle scaling no-code saas apps experiencing slow queries. speeding up `[app name]`'s query load times hi `[first name]`,  
+love what you're building with `[app name]`.  
+as no-code platforms scale past thousands of records, repeating groups and nested search queries often start causing noticeable 4–6 second lag spikes.  
+i specialize in bubble performance architecture (relational database indexing, backend privacy rules, and api workflows).  
+helped an app optimize their backend workflows last month, reducing their server workload units (wus) by 62%.  
+worth a quick 5-minute chat to see if we can streamline your backend?  
+cheers, `[your name]`
+
+---">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 10: The "Bubble.io Database Optimization" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Scaling no-code SaaS apps experiencing slow queries.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Speeding up `<span class="var-badge">[App Name]</span>`'s query load times
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+Love what you're building with `<span class="var-badge">[App Name]</span>`.  
+As no-code platforms scale past thousands of records, repeating groups and nested search queries often start causing noticeable 4–6 second lag spikes.  
+I specialize in Bubble performance architecture (relational database indexing, backend privacy rules, and API workflows).  
+Helped an app optimize their backend workflows last month, reducing their server workload units (WUs) by 62%.  
+Worth a quick 5-minute chat to see if we can streamline your backend?  
+Cheers, `<span class="var-badge">[Your Name]</span>`
+
+---
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Speeding up `[App Name]`&#39;s query load times
+
+Hi `[First Name]`,  
+Love what you&#39;re building with `[App Name]`.  
+As no-code platforms scale past thousands of records, repeating groups and nested search queries often start causing noticeable 4–6 second lag spikes.  
+I specialize in Bubble performance architecture (relational database indexing, backend privacy rules, and API workflows).  
+Helped an app optimize their backend workflows last month, reducing their server workload units (WUs) by 62%.  
+Worth a quick 5-minute chat to see if we can streamline your backend?  
+Cheers, `[Your Name]`
+
+---`)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 11 the "onboarding drop-off" teardown b2b and consumer saas apps with complex sign-ups. quick ux audit of `[product name]`'s onboarding funnel hi `[first name]`,  
+signed up for `[product name]` today—the core dashboard is exceptional.  
+however, during the onboarding flow, there are currently 7 mandatory form fields before the user reaches their "aha!" moment. industry data shows that every non-essential onboarding field drops activation by ~10%.  
+i sketched a simplified 3-step progressive disclosure flow in figma that gets users to value in under 30 seconds: `[figma preview link]`.  
+zero strings attached—feel free to use it internally!  
+best regards, `[your name]`">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 11: The "Onboarding Drop-Off" Teardown</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> B2B and consumer SaaS apps with complex sign-ups.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Quick UX audit of `<span class="var-badge">[Product Name]</span>`'s onboarding funnel
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+Signed up for `<span class="var-badge">[Product Name]</span>` today—the core dashboard is exceptional.  
+However, during the onboarding flow, there are currently 7 mandatory form fields before the user reaches their "Aha!" moment. Industry data shows that every non-essential onboarding field drops activation by ~10%.  
+I sketched a simplified 3-step progressive disclosure flow in Figma that gets users to value in under 30 seconds: `<span class="var-badge">[Figma Preview Link]</span>`.  
+Zero strings attached—feel free to use it internally!  
+Best regards, `<span class="var-badge">[Your Name]</span>`
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Quick UX audit of `[Product Name]`&#39;s onboarding funnel
+
+Hi `[First Name]`,  
+Signed up for `[Product Name]` today—the core dashboard is exceptional.  
+However, during the onboarding flow, there are currently 7 mandatory form fields before the user reaches their &quot;Aha!&quot; moment. Industry data shows that every non-essential onboarding field drops activation by ~10%.  
+I sketched a simplified 3-step progressive disclosure flow in Figma that gets users to value in under 30 seconds: `[Figma Preview Link]`.  
+Zero strings attached—feel free to use it internally!  
+Best regards, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 12 the "60-second figma component redesign" high-growth startups with slightly outdated ui elements. re-imagined the `[feature / pricing]` card for `[company name]` hi `[first name]`,  
+big fan of `[company name]`.  
+noticed that your current pricing page doesn't visually anchor your highest-margin tier (`[tier name]`), which often leads to decision fatigue for potential buyers.  
+spent 20 minutes redesigning your pricing matrix with clear visual hierarchy, trust badges, and toggle clarity: `[figma / image link]`.  
+feel free to show this to your growth team. would love to know if you find it helpful!  
+cheers, `[your name]`">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 12: The "60-Second Figma Component Redesign"</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> High-growth startups with slightly outdated UI elements.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Re-imagined the `<span class="var-badge">[Feature / Pricing]</span>` card for `<span class="var-badge">[Company Name]</span>`
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+Big fan of `<span class="var-badge">[Company Name]</span>`.  
+Noticed that your current pricing page doesn't visually anchor your highest-margin tier (`<span class="var-badge">[Tier Name]</span>`), which often leads to decision fatigue for potential buyers.  
+Spent 20 minutes redesigning your pricing matrix with clear visual hierarchy, trust badges, and toggle clarity: `<span class="var-badge">[Figma / Image Link]</span>`.  
+Feel free to show this to your growth team. Would love to know if you find it helpful!  
+Cheers, `<span class="var-badge">[Your Name]</span>`
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Re-imagined the `[Feature / Pricing]` card for `[Company Name]`
+
+Hi `[First Name]`,  
+Big fan of `[Company Name]`.  
+Noticed that your current pricing page doesn&#39;t visually anchor your highest-margin tier (`[Tier Name]`), which often leads to decision fatigue for potential buyers.  
+Spent 20 minutes redesigning your pricing matrix with clear visual hierarchy, trust badges, and toggle clarity: `[Figma / Image Link]`.  
+Feel free to show this to your growth team. Would love to know if you find it helpful!  
+Cheers, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 13 the "design system debt" angle series a startups whose designs look inconsistent across pages. streamlining `[company name]`'s design system & ui tokens hi `[first name]`,  
+congratulations on scaling the product line over the last quarter!  
+noticed across your marketing pages and dashboard that there are currently 6+ different button styles, typography weights, and color tokens in use.  
+design debt like this slows down your front-end sprint velocity by 25–30%.  
+we help growing tech companies consolidate their ui into clean, tokenized figma design systems that engineers can implement with 1-click tailwind harmony.  
+could i send over a quick sample of the design tokens we organized for `[previous startup]`?  
+best, `[your name]`">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 13: The "Design System Debt" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Series A startups whose designs look inconsistent across pages.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Streamlining `<span class="var-badge">[Company Name]</span>`'s design system & UI tokens
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+Congratulations on scaling the product line over the last quarter!  
+Noticed across your marketing pages and dashboard that there are currently 6+ different button styles, typography weights, and color tokens in use.  
+Design debt like this slows down your front-end sprint velocity by 25–30%.  
+We help growing tech companies consolidate their UI into clean, tokenized Figma Design Systems that engineers can implement with 1-click Tailwind harmony.  
+Could I send over a quick sample of the design tokens we organized for `<span class="var-badge">[Previous Startup]</span>`?  
+Best, `<span class="var-badge">[Your Name]</span>`
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Streamlining `[Company Name]`&#39;s design system & UI tokens
+
+Hi `[First Name]`,  
+Congratulations on scaling the product line over the last quarter!  
+Noticed across your marketing pages and dashboard that there are currently 6+ different button styles, typography weights, and color tokens in use.  
+Design debt like this slows down your front-end sprint velocity by 25–30%.  
+We help growing tech companies consolidate their UI into clean, tokenized Figma Design Systems that engineers can implement with 1-click Tailwind harmony.  
+Could I send over a quick sample of the design tokens we organized for `[Previous Startup]`?  
+Best, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 14 the "competitive parity" ui audit challenger brands trying to take market share from incumbents. where `[competitor]` is winning on mobile ux (and how to beat them) hi `[first name]`,  
+your product delivers far better value than `[competitor name]`, but while analyzing both mobile apps side-by-side, noticed `[competitor]` offers a 1-tap checkout/activation experience that feels slightly smoother than `[company name]`'s current flow.  
+i created a 2-page comparative ux teardown documenting 3 quick adjustments that would put your interface ahead of theirs: `[link]`.  
+would love to send it over for your team's review!  
+best, `[your name]`">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 14: The "Competitive Parity" UI Audit</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Challenger brands trying to take market share from incumbents.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Where `<span class="var-badge">[Competitor]</span>` is winning on mobile UX (and how to beat them)
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+Your product delivers far better value than `<span class="var-badge">[Competitor Name]</span>`, but while analyzing both mobile apps side-by-side, noticed `<span class="var-badge">[Competitor]</span>` offers a 1-tap checkout/activation experience that feels slightly smoother than `<span class="var-badge">[Company Name]</span>`'s current flow.  
+I created a 2-page comparative UX teardown documenting 3 quick adjustments that would put your interface ahead of theirs: `<span class="var-badge">[Link]</span>`.  
+Would love to send it over for your team's review!  
+Best, `<span class="var-badge">[Your Name]</span>`
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Where `[Competitor]` is winning on mobile UX (and how to beat them)
+
+Hi `[First Name]`,  
+Your product delivers far better value than `[Competitor Name]`, but while analyzing both mobile apps side-by-side, noticed `[Competitor]` offers a 1-tap checkout/activation experience that feels slightly smoother than `[Company Name]`&#39;s current flow.  
+I created a 2-page comparative UX teardown documenting 3 quick adjustments that would put your interface ahead of theirs: `[Link]`.  
+Would love to send it over for your team&#39;s review!  
+Best, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 15 the "micro-copy & micro-interaction" polish angle modern fintech, healthtech, and consumer mobile apps. boosting checkout conversion with 2 micro-interactions on `[app name]` hi `[first name]`,  
+testing your app today—the visual aesthetics are brilliant.  
+one small observation: adding animated haptic feedback and inline validation on the payment screen significantly reduces cart abandonment anxiety.  
+created a 30-second lottie animation prototype demonstrating how this would look on your payment screen: `[demo link]`.  
+open to taking a quick look?  
+best regards, `[your name]`
+
+---">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 15: The "Micro-Copy & Micro-Interaction" Polish Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Modern fintech, healthtech, and consumer mobile apps.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Boosting checkout conversion with 2 micro-interactions on `<span class="var-badge">[App Name]</span>`
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+Testing your app today—the visual aesthetics are brilliant.  
+One small observation: adding animated haptic feedback and inline validation on the payment screen significantly reduces cart abandonment anxiety.  
+Created a 30-second Lottie animation prototype demonstrating how this would look on your payment screen: `<span class="var-badge">[Demo Link]</span>`.  
+Open to taking a quick look?  
+Best regards, `<span class="var-badge">[Your Name]</span>`
+
+---
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Boosting checkout conversion with 2 micro-interactions on `[App Name]`
+
+Hi `[First Name]`,  
+Testing your app today—the visual aesthetics are brilliant.  
+One small observation: adding animated haptic feedback and inline validation on the payment screen significantly reduces cart abandonment anxiety.  
+Created a 30-second Lottie animation prototype demonstrating how this would look on your payment screen: `[Demo Link]`.  
+Open to taking a quick look?  
+Best regards, `[Your Name]`
+
+---`)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 16 the "retention drop hook overhaul" creators and founders posting talking-head videos with low views. edited a 30-second retention-optimized test clip for you hey `[creator / founder name]`,  
+your video on `[specific topic]` was packed with gold, but noticed the first 3 seconds took a little long to get to the core punchline—which usually causes viewers to swipe away.  
+i took that video, trimmed the dead air, added dynamic sound effects, b-roll overlays, and kinetic captions, and cut this high-retention sample: `[drive / loom link]`.  
+zero cost for this clip—feel free to post it!  
+if you like the pacing style, i have bandwidth to handle 15–20 clips per month on a guaranteed 24-hour turnaround.  
+keep creating!  
+cheers, `[your name]`">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 16: The "Retention Drop Hook Overhaul"</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Creators and founders posting talking-head videos with low views.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Edited a 30-second retention-optimized test clip for you
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hey `<span class="var-badge">[Creator / Founder Name]</span>`,  
+Your video on `<span class="var-badge">[Specific Topic]</span>` was packed with gold, but noticed the first 3 seconds took a little long to get to the core punchline—which usually causes viewers to swipe away.  
+I took that video, trimmed the dead air, added dynamic sound effects, B-roll overlays, and kinetic captions, and cut this high-retention sample: `<span class="var-badge">[Drive / Loom Link]</span>`.  
+Zero cost for this clip—feel free to post it!  
+If you like the pacing style, I have bandwidth to handle 15–20 clips per month on a guaranteed 24-hour turnaround.  
+Keep creating!  
+Cheers, `<span class="var-badge">[Your Name]</span>`
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Edited a 30-second retention-optimized test clip for you
+
+Hey `[Creator / Founder Name]`,  
+Your video on `[Specific Topic]` was packed with gold, but noticed the first 3 seconds took a little long to get to the core punchline—which usually causes viewers to swipe away.  
+I took that video, trimmed the dead air, added dynamic sound effects, B-roll overlays, and kinetic captions, and cut this high-retention sample: `[Drive / Loom Link]`.  
+Zero cost for this clip—feel free to post it!  
+If you like the pacing style, I have bandwidth to handle 15–20 clips per month on a guaranteed 24-hour turnaround.  
+Keep creating!  
+Cheers, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 17 the "long-form podcast to 10 viral shorts" angle podcasters and founders with long youtube interviews. repurposing your latest podcast episode into 8 high-retention reels hi `[host name]`,  
+listened to your recent interview with `[guest name]`. the insight at `[14:20]` regarding `[topic]` was pure gold.  
+most founders don't have the time to scrub through 60-minute recordings to extract short-form clips.  
+i cut 2 viral-ready vertical clips from that episode with dynamic zooms, visual b-roll, and auto-captions: `[link]`.  
+i run a specialized short-form agency that turns 1 podcast episode into 12 multi-platform clips every week completely hands-off.  
+could i send over the clips for you to check out?  
+best, `[your name]`">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 17: The "Long-Form Podcast to 10 Viral Shorts" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Podcasters and founders with long YouTube interviews.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Repurposing your latest podcast episode into 8 high-retention Reels
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[Host Name]</span>`,  
+Listened to your recent interview with `<span class="var-badge">[Guest Name]</span>`. The insight at `<span class="var-badge">[14:20]</span>` regarding `<span class="var-badge">[Topic]</span>` was pure gold.  
+Most founders don't have the time to scrub through 60-minute recordings to extract short-form clips.  
+I cut 2 viral-ready vertical clips from that episode with dynamic zooms, visual b-roll, and auto-captions: `<span class="var-badge">[Link]</span>`.  
+I run a specialized short-form agency that turns 1 podcast episode into 12 multi-platform clips every week completely hands-off.  
+Could I send over the clips for you to check out?  
+Best, `<span class="var-badge">[Your Name]</span>`
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Repurposing your latest podcast episode into 8 high-retention Reels
+
+Hi `[Host Name]`,  
+Listened to your recent interview with `[Guest Name]`. The insight at `[14:20]` regarding `[Topic]` was pure gold.  
+Most founders don&#39;t have the time to scrub through 60-minute recordings to extract short-form clips.  
+I cut 2 viral-ready vertical clips from that episode with dynamic zooms, visual b-roll, and auto-captions: `[Link]`.  
+I run a specialized short-form agency that turns 1 podcast episode into 12 multi-platform clips every week completely hands-off.  
+Could I send over the clips for you to check out?  
+Best, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 18 the "pacing & kinetic caption elevation" angle coaches, consultants, and educators. elevating the visual packaging of your ig reels hi `[first name]`,  
+love your educational content around `[niche]`.  
+noticed you’re currently using default auto-generated captions, which can look a bit plain against competitors using modern kinetic typography and sound design.  
+re-packaged one of your recent clips with branded colors, clean motion graphics, and audio mastering: `[sample link]`.  
+thought you might like to see the side-by-side comparison.  
+would love to hear your thoughts!  
+best regards, `[your name]`">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 18: The "Pacing & Kinetic Caption Elevation" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Coaches, consultants, and educators.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Elevating the visual packaging of your IG Reels
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+Love your educational content around `<span class="var-badge">[Niche]</span>`.  
+Noticed you’re currently using default auto-generated captions, which can look a bit plain against competitors using modern kinetic typography and sound design.  
+Re-packaged one of your recent clips with branded colors, clean motion graphics, and audio mastering: `<span class="var-badge">[Sample Link]</span>`.  
+Thought you might like to see the side-by-side comparison.  
+Would love to hear your thoughts!  
+Best regards, `<span class="var-badge">[Your Name]</span>`
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Elevating the visual packaging of your IG Reels
+
+Hi `[First Name]`,  
+Love your educational content around `[Niche]`.  
+Noticed you’re currently using default auto-generated captions, which can look a bit plain against competitors using modern kinetic typography and sound design.  
+Re-packaged one of your recent clips with branded colors, clean motion graphics, and audio mastering: `[Sample Link]`.  
+Thought you might like to see the side-by-side comparison.  
+Would love to hear your thoughts!  
+Best regards, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 19 the "b-roll & pattern interrupt" upgrade b2b companies trying to build an organic social presence. making b2b content engaging on tiktok/reels for `[company name]` hi `[first name]`,  
+great seeing `[company name]` actively posting on social media!  
+b2b software can sometimes feel dry on video, but adding strategic pattern interrupts (zoom cuts every 2.5s, meme overlays, ui zooms) doubles average watch time.  
+took one of your product update videos and added custom motion design: `[link]`.  
+if this style resonates with your marketing roadmap, would love to partner up on a small test batch.  
+cheers, `[your name]`">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 19: The "B-Roll & Pattern Interrupt" Upgrade</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> B2B companies trying to build an organic social presence.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Making B2B content engaging on TikTok/Reels for `<span class="var-badge">[Company Name]</span>`
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+Great seeing `<span class="var-badge">[Company Name]</span>` actively posting on social media!  
+B2B software can sometimes feel dry on video, but adding strategic pattern interrupts (zoom cuts every 2.5s, meme overlays, UI zooms) doubles average watch time.  
+Took one of your product update videos and added custom motion design: `<span class="var-badge">[Link]</span>`.  
+If this style resonates with your marketing roadmap, would love to partner up on a small test batch.  
+Cheers, `<span class="var-badge">[Your Name]</span>`
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Making B2B content engaging on TikTok/Reels for `[Company Name]`
+
+Hi `[First Name]`,  
+Great seeing `[Company Name]` actively posting on social media!  
+B2B software can sometimes feel dry on video, but adding strategic pattern interrupts (zoom cuts every 2.5s, meme overlays, UI zooms) doubles average watch time.  
+Took one of your product update videos and added custom motion design: `[Link]`.  
+If this style resonates with your marketing roadmap, would love to partner up on a small test batch.  
+Cheers, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 20 the "1-free clip audition" angle high-follower creators flooded with pitches. free audition edit for your next youtube short / reel hey `[creator name]`,  
+i know you probably get 50 video editors in your dms every day claiming they are the best.  
+i won't pitch you. just send me raw footage for 1 video—i will edit it within 12 hours according to your exact brand guidelines.  
+if it's the best edit you've received this month, we can discuss a monthly retainer. if not, you keep the edit 100% free with zero hard feelings.  
+fair enough?  
+best, `[your name]` • `[showreel link]`
+
+---">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 20: The "1-Free Clip Audition" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> High-follower creators flooded with pitches.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Free audition edit for your next YouTube Short / Reel
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hey `<span class="var-badge">[Creator Name]</span>`,  
+I know you probably get 50 video editors in your DMs every day claiming they are the best.  
+I won't pitch you. Just send me raw footage for 1 video—I will edit it within 12 hours according to your exact brand guidelines.  
+If it's the best edit you've received this month, we can discuss a monthly retainer. If not, you keep the edit 100% free with zero hard feelings.  
+Fair enough?  
+Best, `<span class="var-badge">[Your Name]</span>` • `<span class="var-badge">[Showreel Link]</span>`
+
+---
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Free audition edit for your next YouTube Short / Reel
+
+Hey `[Creator Name]`,  
+I know you probably get 50 video editors in your DMs every day claiming they are the best.  
+I won&#39;t pitch you. Just send me raw footage for 1 video—I will edit it within 12 hours according to your exact brand guidelines.  
+If it&#39;s the best edit you&#39;ve received this month, we can discuss a monthly retainer. If not, you keep the edit 100% free with zero hard feelings.  
+Fair enough?  
+Best, `[Your Name]` • `[Showreel Link]`
+
+---`)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 21 the "thumbnail & title ctr a/b test" audit youtube channels with 10k–200k subscribers whose ctr is lagging. 2 alternate thumbnail concepts for your video on `[topic]` hi `[creator name]`,  
+watched your video on `[topic]` yesterday—the retention and pacing were top-notch.  
+however, noticed the current thumbnail text is slightly hard to read on mobile youtube app feeds, which might be suppressing your initial click-through rate (ctr).  
+i designed 2 high-contrast, curiosity-driven alternate thumbnail concepts in photoshop: `[figma / drive link]`.  
+feel free to test them out via youtube's "test & compare" feature. no charge at all—just a big fan of the channel!  
+rooting for your next 100k milestone!  
+best, `[your name]`">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 21: The "Thumbnail & Title CTR A/B Test" Audit</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> YouTube channels with 10k–200k subscribers whose CTR is lagging.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            2 alternate thumbnail concepts for your video on `<span class="var-badge">[Topic]</span>`
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[Creator Name]</span>`,  
+Watched your video on `<span class="var-badge">[Topic]</span>` yesterday—the retention and pacing were top-notch.  
+However, noticed the current thumbnail text is slightly hard to read on mobile YouTube app feeds, which might be suppressing your initial click-through rate (CTR).  
+I designed 2 high-contrast, curiosity-driven alternate thumbnail concepts in Photoshop: `<span class="var-badge">[Figma / Drive Link]</span>`.  
+Feel free to test them out via YouTube's "Test & Compare" feature. No charge at all—just a big fan of the channel!  
+Rooting for your next 100k milestone!  
+Best, `<span class="var-badge">[Your Name]</span>`
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: 2 alternate thumbnail concepts for your video on `[Topic]`
+
+Hi `[Creator Name]`,  
+Watched your video on `[Topic]` yesterday—the retention and pacing were top-notch.  
+However, noticed the current thumbnail text is slightly hard to read on mobile YouTube app feeds, which might be suppressing your initial click-through rate (CTR).  
+I designed 2 high-contrast, curiosity-driven alternate thumbnail concepts in Photoshop: `[Figma / Drive Link]`.  
+Feel free to test them out via YouTube&#39;s &quot;Test & Compare&quot; feature. No charge at all—just a big fan of the channel!  
+Rooting for your next 100k milestone!  
+Best, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 22 the "retention cliff / dead air" teardown educational and business youtubers. fixing the 2:00 retention dip on your long-form videos hi `[first name]`,  
+studying your channel analytics from a viewer perspective, noticed that videos often experience a slight pacing lull around the 2-minute mark when switching between main topics.  
+modern high-retention youtube editing uses "micro-open loops" and sound risers right before topic transitions to prevent viewer drop-off.  
+i edited a 90-second transition segment from your last video demonstrating this exact pacing technique: `[loom link]`.  
+i handle full-cycle youtube post-production (audio cleanup, color grading, motion graphics, storytelling flow).  
+could i send over my portfolio of channels we've edited for?  
+best regards, `[your name]`">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 22: The "Retention Cliff / Dead Air" Teardown</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Educational and business YouTubers.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Fixing the 2:00 retention dip on your long-form videos
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+Studying your channel analytics from a viewer perspective, noticed that videos often experience a slight pacing lull around the 2-minute mark when switching between main topics.  
+Modern high-retention YouTube editing uses "micro-open loops" and sound risers right before topic transitions to prevent viewer drop-off.  
+I edited a 90-second transition segment from your last video demonstrating this exact pacing technique: `<span class="var-badge">[Loom Link]</span>`.  
+I handle full-cycle YouTube post-production (audio cleanup, color grading, motion graphics, storytelling flow).  
+Could I send over my portfolio of channels we've edited for?  
+Best regards, `<span class="var-badge">[Your Name]</span>`
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Fixing the 2:00 retention dip on your long-form videos
+
+Hi `[First Name]`,  
+Studying your channel analytics from a viewer perspective, noticed that videos often experience a slight pacing lull around the 2-minute mark when switching between main topics.  
+Modern high-retention YouTube editing uses &quot;micro-open loops&quot; and sound risers right before topic transitions to prevent viewer drop-off.  
+I edited a 90-second transition segment from your last video demonstrating this exact pacing technique: `[Loom Link]`.  
+I handle full-cycle YouTube post-production (audio cleanup, color grading, motion graphics, storytelling flow).  
+Could I send over my portfolio of channels we&#39;ve edited for?  
+Best regards, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 23 the "documentary-style elevation" angle creators wanting to transition from simple vlogs to high-end video essays. upgrading your video essay packaging to vox / magnates style hi `[creator name]`,  
+your storytelling and research on `[topic]` are elite.  
+with youtube pushing cinematic documentary-style content, adding custom map animations, newspaper 3d parallax effects, and sound design would elevate your channel into the top 1% of the space.  
+put together a 45-second motion graphic sequence based on your latest script: `[drive link]`.  
+would love to help you produce your next flagship video essay!  
+cheers, `[your name]`">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 23: The "Documentary-Style Elevation" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Creators wanting to transition from simple vlogs to high-end video essays.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Upgrading your video essay packaging to Vox / Magnates style
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[Creator Name]</span>`,  
+Your storytelling and research on `<span class="var-badge">[Topic]</span>` are elite.  
+With YouTube pushing cinematic documentary-style content, adding custom map animations, newspaper 3D parallax effects, and sound design would elevate your channel into the top 1% of the space.  
+Put together a 45-second motion graphic sequence based on your latest script: `<span class="var-badge">[Drive Link]</span>`.  
+Would love to help you produce your next flagship video essay!  
+Cheers, `<span class="var-badge">[Your Name]</span>`
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Upgrading your video essay packaging to Vox / Magnates style
+
+Hi `[Creator Name]`,  
+Your storytelling and research on `[Topic]` are elite.  
+With YouTube pushing cinematic documentary-style content, adding custom map animations, newspaper 3D parallax effects, and sound design would elevate your channel into the top 1% of the space.  
+Put together a 45-second motion graphic sequence based on your latest script: `[Drive Link]`.  
+Would love to help you produce your next flagship video essay!  
+Cheers, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 24 the "full channel post-production sprints" angle busy business owners running youtube channels to generate leads. taking youtube editing completely off your plate hi `[first name]`,  
+as a ceo running `[company name]`, spending 10 hours every week editing your own youtube videos is costing you thousands in opportunity cost.  
+our studio handles 100% of the heavy lifting: you record the raw video on your camera, drop the files into dropbox, and we deliver polished, thumbnail-ready 4k videos ready to upload.  
+here are 3 ceo-led channels we currently produce for: `[links]`.  
+open to a 5-minute call to see if our workflow fits your schedule?  
+best, `[your name]`
+
+---">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 24: The "Full Channel Post-Production Sprints" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Busy business owners running YouTube channels to generate leads.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Taking YouTube editing completely off your plate
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+As a CEO running `<span class="var-badge">[Company Name]</span>`, spending 10 hours every week editing your own YouTube videos is costing you thousands in opportunity cost.  
+Our studio handles 100% of the heavy lifting: you record the raw video on your camera, drop the files into Dropbox, and we deliver polished, thumbnail-ready 4K videos ready to upload.  
+Here are 3 CEO-led channels we currently produce for: `<span class="var-badge">[Links]</span>`.  
+Open to a 5-minute call to see if our workflow fits your schedule?  
+Best, `<span class="var-badge">[Your Name]</span>`
+
+---
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Taking YouTube editing completely off your plate
+
+Hi `[First Name]`,  
+As a CEO running `[Company Name]`, spending 10 hours every week editing your own YouTube videos is costing you thousands in opportunity cost.  
+Our studio handles 100% of the heavy lifting: you record the raw video on your camera, drop the files into Dropbox, and we deliver polished, thumbnail-ready 4K videos ready to upload.  
+Here are 3 CEO-led channels we currently produce for: `[Links]`.  
+Open to a 5-minute call to see if our workflow fits your schedule?  
+Best, `[Your Name]`
+
+---`)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 25 the "customer support ticket automation" angle e-commerce and saas brands with high support volume. automating 60% of repetitive customer support queries for `[company]` hi `[first name]`,  
+saw your recent team update regarding scaling customer operations.  
+most companies in your tier spend $4k–$8k/mo answering the same 5 questions (*"where is my tracking number?", "how do i reset my password?", "what is your refund policy?"*).  
+we build custom ai support agents trained on your specific documentation and zendesk/shopify history that automatically resolve 60%+ of routine tickets with human-grade empathy.  
+built a working demo agent trained on `[company name]`'s public faq page: `[interactive demo link]`.  
+open to testing it out?  
+best regards, `[your name]`">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 25: The "Customer Support Ticket Automation" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> E-commerce and SaaS brands with high support volume.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Automating 60% of repetitive customer support queries for `<span class="var-badge">[Company]</span>`
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+Saw your recent team update regarding scaling customer operations.  
+Most companies in your tier spend $4k–$8k/mo answering the same 5 questions (*"Where is my tracking number?", "How do I reset my password?", "What is your refund policy?"*).  
+We build custom AI support agents trained on your specific documentation and Zendesk/Shopify history that automatically resolve 60%+ of routine tickets with human-grade empathy.  
+Built a working demo agent trained on `<span class="var-badge">[Company Name]</span>`'s public FAQ page: `<span class="var-badge">[Interactive Demo Link]</span>`.  
+Open to testing it out?  
+Best regards, `<span class="var-badge">[Your Name]</span>`
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Automating 60% of repetitive customer support queries for `[Company]`
+
+Hi `[First Name]`,  
+Saw your recent team update regarding scaling customer operations.  
+Most companies in your tier spend $4k–$8k/mo answering the same 5 questions (*&quot;Where is my tracking number?&quot;, &quot;How do I reset my password?&quot;, &quot;What is your refund policy?&quot;*).  
+We build custom AI support agents trained on your specific documentation and Zendesk/Shopify history that automatically resolve 60%+ of routine tickets with human-grade empathy.  
+Built a working demo agent trained on `[Company Name]`&#39;s public FAQ page: `[Interactive Demo Link]`.  
+Open to testing it out?  
+Best regards, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 26 the "crm lead routing & enrichment" angle b2b sales teams and real estate brokerages. eliminating manual lead entry for your sales reps at `[company]` hi `[first name]`,  
+checked out your lead capture form today.  
+when an inbound prospect submits a request, does it take more than 5 minutes for your reps to follow up? research shows that following up within 5 minutes increases conversion odds by 391%.  
+we build automated make.com / zapier workflows that instantly enrich incoming leads with linkedin data, score their buying intent, and ping your sales rep via slack with a pre-written personalized outreach draft.  
+i created a 1-page visual workflow diagram of how this functions: `[figma / image link]`.  
+worth sending over?  
+cheers, `[your name]`">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 26: The "CRM Lead Routing & Enrichment" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> B2B sales teams and real estate brokerages.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Eliminating manual lead entry for your sales reps at `<span class="var-badge">[Company]</span>`
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+Checked out your lead capture form today.  
+When an inbound prospect submits a request, does it take more than 5 minutes for your reps to follow up? Research shows that following up within 5 minutes increases conversion odds by 391%.  
+We build automated Make.com / Zapier workflows that instantly enrich incoming leads with LinkedIn data, score their buying intent, and ping your sales rep via Slack with a pre-written personalized outreach draft.  
+I created a 1-page visual workflow diagram of how this functions: `<span class="var-badge">[Figma / Image Link]</span>`.  
+Worth sending over?  
+Cheers, `<span class="var-badge">[Your Name]</span>`
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Eliminating manual lead entry for your sales reps at `[Company]`
+
+Hi `[First Name]`,  
+Checked out your lead capture form today.  
+When an inbound prospect submits a request, does it take more than 5 minutes for your reps to follow up? Research shows that following up within 5 minutes increases conversion odds by 391%.  
+We build automated Make.com / Zapier workflows that instantly enrich incoming leads with LinkedIn data, score their buying intent, and ping your sales rep via Slack with a pre-written personalized outreach draft.  
+I created a 1-page visual workflow diagram of how this functions: `[Figma / Image Link]`.  
+Worth sending over?  
+Cheers, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 27 the "internal team ai knowledge base" angle remote companies with 15–50 employees drowning in slack questions. an internal ai assistant for `[company name]`'s team wiki hi `[first name]`,  
+as remote teams scale, team members lose 4+ hours every week searching through messy notion docs, google drives, and slack channels for standard operating procedures (sops).  
+we build secure, private slack/teams ai bots connected directly to your company wiki. employees simply ask: *"what is our policy on client revisions?"* and the bot answers with the exact link in 2 seconds.  
+zero data shared with public models. fully encrypted.  
+could i share a 60-second video demo of how this streamlined operations for `[previous client]`?  
+best, `[your name]`">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 27: The "Internal Team AI Knowledge Base" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Remote companies with 15–50 employees drowning in Slack questions.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            An internal AI assistant for `<span class="var-badge">[Company Name]</span>`'s team wiki
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+As remote teams scale, team members lose 4+ hours every week searching through messy Notion docs, Google Drives, and Slack channels for standard operating procedures (SOPs).  
+We build secure, private Slack/Teams AI bots connected directly to your company wiki. Employees simply ask: *"What is our policy on client revisions?"* and the bot answers with the exact link in 2 seconds.  
+Zero data shared with public models. Fully encrypted.  
+Could I share a 60-second video demo of how this streamlined operations for `<span class="var-badge">[Previous Client]</span>`?  
+Best, `<span class="var-badge">[Your Name]</span>`
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: An internal AI assistant for `[Company Name]`&#39;s team wiki
+
+Hi `[First Name]`,  
+As remote teams scale, team members lose 4+ hours every week searching through messy Notion docs, Google Drives, and Slack channels for standard operating procedures (SOPs).  
+We build secure, private Slack/Teams AI bots connected directly to your company wiki. Employees simply ask: *&quot;What is our policy on client revisions?&quot;* and the bot answers with the exact link in 2 seconds.  
+Zero data shared with public models. Fully encrypted.  
+Could I share a 60-second video demo of how this streamlined operations for `[Previous Client]`?  
+Best, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 28 the "automated content repurposing engine" angle marketing directors and content creators. turning 1 blog post into 10 social assets automatically for `[brand]` hi `[first name]`,  
+love the in-depth articles published on `[company name]`'s blog.  
+we built an automated ai workflow that monitors your rss feed and automatically generates:  
+- 3 linkedin post drafts  
+- 1 twitter/x thread  
+- 1 newsletter digest summary  
+formatted in your exact brand voice and delivered to your notion workspace for review.  
+could i run your most recent article through our engine as a free test demo?  
+best regards, `[your name]`
+
+---">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 28: The "Automated Content Repurposing Engine" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Marketing directors and content creators.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Turning 1 blog post into 10 social assets automatically for `<span class="var-badge">[Brand]</span>`
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+Love the in-depth articles published on `<span class="var-badge">[Company Name]</span>`'s blog.  
+We built an automated AI workflow that monitors your RSS feed and automatically generates:  
+- 3 LinkedIn post drafts  
+- 1 Twitter/X thread  
+- 1 Newsletter digest summary  
+Formatted in your exact brand voice and delivered to your Notion workspace for review.  
+Could I run your most recent article through our engine as a free test demo?  
+Best regards, `<span class="var-badge">[Your Name]</span>`
+
+---
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Turning 1 blog post into 10 social assets automatically for `[Brand]`
+
+Hi `[First Name]`,  
+Love the in-depth articles published on `[Company Name]`&#39;s blog.  
+We built an automated AI workflow that monitors your RSS feed and automatically generates:  
+- 3 LinkedIn post drafts  
+- 1 Twitter/X thread  
+- 1 Newsletter digest summary  
+Formatted in your exact brand voice and delivered to your Notion workspace for review.  
+Could I run your most recent article through our engine as a free test demo?  
+Best regards, `[Your Name]`
+
+---`)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 29 the "local gym / fitness studio" angle crossfit boxes, boutique gyms, personal training studios. 1 small tweak to capture missed class bookings on `[gym name]` hi `[owner name]`,  
+checked out `[gym name]`'s instagram page—your member community and workout energy look incredible!  
+visited your website from mobile to see your trial schedule, but noticed there is no 1-click whatsapp or sms booking widget. 70% of local gym prospects browse on their phones after work and will bounce if they have to fill out a long contact form.  
+we install automated whatsapp booking funnels that let prospects claim their first free workout pass in 2 taps.  
+added an extra 23 trial bookings for a fitness studio in `[nearby area]` last month.  
+could i send over a quick 1-minute video showing how it looks on mobile?  
+best, `[your name]`">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 29: The "Local Gym / Fitness Studio" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Crossfit boxes, boutique gyms, personal training studios.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            1 small tweak to capture missed class bookings on `<span class="var-badge">[Gym Name]</span>`
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[Owner Name]</span>`,  
+Checked out `<span class="var-badge">[Gym Name]</span>`'s Instagram page—your member community and workout energy look incredible!  
+Visited your website from mobile to see your trial schedule, but noticed there is no 1-click WhatsApp or SMS booking widget. 70% of local gym prospects browse on their phones after work and will bounce if they have to fill out a long contact form.  
+We install automated WhatsApp booking funnels that let prospects claim their first free workout pass in 2 taps.  
+Added an extra 23 trial bookings for a fitness studio in `<span class="var-badge">[Nearby Area]</span>` last month.  
+Could I send over a quick 1-minute video showing how it looks on mobile?  
+Best, `<span class="var-badge">[Your Name]</span>`
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: 1 small tweak to capture missed class bookings on `[Gym Name]`
+
+Hi `[Owner Name]`,  
+Checked out `[Gym Name]`&#39;s Instagram page—your member community and workout energy look incredible!  
+Visited your website from mobile to see your trial schedule, but noticed there is no 1-click WhatsApp or SMS booking widget. 70% of local gym prospects browse on their phones after work and will bounce if they have to fill out a long contact form.  
+We install automated WhatsApp booking funnels that let prospects claim their first free workout pass in 2 taps.  
+Added an extra 23 trial bookings for a fitness studio in `[Nearby Area]` last month.  
+Could I send over a quick 1-minute video showing how it looks on mobile?  
+Best, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 30 the "dental / aesthetic clinic appointment" angle dentists, dermatologists, cosmetic surgeons. online appointment scheduling for `[clinic name]` dear dr. `[last name]`,  
+`[clinic name]` has stellar 5-star google reviews.  
+however, when patients visit your site after clinic hours (6 pm – 10 pm), they cannot book an appointment online—they are prompted to call your reception desk in the morning. many patients simply book with another clinic that offers instant 24/7 calendar booking.  
+we implement frictionless, hipaa-compliant appointment booking widgets that integrate directly with your clinic calendar.  
+would you be open to a 2-minute overview of how this functions?  
+warm regards, `[your name]`">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 30: The "Dental / Aesthetic Clinic Appointment" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Dentists, dermatologists, cosmetic surgeons.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Online appointment scheduling for `<span class="var-badge">[Clinic Name]</span>`
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Dear Dr. `<span class="var-badge">[Last Name]</span>`,  
+`<span class="var-badge">[Clinic Name]</span>` has stellar 5-star Google reviews.  
+However, when patients visit your site after clinic hours (6 PM – 10 PM), they cannot book an appointment online—they are prompted to call your reception desk in the morning. Many patients simply book with another clinic that offers instant 24/7 calendar booking.  
+We implement frictionless, HIPAA-compliant appointment booking widgets that integrate directly with your clinic calendar.  
+Would you be open to a 2-minute overview of how this functions?  
+Warm regards, `<span class="var-badge">[Your Name]</span>`
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Online appointment scheduling for `[Clinic Name]`
+
+Dear Dr. `[Last Name]`,  
+`[Clinic Name]` has stellar 5-star Google reviews.  
+However, when patients visit your site after clinic hours (6 PM – 10 PM), they cannot book an appointment online—they are prompted to call your reception desk in the morning. Many patients simply book with another clinic that offers instant 24/7 calendar booking.  
+We implement frictionless, HIPAA-compliant appointment booking widgets that integrate directly with your clinic calendar.  
+Would you be open to a 2-minute overview of how this functions?  
+Warm regards, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 31 the "high-end restaurant direct ordering" angle independent restaurants losing 25–30% margins to food delivery apps. saving 25% delivery commission for `[restaurant name]` hi `[owner / general manager name]`,  
+the food at `[restaurant name]` is legendary in `[city]`.  
+noticed on your website that your "order online" button redirects customers directly to zomato/swiggy/ubereats—which charges you a steep 20–30% commission on every order.  
+we set up direct online ordering systems that allow your loyal customers to order straight from your website with zero third-party commission and direct upi/credit card payouts to your bank account.  
+saved `[previous restaurant]` over $1,800 in delivery commissions in their first month alone.  
+worth a quick 5-minute phone call this week?  
+best regards, `[your name]`">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 31: The "High-End Restaurant Direct Ordering" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Independent restaurants losing 25–30% margins to food delivery apps.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Saving 25% delivery commission for `<span class="var-badge">[Restaurant Name]</span>`
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[Owner / General Manager Name]</span>`,  
+The food at `<span class="var-badge">[Restaurant Name]</span>` is legendary in `<span class="var-badge">[City]</span>`.  
+Noticed on your website that your "Order Online" button redirects customers directly to Zomato/Swiggy/UberEats—which charges you a steep 20–30% commission on every order.  
+We set up direct online ordering systems that allow your loyal customers to order straight from your website with zero third-party commission and direct UPI/credit card payouts to your bank account.  
+Saved `<span class="var-badge">[Previous Restaurant]</span>` over $1,800 in delivery commissions in their first month alone.  
+Worth a quick 5-minute phone call this week?  
+Best regards, `<span class="var-badge">[Your Name]</span>`
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Saving 25% delivery commission for `[Restaurant Name]`
+
+Hi `[Owner / General Manager Name]`,  
+The food at `[Restaurant Name]` is legendary in `[City]`.  
+Noticed on your website that your &quot;Order Online&quot; button redirects customers directly to Zomato/Swiggy/UberEats—which charges you a steep 20–30% commission on every order.  
+We set up direct online ordering systems that allow your loyal customers to order straight from your website with zero third-party commission and direct UPI/credit card payouts to your bank account.  
+Saved `[Previous Restaurant]` over $1,800 in delivery commissions in their first month alone.  
+Worth a quick 5-minute phone call this week?  
+Best regards, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 32 the "real estate agent video packaging" angle high-end luxury realtors and commercial brokers. cinematic video tours for `[agent name]`'s luxury listings hi `[agent name]`,  
+congratulations on the stunning new listing at `[property address]`.  
+luxury buyers today expect cinematic 4k vertical video tours (with smooth drone b-roll, property feature callouts, and modern typography) to share on instagram and whatsapp with high-net-worth buyers.  
+i produce high-end real estate video packages with a guaranteed 48-hour delivery timeline.  
+here is a sample tour i recently produced that generated 40+ inbound inquiries: `[video link]`.  
+would love to produce a complimentary tour teaser for your next listing!  
+best, `[your name]`
+
+---">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 32: The "Real Estate Agent Video Packaging" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> High-end luxury realtors and commercial brokers.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Cinematic video tours for `<span class="var-badge">[Agent Name]</span>`'s luxury listings
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[Agent Name]</span>`,  
+Congratulations on the stunning new listing at `<span class="var-badge">[Property Address]</span>`.  
+Luxury buyers today expect cinematic 4K vertical video tours (with smooth drone b-roll, property feature callouts, and modern typography) to share on Instagram and WhatsApp with high-net-worth buyers.  
+I produce high-end real estate video packages with a guaranteed 48-hour delivery timeline.  
+Here is a sample tour I recently produced that generated 40+ inbound inquiries: `<span class="var-badge">[Video Link]</span>`.  
+Would love to produce a complimentary tour teaser for your next listing!  
+Best, `<span class="var-badge">[Your Name]</span>`
+
+---
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Cinematic video tours for `[Agent Name]`&#39;s luxury listings
+
+Hi `[Agent Name]`,  
+Congratulations on the stunning new listing at `[Property Address]`.  
+Luxury buyers today expect cinematic 4K vertical video tours (with smooth drone b-roll, property feature callouts, and modern typography) to share on Instagram and WhatsApp with high-net-worth buyers.  
+I produce high-end real estate video packages with a guaranteed 48-hour delivery timeline.  
+Here is a sample tour I recently produced that generated 40+ inbound inquiries: `[Video Link]`.  
+Would love to produce a complimentary tour teaser for your next listing!  
+Best, `[Your Name]`
+
+---`)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 33 the "founder linkedin authority engine" angle b2b saas and agency founders with inactive linkedin profiles. building `[first name]`'s founder brand on linkedin hi `[first name]`,  
+`[company name]` is shipping incredible updates, but noticed your personal linkedin profile hasn't posted in 3 months.  
+in 2026, buyers trust founders far more than faceless corporate company pages. founder-led content is the #1 organic pipeline for b2b inbound demos.  
+i ghostwrite for b2b tech ceos. my process requires just 45 minutes of your time per month (a voice memo interview), and i turn your thoughts into 16 high-impact linkedin posts and 2 thought-leadership articles.  
+i wrote a sample post based on your recent product release: `[doc link]`.  
+would love to know if you think this captures your authentic voice!  
+best, `[your name]`">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 33: The "Founder LinkedIn Authority Engine" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> B2B SaaS and agency founders with inactive LinkedIn profiles.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Building `<span class="var-badge">[First Name]</span>`'s founder brand on LinkedIn
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+`<span class="var-badge">[Company Name]</span>` is shipping incredible updates, but noticed your personal LinkedIn profile hasn't posted in 3 months.  
+In 2026, buyers trust founders far more than faceless corporate company pages. Founder-led content is the #1 organic pipeline for B2B inbound demos.  
+I ghostwrite for B2B tech CEOs. My process requires just 45 minutes of your time per month (a voice memo interview), and I turn your thoughts into 16 high-impact LinkedIn posts and 2 thought-leadership articles.  
+I wrote a sample post based on your recent product release: `<span class="var-badge">[Doc Link]</span>`.  
+Would love to know if you think this captures your authentic voice!  
+Best, `<span class="var-badge">[Your Name]</span>`
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Building `[First Name]`&#39;s founder brand on LinkedIn
+
+Hi `[First Name]`,  
+`[Company Name]` is shipping incredible updates, but noticed your personal LinkedIn profile hasn&#39;t posted in 3 months.  
+In 2026, buyers trust founders far more than faceless corporate company pages. Founder-led content is the #1 organic pipeline for B2B inbound demos.  
+I ghostwrite for B2B tech CEOs. My process requires just 45 minutes of your time per month (a voice memo interview), and I turn your thoughts into 16 high-impact LinkedIn posts and 2 thought-leadership articles.  
+I wrote a sample post based on your recent product release: `[Doc Link]`.  
+Would love to know if you think this captures your authentic voice!  
+Best, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 34 the "twitter / x strategic thread" angle web3, ai, and developer tool founders. drafted a viral breakdown thread of `[company]`'s architecture hey `[first name]`,  
+the technical engineering behind `[product name]` is world-class.  
+wrote a complete 7-tweet technical breakdown explaining the problem your architecture solves in plain english: `[link to google doc]`.  
+zero cost—feel free to copy-paste it directly to your x account!  
+i help technical founders translate complex software into high-engagement narratives that attract investors and top developers.  
+keep building!  
+cheers, `[your name]`">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 34: The "Twitter / X Strategic Thread" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Web3, AI, and developer tool founders.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Drafted a viral breakdown thread of `<span class="var-badge">[Company]</span>`'s architecture
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hey `<span class="var-badge">[First Name]</span>`,  
+The technical engineering behind `<span class="var-badge">[Product Name]</span>` is world-class.  
+Wrote a complete 7-tweet technical breakdown explaining the problem your architecture solves in plain English: `<span class="var-badge">[Link to Google Doc]</span>`.  
+Zero cost—feel free to copy-paste it directly to your X account!  
+I help technical founders translate complex software into high-engagement narratives that attract investors and top developers.  
+Keep building!  
+Cheers, `<span class="var-badge">[Your Name]</span>`
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Drafted a viral breakdown thread of `[Company]`&#39;s architecture
+
+Hey `[First Name]`,  
+The technical engineering behind `[Product Name]` is world-class.  
+Wrote a complete 7-tweet technical breakdown explaining the problem your architecture solves in plain English: `[Link to Google Doc]`.  
+Zero cost—feel free to copy-paste it directly to your X account!  
+I help technical founders translate complex software into high-engagement narratives that attract investors and top developers.  
+Keep building!  
+Cheers, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 35 the "executive newsletter ghostwriting" angle consultants, venture capitalists, and industry thought leaders. reviving `[company name]`'s weekly newsletter hi `[first name]`,  
+subscribed to your company newsletter last year—your perspective on `[topic]` is unmatched.  
+noticed the newsletter has been dormant for a few months. dormant email lists lose 20% of their deliverability and subscriber trust every quarter.  
+i specialize in executive newsletter curation. i draft, format, and schedule high-retention weekly digests that maintain 45%+ open rates.  
+prepared a sample edition based on this week's news in `[industry]`: `[link]`.  
+open to taking a look?  
+best regards, `[your name]`">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 35: The "Executive Newsletter Ghostwriting" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Consultants, venture capitalists, and industry thought leaders.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Reviving `<span class="var-badge">[Company Name]</span>`'s weekly newsletter
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+Subscribed to your company newsletter last year—your perspective on `<span class="var-badge">[Topic]</span>` is unmatched.  
+Noticed the newsletter has been dormant for a few months. Dormant email lists lose 20% of their deliverability and subscriber trust every quarter.  
+I specialize in executive newsletter curation. I draft, format, and schedule high-retention weekly digests that maintain 45%+ open rates.  
+Prepared a sample edition based on this week's news in `<span class="var-badge">[Industry]</span>`: `<span class="var-badge">[Link]</span>`.  
+Open to taking a look?  
+Best regards, `<span class="var-badge">[Your Name]</span>`
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Reviving `[Company Name]`&#39;s weekly newsletter
+
+Hi `[First Name]`,  
+Subscribed to your company newsletter last year—your perspective on `[Topic]` is unmatched.  
+Noticed the newsletter has been dormant for a few months. Dormant email lists lose 20% of their deliverability and subscriber trust every quarter.  
+I specialize in executive newsletter curation. I draft, format, and schedule high-retention weekly digests that maintain 45%+ open rates.  
+Prepared a sample edition based on this week&#39;s news in `[Industry]`: `[Link]`.  
+Open to taking a look?  
+Best regards, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 36 the "high-value lead magnet / whitepaper" angle b2b service firms struggling to generate qualified sales leads. a high-converting lead magnet for `[company name]`'s homepage hi `[first name]`,  
+visited `[company name]`'s resource page today.  
+currently, your only call to action is "book a consultation", which creates massive friction for prospects who aren't ready to buy today.  
+we design and write high-converting industry benchmark reports and executive playbooks that turn cold website visitors into warm email leads.  
+drafted a 1-page outline for a report titled *"the 2026 `[industry]` efficiency index"*: `[doc link]`.  
+could i send over the full outline for your marketing team?  
+best, `[your name]`
+
+---">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 36: The "High-Value Lead Magnet / Whitepaper" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> B2B service firms struggling to generate qualified sales leads.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            A high-converting lead magnet for `<span class="var-badge">[Company Name]</span>`'s homepage
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+Visited `<span class="var-badge">[Company Name]</span>`'s resource page today.  
+Currently, your only call to action is "Book a Consultation", which creates massive friction for prospects who aren't ready to buy today.  
+We design and write high-converting Industry Benchmark Reports and executive playbooks that turn cold website visitors into warm email leads.  
+Drafted a 1-page outline for a report titled *"The 2026 `<span class="var-badge">[Industry]</span>` Efficiency Index"*: `<span class="var-badge">[Doc Link]</span>`.  
+Could I send over the full outline for your marketing team?  
+Best, `<span class="var-badge">[Your Name]</span>`
+
+---
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: A high-converting lead magnet for `[Company Name]`&#39;s homepage
+
+Hi `[First Name]`,  
+Visited `[Company Name]`&#39;s resource page today.  
+Currently, your only call to action is &quot;Book a Consultation&quot;, which creates massive friction for prospects who aren&#39;t ready to buy today.  
+We design and write high-converting Industry Benchmark Reports and executive playbooks that turn cold website visitors into warm email leads.  
+Drafted a 1-page outline for a report titled *&quot;The 2026 `[Industry]` Efficiency Index&quot;*: `[Doc Link]`.  
+Could I send over the full outline for your marketing team?  
+Best, `[Your Name]`
+
+---`)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 37 the "project-to-retainer upsell" angle pitching an existing or recent one-off client into a steady monthly contract. ongoing support roadmap for `[company name]` post-launch hi `[first name]`,  
+it was fantastic shipping `[project name]` with your team last week! the initial feedback has been stellar.  
+now that the platform is live in production, regular updates, security patches, conversion optimization, and new feature sprints will be essential to keep the momentum going.  
+instead of billing you piecemeal for individual requests, i put together a dedicated **monthly partner retainer**:  
+- up to `[x]` hours of dedicated development/design per month  
+- guaranteed 24-hour turnaround on priority requests  
+- bi-weekly performance & speed audits  
+- flat predictable investment of `[$x,xxx / ₹xx,xxx]` per month  
+this saves you 30% compared to ad-hoc hourly billing and locks in guaranteed bandwidth on my calendar.  
+would you like me to draw up the 1-page retainer agreement starting next month?  
+best regards, `[your name]`">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 37: The "Project-to-Retainer Upsell" Angle</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Pitching an existing or recent one-off client into a steady monthly contract.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Ongoing support roadmap for `<span class="var-badge">[Company Name]</span>` post-launch
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+It was fantastic shipping `<span class="var-badge">[Project Name]</span>` with your team last week! The initial feedback has been stellar.  
+Now that the platform is live in production, regular updates, security patches, conversion optimization, and new feature sprints will be essential to keep the momentum going.  
+Instead of billing you piecemeal for individual requests, I put together a dedicated **Monthly Partner Retainer**:  
+- Up to `<span class="var-badge">[X]</span>` hours of dedicated development/design per month  
+- Guaranteed 24-hour turnaround on priority requests  
+- Bi-weekly performance & speed audits  
+- Flat predictable investment of `<span class="var-badge">[$X,XXX / ₹XX,XXX]</span>` per month  
+This saves you 30% compared to ad-hoc hourly billing and locks in guaranteed bandwidth on my calendar.  
+Would you like me to draw up the 1-page retainer agreement starting next month?  
+Best regards, `<span class="var-badge">[Your Name]</span>`
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Ongoing support roadmap for `[Company Name]` post-launch
+
+Hi `[First Name]`,  
+It was fantastic shipping `[Project Name]` with your team last week! The initial feedback has been stellar.  
+Now that the platform is live in production, regular updates, security patches, conversion optimization, and new feature sprints will be essential to keep the momentum going.  
+Instead of billing you piecemeal for individual requests, I put together a dedicated **Monthly Partner Retainer**:  
+- Up to `[X]` hours of dedicated development/design per month  
+- Guaranteed 24-hour turnaround on priority requests  
+- Bi-weekly performance & speed audits  
+- Flat predictable investment of `[$X,XXX / ₹XX,XXX]` per month  
+This saves you 30% compared to ad-hoc hourly billing and locks in guaranteed bandwidth on my calendar.  
+Would you like me to draw up the 1-page retainer agreement starting next month?  
+Best regards, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 38 the "fractional in-house expert" pitch pitching fast-growing companies that need an expert but don't want a $120k full-time hire. fractional `[role, e.g., head of design / senior dev]` for `[company name]` hi `[first name]`,  
+hiring a full-time senior `[role]` takes 2–3 months of recruiting and costs $120k+ plus benefits, equity, and payroll taxes.  
+i provide **fractional `[role]` services** for scaling companies:  
+- senior-level execution with zero management overhead  
+- embedded directly in your slack / notion workflows  
+- flexible month-to-month commitment  
+we can kick off as early as this monday.  
+here are 2 companies where i currently operate as their fractional lead: `[links]`.  
+open to a brief 10-minute discovery chat?  
+cheers, `[your name]`">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 38: The "Fractional In-House Expert" Pitch</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Pitching fast-growing companies that need an expert but don't want a $120k full-time hire.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Fractional `<span class="var-badge">[Role, e.g., Head of Design / Senior Dev]</span>` for `<span class="var-badge">[Company Name]</span>`
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+Hiring a full-time Senior `<span class="var-badge">[Role]</span>` takes 2–3 months of recruiting and costs $120k+ plus benefits, equity, and payroll taxes.  
+I provide **Fractional `<span class="var-badge">[Role]</span>` services** for scaling companies:  
+- Senior-level execution with zero management overhead  
+- Embedded directly in your Slack / Notion workflows  
+- Flexible month-to-month commitment  
+We can kick off as early as this Monday.  
+Here are 2 companies where I currently operate as their fractional lead: `<span class="var-badge">[Links]</span>`.  
+Open to a brief 10-minute discovery chat?  
+Cheers, `<span class="var-badge">[Your Name]</span>`
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Fractional `[Role, e.g., Head of Design / Senior Dev]` for `[Company Name]`
+
+Hi `[First Name]`,  
+Hiring a full-time Senior `[Role]` takes 2–3 months of recruiting and costs $120k+ plus benefits, equity, and payroll taxes.  
+I provide **Fractional `[Role]` services** for scaling companies:  
+- Senior-level execution with zero management overhead  
+- Embedded directly in your Slack / Notion workflows  
+- Flexible month-to-month commitment  
+We can kick off as early as this Monday.  
+Here are 2 companies where I currently operate as their fractional lead: `[Links]`.  
+Open to a brief 10-minute discovery chat?  
+Cheers, `[Your Name]``)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 39 the "performance upside" retainer confident marketers and conversion rate specialists. lower base retainer + performance bonus for `[brand]` hi `[first name]`,  
+i know agency retainers can feel risky when roi isn't guaranteed upfront.  
+i am so confident in our ability to increase `[brand name]`'s checkout conversion rate that i am willing to tie our compensation directly to your results:  
+- a low baseline maintenance retainer of `[$x,xxx / ₹xx,xxx]`  
+- plus a performance bonus only when we beat your baseline conversion rate by more than `[x%]`  
+if we don't improve your metrics, you only pay the base cost.  
+would love to walk you through our exact 30-day testing roadmap.  
+best, `[your name]`
+
+---">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 39: The "Performance Upside" Retainer</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Email</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Confident marketers and conversion rate specialists.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Lower base retainer + performance bonus for `<span class="var-badge">[Brand]</span>`
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            Hi `<span class="var-badge">[First Name]</span>`,  
+I know agency retainers can feel risky when ROI isn't guaranteed upfront.  
+I am so confident in our ability to increase `<span class="var-badge">[Brand Name]</span>`'s checkout conversion rate that I am willing to tie our compensation directly to your results:  
+- A low baseline maintenance retainer of `<span class="var-badge">[$X,XXX / ₹XX,XXX]</span>`  
+- Plus a performance bonus only when we beat your baseline conversion rate by more than `<span class="var-badge">[X%]</span>`  
+If we don't improve your metrics, you only pay the base cost.  
+Would love to walk you through our exact 30-day testing roadmap.  
+Best, `<span class="var-badge">[Your Name]</span>`
+
+---
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Lower base retainer + performance bonus for `[Brand]`
+
+Hi `[First Name]`,  
+I know agency retainers can feel risky when ROI isn&#39;t guaranteed upfront.  
+I am so confident in our ability to increase `[Brand Name]`&#39;s checkout conversion rate that I am willing to tie our compensation directly to your results:  
+- A low baseline maintenance retainer of `[$X,XXX / ₹XX,XXX]`  
+- Plus a performance bonus only when we beat your baseline conversion rate by more than `[X%]`  
+If we don&#39;t improve your metrics, you only pay the base cost.  
+Would love to walk you through our exact 30-day testing roadmap.  
+Best, `[Your Name]`
+
+---`)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 40 the "peer-to-peer observation" dm connecting directly with founders & cmos. hey `[first name]`, noticed `[company name]` just rolled out `[new feature / campaign]`. really clean execution on the messaging. one small thing caught my eye: your mobile sign-up cta is getting pushed below the fold on smaller screens. took a quick screenshot with a suggestion on how to fix it: `[link]`. keep crushing it! ">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 40: The "Peer-to-Peer Observation" DM</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">LinkedIn / Twitter (X)  </span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Connecting directly with founders & CMOs.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Hey `<span class="var-badge">[First Name]</span>`, noticed `<span class="var-badge">[Company Name]</span>` just rolled out `<span class="var-badge">[New Feature / Campaign]</span>`. Really clean execution on the messaging. One small thing caught my eye: your mobile sign-up CTA is getting pushed below the fold on smaller screens. Took a quick screenshot with a suggestion on how to fix it: `<span class="var-badge">[Link]</span>`. Keep crushing it!
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Hey `[First Name]`, noticed `[Company Name]` just rolled out `[New Feature / Campaign]`. Really clean execution on the messaging. One small thing caught my eye: your mobile sign-up CTA is getting pushed below the fold on smaller screens. Took a quick screenshot with a suggestion on how to fix it: `[Link]`. Keep crushing it!
+
+`)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 41 the "hiring post intercept" dm reaching founders who just posted a job opening. hey `[first name]`, saw you're hiring a full-time `[role, e.g., senior react dev / ui designer]` for `[company name]`. while you search for the right full-time culture fit (which usually takes 30–60 days), my agency can step in on monday to handle your immediate backlog so your release schedule doesn’t stall. zero onboarding overhead. plug-and-play contract basis. here are 2 similar products we recently shipped: `[links]`. worth a 5-minute chat? ">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 41: The "Hiring Post Intercept" DM</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">LinkedIn / Twitter (X)  </span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Reaching founders who just posted a job opening.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Hey `<span class="var-badge">[First Name]</span>`, saw you're hiring a full-time `<span class="var-badge">[Role, e.g., Senior React Dev / UI Designer]</span>` for `<span class="var-badge">[Company Name]</span>`. While you search for the right full-time culture fit (which usually takes 30–60 days), my agency can step in on Monday to handle your immediate backlog so your release schedule doesn’t stall. Zero onboarding overhead. Plug-and-play contract basis. Here are 2 similar products we recently shipped: `<span class="var-badge">[Links]</span>`. Worth a 5-minute chat?
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Hey `[First Name]`, saw you&#39;re hiring a full-time `[Role, e.g., Senior React Dev / UI Designer]` for `[Company Name]`. While you search for the right full-time culture fit (which usually takes 30–60 days), my agency can step in on Monday to handle your immediate backlog so your release schedule doesn’t stall. Zero onboarding overhead. Plug-and-play contract basis. Here are 2 similar products we recently shipped: `[Links]`. Worth a 5-minute chat?
+
+`)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 42 the "broken link / 404 gifter" dm casual, warm twitter/x or linkedin connection. hey `[first name]`, was reading your article on `[topic]` today—fascinating insights! noticed the resource link in paragraph 4 currently redirects to a 404 error page. just wanted to give you a quick heads-up so you can update the url: `[screenshot link]`. hope you have an awesome week! ">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 42: The "Broken Link / 404 Gifter" DM</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">LinkedIn / Twitter (X)  </span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Casual, warm Twitter/X or LinkedIn connection.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Hey `<span class="var-badge">[First Name]</span>`, was reading your article on `<span class="var-badge">[Topic]</span>` today—fascinating insights! Noticed the resource link in paragraph 4 currently redirects to a 404 error page. Just wanted to give you a quick heads-up so you can update the URL: `<span class="var-badge">[Screenshot Link]</span>`. Hope you have an awesome week!
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Hey `[First Name]`, was reading your article on `[Topic]` today—fascinating insights! Noticed the resource link in paragraph 4 currently redirects to a 404 error page. Just wanted to give you a quick heads-up so you can update the URL: `[Screenshot Link]`. Hope you have an awesome week!
+
+`)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 43 the "mutual connection / network" dm networking with respected peers. hi `[first name]`, noticed we’re both connected with `[mutual name]` and following the `[industry/topic]` ecosystem. loved your recent comment regarding `[topic]`. i build `[service]` for companies in our space. not pitching you anything—just wanted to connect with fellow builders in the ecosystem. looking forward to following your journey! ">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 43: The "Mutual Connection / Network" DM</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">LinkedIn  </span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Networking with respected peers.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Hi `<span class="var-badge">[First Name]</span>`, noticed we’re both connected with `<span class="var-badge">[Mutual Name]</span>` and following the `<span class="var-badge">[Industry/Topic]</span>` ecosystem. Loved your recent comment regarding `<span class="var-badge">[Topic]</span>`. I build `<span class="var-badge">[Service]</span>` for companies in our space. Not pitching you anything—just wanted to connect with fellow builders in the ecosystem. Looking forward to following your journey!
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Hi `[First Name]`, noticed we’re both connected with `[Mutual Name]` and following the `[Industry/Topic]` ecosystem. Loved your recent comment regarding `[Topic]`. I build `[Service]` for companies in our space. Not pitching you anything—just wanted to connect with fellow builders in the ecosystem. Looking forward to following your journey!
+
+`)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="script-box rounded-xl p-5 flex flex-col justify-between searchable-card" data-corpus="script 44 the "resource gifting" dm creators and influencers. hey `[handle]`, loved your breakdown on `[topic]`. i actually created an internal notion checklist / template that maps out the exact steps you mentioned: `[link]`. no opt-in or email required, thought you might like to have it in your bookmarks! thanks for sharing so much value on the timeline. ---">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Script 44: The "Resource Gifting" DM</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">Twitter (X) / Instagram  </span>
+          </div>
+          <div class="text-[11px] text-slate-400 mb-2"><strong>Target:</strong> Creators and influencers.</div>
+          <div class="text-xs font-mono text-slate-200 bg-black/40 border border-white/5 p-2 rounded mb-3">
+            <span class="text-slate-500 text-[10px] block uppercase font-sans">Subject / Hook:</span>
+            Hey `<span class="var-badge">[Handle]</span>`, loved your breakdown on `<span class="var-badge">[Topic]</span>`. I actually created an internal Notion checklist / template that maps out the exact steps you mentioned: `<span class="var-badge">[Link]</span>`. No opt-in or email required, thought you might like to have it in your bookmarks! Thanks for sharing so much value on the timeline.
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-line font-sans mb-4">
+            ---
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="text-[10px] text-slate-500 font-mono">1-Click Copy Ready</span>
+          <button onclick="copyToClipboard(this, `Subject: Hey `[Handle]`, loved your breakdown on `[Topic]`. I actually created an internal Notion checklist / template that maps out the exact steps you mentioned: `[Link]`. No opt-in or email required, thought you might like to have it in your bookmarks! Thanks for sharing so much value on the timeline.
+
+---`)" class="px-3 py-1 rounded bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 text-xs font-medium transition flex items-center gap-1 cursor-pointer">
+            <span>📋 Copy Script</span>
+          </button>
+        </div>
+      </div>
+    
+    </div>
+
+    <!-- Module 3: 5 Follow-Ups -->
+    <div class="mt-12">
+      <div class="flex items-center justify-between border-b border-white/10 pb-3 mb-6">
+        <h2 class="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
+          <span>🔁</span> Module 3: The 5-Step Relentless Follow-Up Machine
+        </h2>
+        <span class="text-xs font-mono bg-blue-500/20 text-blue-300 px-2.5 py-1 rounded">5 Sequences</span>
       </div>
 
-      <pre id="contractText" class="script-box rounded-xl p-5 text-xs text-gray-300 whitespace-pre-wrap leading-relaxed">MASTER PROFESSIONAL SERVICES AGREEMENT
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="script-box rounded-xl p-5">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold text-amber-400 uppercase">Follow-Up 1 (Day 3) • Soft Value Bump</span>
+            <button onclick="copyToClipboard(this, 'Subject: Re: [Original Subject]\n\nHi [First Name],\nQuick follow-up on my note below.\nIn case you didn\'t have time to review the breakdown, here is a 1-sentence summary: [Insert core value benefit, e.g., We found 3 unoptimized scripts slowing down your mobile checkout].\nHappy to share the details whenever convenient.\nBest,\n[Your Name]')" class="text-xs bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 px-2.5 py-1 rounded transition">Copy</button>
+          </div>
+          <p class="text-xs text-slate-300 whitespace-pre-line">
+Hi <span class="var-badge">[First Name]</span>,
+Quick follow-up on my note below.
+In case you didn't have time to review the breakdown, here is a 1-sentence summary: <span class="var-badge">[Insert core value benefit, e.g., We found 3 unoptimized scripts slowing down your mobile checkout]</span>.
+Happy to share the details whenever convenient.
+Best, <span class="var-badge">[Your Name]</span>
+          </p>
+        </div>
 
-This Agreement is entered into on [Date] by and between:
-SERVICE PROVIDER: [Your Name / Agency Name] ("Provider")
-CLIENT: [Client Company Name] ("Client")
+        <div class="script-box rounded-xl p-5">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold text-amber-400 uppercase">Follow-Up 2 (Day 7) • Relevant Metric</span>
+            <button onclick="copyToClipboard(this, 'Subject: Re: [Original Subject]\n\nHi [First Name],\nWe just wrapped up a project for a company facing an identical challenge in [Industry]: [1-Sentence Result, e.g., Cut page latency from 3.8s to 0.7s, generating a 28% increase in mobile completions].\nThought this metric would be relevant to [Company Name]\'s current roadmap.\nHappy to send over the case study if you\'re interested!\nCheers,\n[Your Name]')" class="text-xs bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 px-2.5 py-1 rounded transition">Copy</button>
+          </div>
+          <p class="text-xs text-slate-300 whitespace-pre-line">
+Hi <span class="var-badge">[First Name]</span>,
+We just wrapped up a project for a company facing an identical challenge in <span class="var-badge">[Industry]</span>: <span class="var-badge">[1-Sentence Result, e.g., Cut page latency from 3.8s to 0.7s, generating a 28% increase in mobile completions]</span>.
+Thought this metric would be relevant to <span class="var-badge">[Company Name]</span>'s current roadmap.
+Happy to send over the case study if you're interested!
+Cheers, <span class="var-badge">[Your Name]</span>
+          </p>
+        </div>
 
-1. SERVICES: Provider agrees to deliver the services described in the agreed Statement of Work. Additional features outside scope will require a signed Change Order at additional fees.
+        <div class="script-box rounded-xl p-5">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold text-amber-400 uppercase">Follow-Up 3 (Day 12) • Priority Check</span>
+            <button onclick="copyToClipboard(this, 'Subject: Re: [Original Subject]\n\nHi [First Name],\nJust wanted to check: Is improving [Specific Problem, e.g., mobile conversions / internal automation] currently a priority for your team this quarter, or is your roadmap focused elsewhere?\nEither way, completely understand!\nBest,\n[Your Name]')" class="text-xs bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 px-2.5 py-1 rounded transition">Copy</button>
+          </div>
+          <p class="text-xs text-slate-300 whitespace-pre-line">
+Hi <span class="var-badge">[First Name]</span>,
+Just wanted to check: Is improving <span class="var-badge">[Specific Problem, e.g., mobile conversions / internal automation]</span> currently a priority for your team this quarter, or is your roadmap focused elsewhere?
+Either way, completely understand!
+Best, <span class="var-badge">[Your Name]</span>
+          </p>
+        </div>
 
-2. PAYMENT &amp; DEPOSIT:
-• 50% non-refundable deposit is required prior to project kick-off.
-• Remaining 50% is due immediately upon final completion before release of production files or master credentials.
-• Invoices unpaid after 7 calendar days incur 1.5% monthly late interest.
+        <div class="script-box rounded-xl p-5 border-l-2 border-amber-500">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold text-amber-400 uppercase">Follow-Up 5 (Day 25) • Clean Breakup</span>
+            <button onclick="copyToClipboard(this, 'Subject: Closing this loop ([Company Name])\n\nHi [First Name],\nI haven\'t heard back from you, so I\'m assuming this isn\'t a current priority for [Company Name] right now. Completely understand!\nI\'ll stop following up so I don\'t clutter your inbox.\nIf you ever need high-performance [Your Service] in the future, feel free to keep my details on file. Wishing you and the team massive success!\nBest regards,\n[Your Name] • [Portfolio / Website Link]')" class="text-xs bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 px-2.5 py-1 rounded transition">Copy</button>
+          </div>
+          <p class="text-xs text-slate-300 whitespace-pre-line">
+Hi <span class="var-badge">[First Name]</span>,
+I haven’t heard back from you, so I’m assuming this isn't a current priority for <span class="var-badge">[Company Name]</span> right now. Completely understand!
+I’ll stop following up so I don't clutter your inbox.
+If you ever need high-performance <span class="var-badge">[Your Service]</span> in the future, feel free to keep my details on file. Wishing you and the team massive success!
+Best regards, <span class="var-badge">[Your Name]</span> • <span class="var-badge">[Portfolio Link]</span>
+          </p>
+        </div>
+      </div>
+    </div>
 
-3. REVISIONS: Client receives up to two (2) rounds of consolidated written revisions. Failure to provide feedback within 5 business days constitutes deemed acceptance.
+    <!-- Module 5: 4 Legal Agreements -->
+    <div class="mt-12">
+      <div class="flex items-center justify-between border-b border-white/10 pb-3 mb-6">
+        <h2 class="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
+          <span>⚖️</span> Module 5: The 4 Official Legal Agreements (Ready-to-Sign)
+        </h2>
+        <span class="text-xs font-mono bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded">4 Contracts</span>
+      </div>
 
-4. INTELLECTUAL PROPERTY: Upon receipt of FULL AND FINAL PAYMENT, all IP rights transfer to Client. Until full payment is received, Provider retains 100% ownership of all source code, designs, and assets. Client is prohibited from publishing unpaid deliverables.
+      <div class="space-y-6">
+        <!-- Contract 1 -->
+        <div class="glass-card rounded-xl p-6">
+          <div class="flex items-center justify-between mb-3 border-b border-white/10 pb-3">
+            <div>
+              <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Contract 01 • Master Services Agreement (MSA)</span>
+              <p class="text-xs text-slate-400">Includes 50% non-refundable upfront deposit, IP retention until full settlement, and 1.5% late payment interest.</p>
+            </div>
+            <button onclick="copyContract('contract-msa-text')" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold transition">Copy MSA Contract</button>
+          </div>
+          <pre id="contract-msa-text" class="text-xs text-slate-300 max-h-72 overflow-y-auto bg-black/40 p-4 rounded-lg leading-relaxed whitespace-pre-wrap">THIS PROFESSIONAL SERVICES AGREEMENT is entered into as of [Date], by and between:
+SERVICE PROVIDER: [Your Name / Agency Name] ("Provider"), and
+CLIENT: [Client Company Name] ("Client").
 
-5. INDEPENDENT CONTRACTOR: Provider is an independent contractor. No employer-employee relationship is created.
+1.0 SCOPE OF SERVICES: Provider agrees to perform the digital services described in Exhibit A ("Statement of Work"). Any modifications, expansions, or new feature requests outside Exhibit A shall require an executed Scope Change Order Form and will incur additional billable fees.
 
-6. LIMITATION OF LIABILITY: Provider's total aggregate liability under this agreement shall not exceed total fees paid by Client.
+2.0 COMPENSATION & PAYMENT MILESTONES:
+2.1 Client agrees to pay Provider the total contract fee of [Amount: ₹ / $].
+2.2 Upfront Deposit: A non-refundable deposit of fifty percent (50%) is required prior to the commencement of any work.
+2.3 Final Milestone: The remaining fifty percent (50%) is due immediately upon completion of deliverables and prior to the release of live production credentials, domain transfers, or master source files.
+2.4 Late Payments: Invoices unpaid after seven (7) calendar days shall accrue interest at the rate of 1.5% per month or the maximum permitted by applicable law.
 
-IN WITNESS WHEREOF, the parties execute this Agreement:
-Provider Signature: __________________   Date: ________
-Client Signature:   __________________   Date: ________</pre>
-    </section>
+3.0 REVISIONS & APPROVAL PROTOCOL: Client shall be entitled to two (2) rounds of consolidated written revisions during the design/development phase. Revisions must be submitted within five (5) business days of delivery. Silence or failure to submit feedback within five (5) business days shall constitute deemed acceptance of the work.
+
+4.0 INTELLECTUAL PROPERTY & TRANSFER OF RIGHTS:
+4.1 Upon receipt of full and final payment by Provider, all intellectual property rights, copyrights, and source assets created specifically for Client under this Agreement shall transfer to Client.
+4.2 Until full payment is received, Provider retains sole ownership of all drafts, source code, and design components. Client is strictly prohibited from publishing, distributing, or deploying unpaid assets.
+
+5.0 INDEPENDENT CONTRACTOR STATUS: Provider is an independent contractor. Nothing in this Agreement creates an employer-employee relationship, partnership, or joint venture.
+
+6.0 CONFIDENTIALITY: Both parties agree to hold in strict confidence all proprietary data, product roadmaps, passwords, and trade secrets disclosed during the engagement, and shall not disclose such information to any third party without prior written consent.
+
+7.0 LIMITATION OF LIABILITY: Under no circumstances shall Provider be liable for any indirect, incidental, consequential, or punitive damages (including lost profits, server downtime, or loss of business) arising out of this engagement. Provider's total aggregate liability shall not exceed the total fees paid by Client under this Agreement.
+
+8.0 TERMINATION & KILL FEE: Either party may terminate this Agreement upon seven (7) business days' written notice. In the event of early termination by Client, Provider shall retain the initial 50% deposit as a non-refundable kill fee, and Client shall pay for all billable hours completed up to the date of termination.
+
+SERVICE PROVIDER SIGNATURE: _____________________ Date: [Date]
+CLIENT SIGNATURE: ___________________________ Date: [Date]</pre>
+        </div>
+
+        <!-- Contract 2: NDA -->
+        <div class="glass-card rounded-xl p-6">
+          <div class="flex items-center justify-between mb-3 border-b border-white/10 pb-3">
+            <div>
+              <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Contract 02 • Mutual Non-Disclosure Agreement (NDA)</span>
+              <p class="text-xs text-slate-400">Protects client and provider trade secrets, API keys, algorithms, and roadmaps.</p>
+            </div>
+            <button onclick="copyContract('contract-nda-text')" class="px-3 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-xs font-semibold transition">Copy NDA</button>
+          </div>
+          <pre id="contract-nda-text" class="text-xs text-slate-300 max-h-48 overflow-y-auto bg-black/40 p-4 rounded-lg leading-relaxed whitespace-pre-wrap">MUTUAL NON-DISCLOSURE AGREEMENT (NDA)
+Effective Date: [Date]
+Party A: [Your Name / Agency Name]
+Party B: [Client Company Name]
+
+1. PURPOSE: The parties wish to explore a business engagement in connection with [Project Name] and may disclose confidential business, technical, and proprietary data.
+2. CONFIDENTIAL INFORMATION DEFINED: Includes all non-public technical data, source code, designs, business metrics, customer lists, API keys, and roadmaps disclosed orally or in writing.
+3. OBLIGATIONS: The receiving party shall maintain strict confidentiality using reasonable care and shall not disclose or exploit such information for two (2) years from the Effective Date.
+
+Party A Signature: _____________________ Date: [Date]
+Party B Signature: _____________________ Date: [Date]</pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Module 7: Emergency Crisis Playbook -->
+    <div class="mt-12">
+      <div class="flex items-center justify-between border-b border-white/10 pb-3 mb-6">
+        <h2 class="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
+          <span>🚨</span> Module 7: The Emergency Client Crisis Playbook
+        </h2>
+        <span class="text-xs font-mono bg-red-500/20 text-red-300 px-2.5 py-1 rounded">5 Scenarios</span>
+      </div>
+
+      <div class="space-y-4">
+        <div class="script-box rounded-xl p-5 border-l-4 border-red-500">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold text-red-400 uppercase">Crisis 1 • Client Demands Heavy Discount ("Your price is too high")</span>
+            <button onclick="copyToClipboard(this, 'I completely understand budget considerations, [Client Name]. To keep our deliverables at the highest standard, our fees reflect the exact focus required. However, if you need to hit a tighter budget of [$X,XXX / ₹XX,XXX], we can adjust the scope by removing [Feature A / 1 Round of Revisions / Extended Support] while still achieving your primary outcome. Would you prefer to adjust the scope to fit that budget, or keep the full feature set as quoted?')" class="text-xs bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 px-2.5 py-1 rounded transition">Copy Script</button>
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed bg-black/30 p-3 rounded mt-2">
+            "I completely understand budget considerations, <span class="var-badge">[Client Name]</span>. To keep our deliverables at the highest standard, our fees reflect the exact focus required. However, if you need to hit a tighter budget of <span class="var-badge">[$X,XXX / ₹XX,XXX]</span>, we can adjust the scope by removing <span class="var-badge">[Feature A / 1 Round of Revisions / Extended Support]</span> while still achieving your primary outcome. Would you prefer to adjust the scope to fit that budget, or keep the full feature set as quoted?"
+          </div>
+        </div>
+
+        <div class="script-box rounded-xl p-5 border-l-4 border-red-500">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold text-red-400 uppercase">Crisis 2 • Client Disappears After Paying 50% Deposit</span>
+            <button onclick="copyToClipboard(this, 'Hi [First Name], hope all is well! We are currently holding dedicated sprint capacity for [Company Name] on our calendar. Because we schedule client sprints tightly, if we do not receive [Asset / Approval] by [Date - 3 days out], we will need to pause this sprint and place your project in our next queue slot [Date - 3 weeks out]. Want to make sure we don\'t delay your launch—could you send over [Asset] today so we can keep your delivery on schedule?')" class="text-xs bg-white/10 hover:bg-amber-500 hover:text-black text-slate-200 px-2.5 py-1 rounded transition">Copy Script</button>
+          </div>
+          <div class="text-xs text-slate-300 leading-relaxed bg-black/30 p-3 rounded mt-2">
+            "Hi <span class="var-badge">[First Name]</span>, hope all is well! We are currently holding dedicated sprint capacity for <span class="var-badge">[Company Name]</span> on our calendar. Because we schedule client sprints tightly, if we do not receive <span class="var-badge">[Asset / Approval]</span> by <span class="var-badge">[Date - 3 days out]</span>, we will need to pause this sprint and place your project in our next queue slot <span class="var-badge">[Date - 3 weeks out]</span>. Want to make sure we don't delay your launch—could you send over <span class="var-badge">[Asset]</span> today so we can keep your delivery on schedule?"
+          </div>
+        </div>
+      </div>
+    </div>
 
   </main>
 
-  <!-- Footer -->
-  <footer class="max-w-5xl mx-auto px-6 mt-16 pt-8 border-t border-white/10 text-center text-xs text-gray-500">
-    <p>The Client Acquisition &amp; Contract Vault • Published by <strong>MarkBuilder Labs</strong></p>
-    <p class="mt-1">Official Marketplace Store: <a href="https://www.markbuilder.in" class="text-orange-400 hover:underline">markbuilder.in</a> • Support: <a href="mailto:support@markbuilder.in" class="text-gray-400">support@markbuilder.in</a></p>
-  </footer>
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 bg-amber-500 text-slate-950 font-bold px-5 py-3 rounded-xl shadow-2xl flex items-center gap-2 text-xs transition-all duration-300 transform translate-y-24 opacity-0 pointer-events-none">
+    <span>✓</span>
+    <span id="toast-text">Copied to clipboard!</span>
+  </div>
 
   <script>
-    function copySnippet(id) {
-      const text = document.getElementById(id).innerText;
+    function copyToClipboard(btn, text) {
       navigator.clipboard.writeText(text).then(() => {
-        alert("Copied to clipboard! 📋");
-      }).catch(err => {
-        console.error("Failed to copy", err);
+        showToast("✓ Copied script to clipboard!");
+        const originalText = btn.innerHTML;
+        btn.innerHTML = "<span>✓ Copied!</span>";
+        btn.classList.add("bg-amber-500", "text-black");
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.classList.remove("bg-amber-500", "text-black");
+        }, 1500);
       });
+    }
+
+    function copyContract(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        navigator.clipboard.writeText(el.innerText).then(() => {
+          showToast("✓ Full legal agreement copied!");
+        });
+      }
+    }
+
+    function filterArsenal(val) {
+      const q = (val || '').toLowerCase().trim();
+      const cards = document.querySelectorAll('.searchable-card');
+      cards.forEach(c => {
+        const corpus = c.getAttribute('data-corpus') || '';
+        if (!q || corpus.includes(q)) {
+          c.style.display = 'flex';
+        } else {
+          c.style.display = 'none';
+        }
+      });
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      document.getElementById('toast-text').innerText = msg;
+      t.classList.remove('translate-y-24', 'opacity-0');
+      setTimeout(() => {
+        t.classList.add('translate-y-24', 'opacity-0');
+      }, 2000);
     }
   </script>
 </body>
