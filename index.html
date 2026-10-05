@@ -863,14 +863,14 @@
         <div class="space-y-2.5 text-xs text-gray-700">
           <label class="flex items-center justify-between p-3 rounded-xl border border-gray-300 bg-white cursor-pointer hover:border-black transition">
             <div class="flex items-center gap-2">
-              <input type="radio" name="pay_method" checked class="text-black focus:ring-0" />
+              <input type="radio" id="pay-method-domestic" name="pay_method" value="domestic" onchange="handleCartPaymentMethodChange('domestic')" checked class="text-black focus:ring-0" />
               <span class="font-semibold">UPI / Netbanking / Domestic Cards</span>
             </div>
             <span class="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-bold">1-Click</span>
           </label>
           <label class="flex items-center justify-between p-3 rounded-xl border border-gray-300 bg-white cursor-pointer hover:border-black transition">
             <div class="flex items-center gap-2">
-              <input type="radio" name="pay_method" class="text-black focus:ring-0" />
+              <input type="radio" id="pay-method-global" name="pay_method" value="global" onchange="handleCartPaymentMethodChange('global')" class="text-black focus:ring-0" />
               <span class="font-semibold">Global Cards / PayPal</span>
             </div>
             <span class="text-[10px] text-gray-400">Stripe/PayPal</span>
@@ -2025,15 +2025,48 @@
 
       document.getElementById('cart-calc-subtotal').innerText = `${symbol}${subtotal.toFixed(2)}`;
       document.getElementById('cart-calc-total').innerText = `${symbol}${subtotal.toFixed(2)}`;
+
+      // Sync payment method radio buttons with activeCurrency
+      const payDom = document.getElementById('pay-method-domestic');
+      const payGlob = document.getElementById('pay-method-global');
+      if (payDom && payGlob) {
+        if (activeCurrency === 'INR') {
+          payDom.checked = true;
+          payGlob.checked = false;
+        } else {
+          payDom.checked = false;
+          payGlob.checked = true;
+        }
+      }
+    }
+
+    function handleCartPaymentMethodChange(method) {
+      if (method === 'global') {
+        if (activeCurrency === 'INR') {
+          setCurrency('USD', '🇺🇸', '$');
+        }
+      } else {
+        if (activeCurrency !== 'INR') {
+          setCurrency('INR', '🇮🇳', '₹');
+        }
+      }
     }
 
     function executeCartCheckout() {
       if (cart.length === 0) return;
+      const isGlobalRadio = document.getElementById('pay-method-global')?.checked;
+      const isInternational = isGlobalRadio || (activeCurrency !== 'INR');
+
       if (cart.length === 1) {
-        quickBuy(cart[0].id);
+        const item = cart[0];
+        if (isInternational) {
+          window.open(item.links.international, '_blank');
+        } else {
+          window.open(item.links.domestic, '_blank');
+        }
       } else {
         // Multi-item bundle checkout
-        if (activeCurrency === 'INR') {
+        if (!isInternational) {
           cart.forEach((item, idx) => {
             setTimeout(() => {
               window.open(item.links.domestic, '_blank');
