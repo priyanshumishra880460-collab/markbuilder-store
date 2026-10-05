@@ -297,9 +297,10 @@
     <!-- Category Sub-Nav (Etsy Style Clean Text Links) -->
     <div class="border-t border-gray-100 bg-white">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center gap-4 sm:gap-6 overflow-x-auto py-2.5 text-xs font-medium text-gray-700 whitespace-nowrap" style="-webkit-overflow-scrolling: touch; scrollbar-width: none;">
-        <button onclick="filterCat('all')" id="tab-all" class="text-black font-bold border-b-2 border-black pb-1 cursor-pointer">All Publications (2)</button>
+        <button onclick="filterCat('all')" id="tab-all" class="text-black font-bold border-b-2 border-black pb-1 cursor-pointer">All Publications (3)</button>
         <button onclick="filterCat('saas')" id="tab-saas" class="text-gray-600 hover:text-black transition pb-1 cursor-pointer">No-Code &amp; Micro-SaaS</button>
         <button onclick="filterCat('psychology')" id="tab-psychology" class="text-gray-600 hover:text-black transition pb-1 cursor-pointer">Psychology &amp; Brain Hacks</button>
+        <button onclick="filterCat('vault')" id="tab-vault" class="text-gray-600 hover:text-black transition pb-1 cursor-pointer">Freelance &amp; Agency Toolkits</button>
         <span class="text-gray-300">|</span>
         <span class="text-gray-400 text-[11px]">Instant Download • Verified Editions</span>
       </div>
@@ -330,7 +331,7 @@
       </div>
       <div class="w-full sm:w-auto grid grid-cols-3 sm:flex items-center gap-2 sm:gap-4 text-xs font-semibold text-gray-700 bg-white p-3 sm:p-4 rounded-xl border border-gray-200 shadow-xs">
         <div class="text-center px-2 sm:px-3 border-r border-gray-200">
-          <span class="block text-base sm:text-lg font-black text-[#222222]">2</span>
+          <span class="block text-base sm:text-lg font-black text-[#222222]">3</span>
           <span class="text-[9px] sm:text-[10px] text-gray-400 uppercase">Publications</span>
         </div>
         <div class="text-center px-2 sm:px-3 border-r border-gray-200">
@@ -347,7 +348,7 @@
     <!-- Catalog Controls Bar -->
     <div class="flex items-center justify-between pb-4 border-b border-gray-200 mb-6 text-xs text-gray-500">
       <div>
-        <span>Showing <strong id="catalog-count" class="text-black font-semibold">2 products</strong> in <span id="label-currency" class="font-semibold text-gray-800">INR (₹)</span></span>
+        <span>Showing <strong id="catalog-count" class="text-black font-semibold">3 products</strong> in <span id="label-currency" class="font-semibold text-gray-800">INR (₹)</span></span>
       </div>
       <div class="flex items-center gap-2">
         <span>Sort by:</span>
@@ -355,8 +356,8 @@
       </div>
     </div>
 
-    <!-- ================= 2-COLUMN ETSY GRID ================= -->
-    <div id="products-grid" class="grid grid-cols-2 gap-3 sm:gap-6 max-w-4xl mx-auto">
+    <!-- ================= 3-COLUMN ETSY GRID ================= -->
+    <div id="products-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-6 max-w-5xl mx-auto">
       
       <!-- ============ CARD 1: 50 MICRO-SAAS ============ -->
       <div id="card-saas" class="group flex flex-col justify-between cursor-pointer" onclick="openListing('saas')">
@@ -462,8 +463,8 @@
         </div>
       </div>
 
-      <!-- ============ CARD 3: THE CLIENT ACQUISITION & CONTRACT VAULT (WIP - HIDDEN UNTIL APPROVED) ============ -->
-      <div id="card-vault" class="hidden group flex flex-col justify-between cursor-pointer" style="display: none !important;" onclick="openListing('vault')">
+      <!-- ============ CARD 3: THE CLIENT ACQUISITION & CONTRACT VAULT ============ -->
+      <div id="card-vault" class="group flex flex-col justify-between cursor-pointer" onclick="openListing('vault')">
         <!-- Photo Container: Clean White Studio Frame with Badge at Bottom Left -->
         <div class="relative bg-white rounded-xl sm:rounded-2xl aspect-square overflow-hidden flex items-center justify-center p-2.5 sm:p-5 border border-gray-200 group-hover:border-gray-400 group-hover:shadow-md transition">
           <span class="absolute bottom-2.5 left-2.5 z-10 bg-amber-500 text-white text-[9px] sm:text-[10px] font-bold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md sm:rounded-lg uppercase tracking-wider shadow-xs">
@@ -1204,7 +1205,9 @@
         mainPhoto: 'vault-mockup.png',
         photos: [
           'vault-mockup.png',
-          'slide-devices.png'
+          'vault-slide-modules.png',
+          'vault-slide-niches.png',
+          'vault-slide-contracts.png'
         ],
         prices: {
           INR: { price: 99, orig: 999, symbol: '₹' },
@@ -1218,15 +1221,15 @@
           JPY: { price: 1490, orig: 7500, symbol: '¥' }
         },
         links: {
-          domestic: 'https://rzp.io/rzp/8a339TK',
+          domestic: 'https://rzp.io/rzp/client-acquisition-vault',
           international: 'https://mishrapriyan34.gumroad.com/l/50-micro-saas?wanted=true'
         },
         description: `
           <p><strong>Stop sending generic cold pitches that get ignored. Run your client pipeline like an executive.</strong></p>
-          <p>The <strong>Client Acquisition &amp; Contract Vault</strong> is a comprehensive, production-ready operational toolkit curated by <strong>MarkBuilder Labs</strong>. It equips developers, designers, no-code builders, and creative agencies with <strong>30+ battle-tested outreach scripts</strong>, relentless follow-up sequences, a 1-page high-converting proposal framework, and an official <strong>Master Freelance &amp; Agency Legal Agreement</strong>.</p>
+          <p>The <strong>Client Acquisition &amp; Contract Vault</strong> is a comprehensive, production-ready operational toolkit curated by <strong>MarkBuilder Labs</strong>. It equips developers, designers, no-code builders, and creative agencies with <strong>44 battle-tested outreach scripts across 10 niches</strong>, relentless follow-up sequences, a 1-page high-converting proposal framework, and <strong>4 official Master Freelance &amp; Agency Legal Agreements</strong>.</p>
           <h4 class="font-bold text-sm text-[#222222] mt-3">What's Inside the Arsenal:</h4>
           <ul class="list-disc pl-5 space-y-1">
-            <li><strong>30 Niche-Specific Cold Scripts:</strong> Tested copy for Web Dev, SaaS MVPs, UI/UX, Video Editing, AI Automations, and LinkedIn/X DMs with 40%+ reply rates.</li>
+            <li><strong>44 Niche-Specific Cold Scripts:</strong> Tested copy for Web Dev, SaaS MVPs, UI/UX, Video Editing, AI Automations, and LinkedIn/X DMs with 40%+ reply rates.</li>
             <li><strong>The 5-Step Relentless Follow-Up Machine:</strong> Exactly how to revive ghosted leads and turn cold prospects into paying deals without being annoying.</li>
             <li><strong>The 1-Page High-Converting Proposal Template:</strong> Eliminate 15-page PDF proposal friction. Clear scope, timeline, and pricing executives approve instantly.</li>
             <li><strong>Master Freelance &amp; Agency Legal Agreement:</strong> Official contract protecting your IP, preventing scope creep, enforcing revisions limits, and securing 50% upfront payments.</li>
@@ -2122,8 +2125,8 @@
         document.getElementById('tab-all').className = activeClass;
         if (cardSaas) cardSaas.style.display = 'flex';
         if (cardBrain) cardBrain.style.display = 'flex';
-        if (cardVault) cardVault.style.display = 'none';
-        if (countEl) countEl.innerText = '2 products';
+        if (cardVault) cardVault.style.display = 'flex';
+        if (countEl) countEl.innerText = '3 products';
       }
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
