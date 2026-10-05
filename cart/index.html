@@ -297,11 +297,12 @@
     <!-- Category Sub-Nav (Etsy Style Clean Text Links) -->
     <div class="border-t border-gray-100 bg-white">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center gap-4 sm:gap-6 overflow-x-auto py-2.5 text-xs font-medium text-gray-700 whitespace-nowrap" style="-webkit-overflow-scrolling: touch; scrollbar-width: none;">
-        <button onclick="filterCat('all')" id="tab-all" class="text-black font-bold border-b-2 border-black pb-1 cursor-pointer">All Publications (2)</button>
-        <button onclick="filterCat('saas')" id="tab-saas" class="text-gray-600 hover:text-black transition pb-1 cursor-pointer">No-Code & Micro-SaaS</button>
-        <button onclick="filterCat('psychology')" id="tab-psychology" class="text-gray-600 hover:text-black transition pb-1 cursor-pointer">Psychology & Brain Hacks</button>
+        <button onclick="filterCat('all')" id="tab-all" class="text-black font-bold border-b-2 border-black pb-1 cursor-pointer">All Publications (3)</button>
+        <button onclick="filterCat('saas')" id="tab-saas" class="text-gray-600 hover:text-black transition pb-1 cursor-pointer">No-Code &amp; Micro-SaaS</button>
+        <button onclick="filterCat('psychology')" id="tab-psychology" class="text-gray-600 hover:text-black transition pb-1 cursor-pointer">Psychology &amp; Brain Hacks</button>
+        <button onclick="filterCat('vault')" id="tab-vault" class="text-gray-600 hover:text-black transition pb-1 cursor-pointer">Client &amp; Agency Toolkits</button>
         <span class="text-gray-300">|</span>
-        <span class="text-gray-400 text-[11px]">Instant PDF Download • Verified Editions</span>
+        <span class="text-gray-400 text-[11px]">Instant Download • Verified Editions</span>
       </div>
     </div>
   </header>
@@ -320,18 +321,18 @@
     <!-- Warm Editorial Banner -->
     <div class="bg-[#F8F5F0] rounded-2xl p-5 sm:p-10 mb-8 border border-[#EFE8DD] flex flex-col md:flex-row items-center justify-between gap-6">
       <div class="max-w-xl text-center md:text-left">
-        <span class="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#A16207]">Official Author & Creator Store • 2026 Editions</span>
+        <span class="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#A16207]">Official Author &amp; Creator Store • Curated Editions</span>
         <h1 class="font-serif-title text-2xl sm:text-3xl lg:text-4xl text-[#222222] font-bold mt-1 leading-tight">
-          Curated digital field guides & master blueprints.
+          Curated digital field guides &amp; master blueprints.
         </h1>
         <p class="text-xs sm:text-sm text-gray-600 mt-2 leading-relaxed">
-          Comprehensive, fluff-free non-fiction publications designed for founders, creators, and curious thinkers. Download instantly upon checkout.
+          Comprehensive, fluff-free publications and operational toolkits designed for founders, creators, and curious thinkers. Download instantly upon checkout.
         </p>
       </div>
       <div class="w-full sm:w-auto grid grid-cols-3 sm:flex items-center gap-2 sm:gap-4 text-xs font-semibold text-gray-700 bg-white p-3 sm:p-4 rounded-xl border border-gray-200 shadow-xs">
         <div class="text-center px-2 sm:px-3 border-r border-gray-200">
-          <span class="block text-base sm:text-lg font-black text-[#222222]">2</span>
-          <span class="text-[9px] sm:text-[10px] text-gray-400 uppercase">Master Books</span>
+          <span class="block text-base sm:text-lg font-black text-[#222222]">3</span>
+          <span class="text-[9px] sm:text-[10px] text-gray-400 uppercase">Master Kits</span>
         </div>
         <div class="text-center px-2 sm:px-3 border-r border-gray-200">
           <span class="block text-base sm:text-lg font-black text-amber-600">4.9★</span>
@@ -355,8 +356,8 @@
       </div>
     </div>
 
-    <!-- ================= 2-COLUMN ETSY GRID (2 COLUMNS ON MOBILE & DESKTOP - MATCHES ETSY APP) ================= -->
-    <div id="products-grid" class="grid grid-cols-2 gap-3 sm:gap-8 max-w-4xl mx-auto">
+    <!-- ================= 3-COLUMN ETSY GRID (2 COLUMNS ON MOBILE, 3 COLUMNS ON DESKTOP) ================= -->
+    <div id="products-grid" class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 max-w-6xl mx-auto">
       
       <!-- ============ CARD 1: 50 MICRO-SAAS ============ -->
       <div id="card-saas" class="group flex flex-col justify-between cursor-pointer" onclick="openListing('saas')">
@@ -462,6 +463,58 @@
         </div>
       </div>
 
+      <!-- ============ CARD 3: THE CLIENT ACQUISITION & CONTRACT VAULT ============ -->
+      <div id="card-vault" class="group flex flex-col justify-between cursor-pointer" onclick="openListing('vault')">
+        <!-- Photo Container: Clean White Studio Frame with Badge at Bottom Left -->
+        <div class="relative bg-white rounded-xl sm:rounded-2xl aspect-square overflow-hidden flex items-center justify-center p-2.5 sm:p-5 border border-gray-200 group-hover:border-gray-400 group-hover:shadow-md transition">
+          <span class="absolute bottom-2.5 left-2.5 z-10 bg-amber-500 text-white text-[9px] sm:text-[10px] font-bold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md sm:rounded-lg uppercase tracking-wider shadow-xs">
+            New Release
+          </span>
+          <button 
+            id="fav-btn-vault" 
+            onclick="event.stopPropagation(); toggleFavorite('vault');" 
+            class="absolute top-2 right-2 z-10 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/90 hover:bg-white text-gray-600 hover:text-red-500 flex items-center justify-center shadow-xs transition"
+            title="Save to Favorites"
+          >
+            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+          </button>
+          
+          <!-- Full-Size Book/Binder Mockup (Generated Studio Asset) -->
+          <img 
+            src="vault-mockup.png" 
+            alt="The Client Acquisition &amp; Contract Vault" 
+            class="w-full h-full object-contain p-1 sm:p-2 transform group-hover:scale-105 transition duration-300 drop-shadow-md" 
+          />
+        </div>
+
+        <!-- Metadata Block (Etsy 1:1 Layout) -->
+        <div class="pt-2 sm:pt-3">
+          <div class="text-[10px] sm:text-[11px] text-gray-500 font-normal">
+            Digital toolkit &amp; templates
+          </div>
+          <h3 class="font-medium text-xs sm:text-base text-[#222222] group-hover:underline mt-0.5 line-clamp-2 leading-snug">
+            The Client Acquisition &amp; Contract Vault (MarkBuilder Labs)
+          </h3>
+          <div class="text-[11px] sm:text-xs text-gray-800 mt-1 flex items-center gap-1">
+            <span class="font-bold text-black" id="home-rating-vault">5.0 ★</span>
+            <span class="text-gray-400" id="home-reviews-vault">(38)</span>
+          </div>
+          <div class="mt-1 flex items-baseline gap-1.5 sm:gap-2">
+            <span id="price-card-vault" class="text-sm sm:text-lg font-bold text-gray-900">₹99</span>
+            <span id="orig-card-vault" class="text-[10px] sm:text-xs text-gray-400 line-through">₹999</span>
+            <span class="text-[9px] sm:text-xs font-semibold text-amber-700 bg-amber-50 px-1 sm:px-1.5 py-0.5 rounded">90% off</span>
+          </div>
+          <p class="text-[10px] sm:text-xs text-gray-400 mt-0.5">MarkBuilder Labs Official</p>
+
+          <!-- Desktop Quick Action -->
+          <div class="mt-2.5 hidden sm:flex items-center gap-2" onclick="event.stopPropagation()">
+            <button onclick="addToCart('vault')" class="px-3.5 py-1.5 rounded-full border border-gray-300 hover:border-black hover:bg-gray-50 text-xs font-semibold text-gray-900 transition flex items-center gap-1 shadow-xs">
+              <span>+ Add to cart</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <!-- Empty Search State -->
@@ -488,7 +541,7 @@
       </button>
       <div class="text-xs text-gray-400 hidden sm:block">
         <span class="hover:underline cursor-pointer" onclick="navigateTo('home')">Home</span> &gt;
-        <span id="crumb-category" class="hover:underline cursor-pointer" onclick="filterCat(activeListingId === 'saas' ? 'saas' : 'psychology')">Digital Products</span> &gt;
+        <span id="crumb-category" class="hover:underline cursor-pointer" onclick="filterCat(activeListingId === 'saas' ? 'saas' : (activeListingId === 'vault' ? 'vault' : 'psychology'))">Digital Products</span> &gt;
         <span id="crumb-title" class="text-gray-900 font-medium truncate max-w-md">Product Title</span>
       </div>
     </div>
@@ -1142,6 +1195,86 @@
             helpfulDown: 0
           }
         ]
+      },
+      vault: {
+        id: 'vault',
+        title: 'The Client Acquisition & Contract Vault - 30+ Outreach Scripts, Proposals & Legal Agreements',
+        category: 'Freelance & Agency Toolkits',
+        rating: '5.0',
+        reviewsCount: 38,
+        mainPhoto: 'vault-mockup.png',
+        photos: [
+          'vault-mockup.png',
+          'slide-devices.png'
+        ],
+        prices: {
+          INR: { price: 99, orig: 999, symbol: '₹' },
+          USD: { price: 9.99, orig: 49.99, symbol: '$' },
+          EUR: { price: 8.99, orig: 45.99, symbol: '€' },
+          GBP: { price: 7.99, orig: 39.99, symbol: '£' },
+          CAD: { price: 13.99, orig: 65.99, symbol: 'CA$' },
+          AUD: { price: 14.99, orig: 69.99, symbol: 'AU$' },
+          AED: { price: 36.99, orig: 180.00, symbol: 'AED ' },
+          SGD: { price: 13.50, orig: 65.00, symbol: 'S$' },
+          JPY: { price: 1490, orig: 7500, symbol: '¥' }
+        },
+        links: {
+          domestic: 'https://rzp.io/rzp/8a339TK',
+          international: 'https://mishrapriyan34.gumroad.com/l/50-micro-saas?wanted=true'
+        },
+        description: `
+          <p><strong>Stop sending generic cold pitches that get ignored. Run your client pipeline like an executive.</strong></p>
+          <p>The <strong>Client Acquisition &amp; Contract Vault</strong> is a comprehensive, production-ready operational toolkit curated by <strong>MarkBuilder Labs</strong>. It equips developers, designers, no-code builders, and creative agencies with <strong>30+ battle-tested outreach scripts</strong>, relentless follow-up sequences, a 1-page high-converting proposal framework, and an official <strong>Master Freelance &amp; Agency Legal Agreement</strong>.</p>
+          <h4 class="font-bold text-sm text-[#222222] mt-3">What's Inside the Arsenal:</h4>
+          <ul class="list-disc pl-5 space-y-1">
+            <li><strong>30 Niche-Specific Cold Scripts:</strong> Tested copy for Web Dev, SaaS MVPs, UI/UX, Video Editing, AI Automations, and LinkedIn/X DMs with 40%+ reply rates.</li>
+            <li><strong>The 5-Step Relentless Follow-Up Machine:</strong> Exactly how to revive ghosted leads and turn cold prospects into paying deals without being annoying.</li>
+            <li><strong>The 1-Page High-Converting Proposal Template:</strong> Eliminate 15-page PDF proposal friction. Clear scope, timeline, and pricing executives approve instantly.</li>
+            <li><strong>Master Freelance &amp; Agency Legal Agreement:</strong> Official contract protecting your IP, preventing scope creep, enforcing revisions limits, and securing 50% upfront payments.</li>
+            <li><strong>Interactive Dashboard + Printable PDF:</strong> Copy scripts with 1 click or download the formatted field guide for offline meetings.</li>
+          </ul>
+        `,
+        aspects: [
+          { name: 'Cold Script Quality', score: '5.0' },
+          { name: 'Legal Contract Protection', score: '5.0' },
+          { name: '1-Page Proposal Framework', score: '4.9' },
+          { name: 'Commercial Usage Rights', score: '5.0' }
+        ],
+        reviews: [
+          {
+            id: 'vault-1',
+            name: "Aditya Verma, Full-Stack Dev",
+            rating: 5,
+            headline: "Closed my first ₹45,000 client in 4 days",
+            date: "Today",
+            comment: "Used Script #01 (Speed Optimization) and sent 12 personalized emails. Got 3 replies and closed a ₹45k Shopify speed optimization deal. The legal contract alone is worth ₹5,000.",
+            verified: true,
+            helpfulUp: 28,
+            helpfulDown: 0
+          },
+          {
+            id: 'vault-2',
+            name: "Marcus Miller, UK",
+            rating: 5,
+            headline: "The 1-page proposal is pure gold",
+            date: "2 days ago",
+            comment: "I used to waste hours writing 10-page proposals that nobody read. The 1-page framework in this vault was approved by a B2B SaaS founder within 20 minutes.",
+            verified: true,
+            helpfulUp: 19,
+            helpfulDown: 0
+          },
+          {
+            id: 'vault-3',
+            name: "Sneha Nair, UI/UX Designer, Bengaluru",
+            rating: 5,
+            headline: "Saved me from client payment disputes",
+            date: "6 days ago",
+            comment: "The Master Service Agreement with the 50% upfront deposit and scope creep add-on clause saved me from so many unpaid revisions. Essential for every freelancer.",
+            verified: true,
+            helpfulUp: 14,
+            helpfulDown: 0
+          }
+        ]
       }
     };
 
@@ -1154,7 +1287,8 @@
     // ================= FLIPKART-STYLE PAGE SLUG ROUTER =================
     const routeSlugs = {
       saas: '/50-micro-saas',
-      brain: '/the-hidden-tricks-your-brain-plays-on-you'
+      brain: '/the-hidden-tricks-your-brain-plays-on-you',
+      vault: '/client-acquisition-vault'
     };
 
     function getProdIdFromCurrentUrl() {
@@ -1164,6 +1298,7 @@
 
       if (p.includes('saas') || p.includes('50-micro') || h.includes('saas') || s.includes('saas')) return 'saas';
       if (p.includes('brain') || p.includes('trick') || h.includes('brain') || s.includes('brain')) return 'brain';
+      if (p.includes('vault') || p.includes('acquisition') || p.includes('contract') || h.includes('vault') || s.includes('vault')) return 'vault';
       return null;
     }
 
@@ -1652,7 +1787,7 @@
     }
 
     function updateHomeReviewCounts() {
-      ['saas', 'brain'].forEach(id => {
+      ['saas', 'brain', 'vault'].forEach(id => {
         const item = catalog[id];
         if (!item) return;
         let userRevs = [];
@@ -1699,7 +1834,7 @@
     }
 
     function renderPrices() {
-      ['saas', 'brain'].forEach(id => {
+      ['saas', 'brain', 'vault'].forEach(id => {
         const item = catalog[id];
         const pData = item.prices[activeCurrency] || item.prices['USD'];
         const priceEl = document.getElementById(`price-card-${id}`);
@@ -1743,7 +1878,7 @@
     }
 
     function updateFavUI() {
-      ['saas', 'brain'].forEach(id => {
+      ['saas', 'brain', 'vault'].forEach(id => {
         const btn = document.getElementById(`fav-btn-${id}`);
         if (btn) {
           if (favorites.includes(id)) {
@@ -1897,12 +2032,17 @@
       } else {
         // Multi-item bundle checkout
         if (activeCurrency === 'INR') {
-          window.open('https://rzp.io/rzp/brain-tricks', '_blank');
-          setTimeout(() => {
-            window.open('https://rzp.io/rzp/8a339TK', '_blank');
-          }, 600);
+          cart.forEach((item, idx) => {
+            setTimeout(() => {
+              window.open(item.links.domestic, '_blank');
+            }, idx * 600);
+          });
         } else {
-          window.open('https://mishrapriyan34.gumroad.com/l/brain-tricks?wanted=true', '_blank');
+          cart.forEach((item, idx) => {
+            setTimeout(() => {
+              window.open(item.links.international, '_blank');
+            }, idx * 600);
+          });
         }
       }
     }
@@ -1932,6 +2072,7 @@
         let catUrl = '/';
         if (cat === 'saas') catUrl = '/?category=no-code';
         if (cat === 'psychology') catUrl = '/?category=psychology';
+        if (cat === 'vault') catUrl = '/?category=toolkits';
         history.pushState({ view: 'home', category: cat }, '', catUrl);
       }
 
@@ -1950,30 +2091,40 @@
       const defaultClass = 'text-gray-600 hover:text-black transition pb-1 cursor-pointer';
       const activeClass = 'text-black font-bold border-b-2 border-black pb-1 cursor-pointer';
 
-      ['tab-all', 'tab-saas', 'tab-psychology'].forEach(t => {
+      ['tab-all', 'tab-saas', 'tab-psychology', 'tab-vault'].forEach(t => {
         const el = document.getElementById(t);
         if (el) el.className = defaultClass;
       });
 
       const cardSaas = document.getElementById('card-saas');
       const cardBrain = document.getElementById('card-brain');
+      const cardVault = document.getElementById('card-vault');
       const countEl = document.getElementById('catalog-count');
 
       if (cat === 'saas') {
         document.getElementById('tab-saas').className = activeClass;
         if (cardSaas) cardSaas.style.display = 'flex';
         if (cardBrain) cardBrain.style.display = 'none';
+        if (cardVault) cardVault.style.display = 'none';
         if (countEl) countEl.innerText = '1 product';
       } else if (cat === 'psychology') {
         document.getElementById('tab-psychology').className = activeClass;
         if (cardSaas) cardSaas.style.display = 'none';
         if (cardBrain) cardBrain.style.display = 'flex';
+        if (cardVault) cardVault.style.display = 'none';
+        if (countEl) countEl.innerText = '1 product';
+      } else if (cat === 'vault') {
+        document.getElementById('tab-vault').className = activeClass;
+        if (cardSaas) cardSaas.style.display = 'none';
+        if (cardBrain) cardBrain.style.display = 'none';
+        if (cardVault) cardVault.style.display = 'flex';
         if (countEl) countEl.innerText = '1 product';
       } else {
         document.getElementById('tab-all').className = activeClass;
         if (cardSaas) cardSaas.style.display = 'flex';
         if (cardBrain) cardBrain.style.display = 'flex';
-        if (countEl) countEl.innerText = '2 products';
+        if (cardVault) cardVault.style.display = 'flex';
+        if (countEl) countEl.innerText = '3 products';
       }
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -2038,7 +2189,7 @@
 
       // If searching, reset category tab to All
       if (q) {
-        ['tab-all', 'tab-saas', 'tab-psychology'].forEach(t => {
+        ['tab-all', 'tab-saas', 'tab-psychology', 'tab-vault'].forEach(t => {
           const el = document.getElementById(t);
           if (el) el.className = 'text-gray-600 hover:text-black transition pb-1 cursor-pointer';
         });
@@ -2051,10 +2202,11 @@
 
       const searchableKeywords = {
         saas: '50 micro saas you can build without coding no-code nocode saas software startup business ideas ai tools apps tech 2026 digital download edition book ebook guide',
-        brain: 'the hidden tricks your brain plays on you psychology cognitive biases mental models thinking behavioral science mind hacks decisions human behavior 2026 digital download edition book ebook guide'
+        brain: 'the hidden tricks your brain plays on you psychology cognitive biases mental models thinking behavioral science mind hacks decisions human behavior 2026 digital download edition book ebook guide',
+        vault: 'the client acquisition contract vault markbuilder labs 30 outreach scripts proposals legal agreements freelance agency agreements contracts cold pitch email dms web dev ui ux video editing templates commercial license'
       };
 
-      ['saas', 'brain'].forEach(id => {
+      ['saas', 'brain', 'vault'].forEach(id => {
         const item = catalog[id];
         const card = document.getElementById(`card-${id}`);
         if (!card) return;
