@@ -263,7 +263,7 @@
           </button>
 
           <!-- Cart Button with Dynamic Badge -->
-          <button onclick="navigateTo('cart')" class="p-1.5 sm:p-2 text-gray-700 hover:text-black hover:bg-gray-100 rounded-full transition relative flex items-center cursor-pointer" title="Shopping Cart">
+          <button onclick="navigateTo('cart')" id="header-cart-btn" class="p-1.5 sm:p-2 text-gray-700 hover:text-black hover:bg-gray-100 rounded-full transition relative flex items-center cursor-pointer" title="Shopping Cart">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
             <span id="header-cart-badge" class="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-[#F1641E] text-white text-[10px] font-bold flex items-center justify-center">0</span>
           </button>
@@ -304,6 +304,8 @@
         <button onclick="filterCat('saas')" id="tab-saas" class="text-gray-600 hover:text-black transition pb-1 cursor-pointer">No-Code &amp; Micro-SaaS</button>
         <button onclick="filterCat('psychology')" id="tab-psychology" class="text-gray-600 hover:text-black transition pb-1 cursor-pointer">Psychology &amp; Brain Hacks</button>
         <button onclick="filterCat('vault')" id="tab-vault" class="text-gray-600 hover:text-black transition pb-1 cursor-pointer">Freelance &amp; Agency Toolkits</button>
+        <span class="text-gray-300">|</span>
+        <button onclick="navigateTo('cart')" id="tab-cart" class="text-gray-600 hover:text-black transition pb-1 cursor-pointer">Shopping Cart</button>
         <span class="text-gray-300">|</span>
         <span class="text-gray-400 text-[11px]">Instant Download • Verified Editions</span>
       </div>
@@ -1733,6 +1735,41 @@
       }
     });
 
+    // ================= DYNAMIC CATEGORY & CART SUB-NAV CONTROLLER =================
+    function updateActiveNavTab(activeKey) {
+      const defaultClass = 'text-gray-600 hover:text-black transition pb-1 cursor-pointer';
+      const activeClass = 'text-black font-bold border-b-2 border-black pb-1 cursor-pointer';
+
+      const tabMap = {
+        all: 'tab-all',
+        saas: 'tab-saas',
+        psychology: 'tab-psychology',
+        vault: 'tab-vault',
+        cart: 'tab-cart'
+      };
+
+      Object.values(tabMap).forEach(tabId => {
+        const el = document.getElementById(tabId);
+        if (el) el.className = defaultClass;
+      });
+
+      const activeTabId = tabMap[activeKey];
+      if (activeTabId) {
+        const activeEl = document.getElementById(activeTabId);
+        if (activeEl) activeEl.className = activeClass;
+      }
+
+      // Sync Header Cart Icon highlight
+      const headerCartBtn = document.getElementById('header-cart-btn');
+      if (headerCartBtn) {
+        if (activeKey === 'cart') {
+          headerCartBtn.classList.add('bg-gray-100', 'ring-1', 'ring-black/20');
+        } else {
+          headerCartBtn.classList.remove('bg-gray-100', 'ring-1', 'ring-black/20');
+        }
+      }
+    }
+
     function navigateTo(view, pushState = true) {
       if (pushState) {
         const targetUrl = view === 'cart' ? '/cart' : '/';
@@ -1753,6 +1790,13 @@
       if (vCart) {
         vCart.style.display = view === 'cart' ? 'block' : 'none';
         vCart.classList.toggle('hidden', view !== 'cart');
+      }
+
+      // Update Navigation Tabs & Active Indicator
+      if (view === 'cart') {
+        updateActiveNavTab('cart');
+      } else if (view === 'home') {
+        updateActiveNavTab('all');
       }
 
       // Control Mobile Sticky Buy Bar
@@ -1839,6 +1883,17 @@
       }
 
       renderPrices();
+
+      // Update Category Sub-Nav active tab based on product
+      if (prodId === 'saas') {
+        updateActiveNavTab('saas');
+      } else if (prodId === 'brain') {
+        updateActiveNavTab('psychology');
+      } else if (prodId === 'vault') {
+        updateActiveNavTab('vault');
+      } else {
+        updateActiveNavTab('all');
+      }
 
       const vCat = document.getElementById('view-catalog');
       const vList = document.getElementById('view-listing');
@@ -2504,14 +2559,8 @@
       const noResults = document.getElementById('search-no-results');
       if (noResults) noResults.classList.add('hidden');
 
-      // 3. Reset tab styles
-      const defaultClass = 'text-gray-600 hover:text-black transition pb-1 cursor-pointer';
-      const activeClass = 'text-black font-bold border-b-2 border-black pb-1 cursor-pointer';
-
-      ['tab-all', 'tab-saas', 'tab-psychology', 'tab-vault'].forEach(t => {
-        const el = document.getElementById(t);
-        if (el) el.className = defaultClass;
-      });
+      // 3. Reset and apply tab styles
+      updateActiveNavTab(cat || 'all');
 
       const cardSaas = document.getElementById('card-saas');
       const cardBrain = document.getElementById('card-brain');
@@ -2519,25 +2568,21 @@
       const countEl = document.getElementById('catalog-count');
 
       if (cat === 'saas') {
-        document.getElementById('tab-saas').className = activeClass;
         if (cardSaas) cardSaas.style.display = 'flex';
         if (cardBrain) cardBrain.style.display = 'none';
         if (cardVault) cardVault.style.display = 'none';
         if (countEl) countEl.innerText = '1 product';
       } else if (cat === 'psychology') {
-        document.getElementById('tab-psychology').className = activeClass;
         if (cardSaas) cardSaas.style.display = 'none';
         if (cardBrain) cardBrain.style.display = 'flex';
         if (cardVault) cardVault.style.display = 'none';
         if (countEl) countEl.innerText = '1 product';
       } else if (cat === 'vault') {
-        document.getElementById('tab-vault').className = activeClass;
         if (cardSaas) cardSaas.style.display = 'none';
         if (cardBrain) cardBrain.style.display = 'none';
         if (cardVault) cardVault.style.display = 'flex';
         if (countEl) countEl.innerText = '1 product';
       } else {
-        document.getElementById('tab-all').className = activeClass;
         if (cardSaas) cardSaas.style.display = 'flex';
         if (cardBrain) cardBrain.style.display = 'flex';
         if (cardVault) cardVault.style.display = 'flex';
@@ -2606,12 +2651,7 @@
 
       // If searching, reset category tab to All
       if (q) {
-        ['tab-all', 'tab-saas', 'tab-psychology', 'tab-vault'].forEach(t => {
-          const el = document.getElementById(t);
-          if (el) el.className = 'text-gray-600 hover:text-black transition pb-1 cursor-pointer';
-        });
-        const tabAll = document.getElementById('tab-all');
-        if (tabAll) tabAll.className = 'text-black font-bold border-b-2 border-black pb-1 cursor-pointer';
+        updateActiveNavTab('all');
       }
 
       const tokens = q.replace(/[-_/\\,]/g, ' ').split(/\s+/).filter(Boolean);
