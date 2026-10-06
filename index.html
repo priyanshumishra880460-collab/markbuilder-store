@@ -770,6 +770,10 @@
           <button id="btn-listing-buy-now" class="w-full py-3.5 px-6 rounded-full bg-[#222222] hover:bg-black text-white font-bold text-sm transition shadow-md flex items-center justify-center gap-2 hover:scale-[1.01] cursor-pointer">
             <span>⚡ Buy it now (1-Click Instant Checkout)</span>
           </button>
+          <button onclick="openSamplePreview()" class="w-full py-2.5 px-4 rounded-full border border-amber-300 hover:border-amber-500 bg-amber-50/70 hover:bg-amber-100 text-amber-950 font-semibold text-xs transition flex items-center justify-center gap-2 shadow-xs cursor-pointer">
+            <span class="text-amber-600 text-sm">📖</span>
+            <span id="btn-sample-text">Read Free Sample (Blueprint #01 Teaser)</span>
+          </button>
         </div>
 
         <!-- Rate & Review Prompt in Buy Box -->
@@ -783,7 +787,10 @@
         <div class="mt-6 pt-5 border-t border-gray-100 space-y-3 text-xs text-gray-600">
           <div class="flex items-start gap-2.5">
             <span class="text-emerald-600 text-sm">🛡️</span>
-            <div><strong class="text-gray-900 block">MarkBuilder Purchase Protection</strong><span>Shop confidently knowing your payment is encrypted and download links are instant.</span></div>
+            <div>
+              <strong class="text-gray-900 block">MarkBuilder Purchase Protection</strong>
+              <span>Shop confidently knowing your payment is encrypted and download links are instant. <button onclick="openProtectionModal()" class="text-emerald-700 underline font-semibold hover:text-emerald-900 cursor-pointer ml-1 inline">View Guarantee &amp; Policy →</button></span>
+            </div>
           </div>
           <div class="flex items-start gap-2.5">
             <span class="text-blue-600 text-sm">⚡</span>
@@ -910,7 +917,7 @@
 
         <!-- Security Badge -->
         <div class="pt-2 text-[11px] text-gray-500 space-y-2 text-center">
-          <p>🛡️ MarkBuilder Purchase Protection: If anything goes wrong, you are 100% covered.</p>
+          <p>🛡️ MarkBuilder Purchase Protection: If anything goes wrong, you are 100% covered. <button onclick="openProtectionModal()" class="text-emerald-700 underline font-medium hover:text-emerald-900 cursor-pointer ml-1 inline">Learn more →</button></p>
         </div>
       </div>
 
@@ -940,6 +947,118 @@
         <span class="text-xs text-gray-500">Saved items are stored in your browser</span>
         <button onclick="closeFavoritesModal(); navigateTo('cart');" class="px-4 py-2 bg-[#222222] hover:bg-black text-white font-bold text-xs rounded-full transition">
           Go to Cart →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FREE SAMPLE BLUEPRINT PREVIEW MODAL ================= -->
+  <div id="sample-modal" style="display: none;" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 flex items-center justify-center p-3 sm:p-6" onclick="closeSamplePreview(event)">
+    <div class="bg-white rounded-2xl sm:rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col shadow-2xl border border-gray-200" onclick="event.stopPropagation()">
+      <!-- Modal Header -->
+      <div class="p-4 sm:p-5 border-b border-gray-200 flex items-center justify-between bg-[#FAFAFA]">
+        <div>
+          <span id="sample-modal-badge" class="inline-block px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 font-bold text-[10px] uppercase tracking-wider">Free Sample Preview</span>
+          <h3 id="sample-modal-title" class="font-serif-title font-bold text-base sm:text-lg text-gray-900 mt-1 line-clamp-1">Sample Blueprint</h3>
+          <span id="sample-modal-category" class="text-[11px] text-gray-500 font-medium">Curated Edition</span>
+        </div>
+        <button onclick="closeSamplePreview()" class="w-8 h-8 rounded-full hover:bg-gray-200 flex items-center justify-center text-gray-600 font-bold transition cursor-pointer" title="Close Preview">
+          ✕
+        </button>
+      </div>
+
+      <!-- Scrollable Preview Body -->
+      <div id="sample-modal-body" class="p-5 sm:p-6 overflow-y-auto space-y-4 flex-1 custom-scrollbar">
+        <!-- Injected via JS -->
+      </div>
+
+      <!-- Sticky Modal Footer -->
+      <div class="p-4 sm:p-5 border-t border-gray-200 bg-[#FAFAFA] flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div class="text-xs text-gray-500 text-center sm:text-left">
+          <span class="font-semibold text-gray-900">Like this blueprint?</span>
+          <span class="block text-[11px]">Download all ideas, contracts &amp; models immediately.</span>
+        </div>
+        <div class="flex items-center gap-2 w-full sm:w-auto">
+          <button onclick="closeSamplePreview()" class="flex-1 sm:flex-none px-4 py-2.5 border border-gray-300 hover:border-black rounded-full text-xs font-semibold text-gray-700 transition cursor-pointer">
+            Close
+          </button>
+          <button id="sample-modal-buy-btn" class="flex-1 sm:flex-none px-5 py-2.5 bg-[#222222] hover:bg-black text-white rounded-full text-xs font-bold transition shadow-md cursor-pointer flex items-center justify-center gap-1.5">
+            <span>Unlock Complete Edition →</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= PURCHASE PROTECTION & POLICY MODAL ================= -->
+  <div id="protection-modal" style="display: none;" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 flex items-center justify-center p-3 sm:p-6" onclick="closeProtectionModal(event)">
+    <div class="bg-white rounded-2xl sm:rounded-3xl max-w-lg w-full max-h-[90vh] overflow-hidden flex flex-col shadow-2xl border border-gray-200" onclick="event.stopPropagation()">
+      <!-- Modal Header -->
+      <div class="p-4 sm:p-5 border-b border-gray-200 flex items-center justify-between bg-[#FAFAFA]">
+        <div class="flex items-center gap-2.5">
+          <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-base font-bold">🛡️</span>
+          <div>
+            <h3 class="font-serif-title font-bold text-base sm:text-lg text-gray-900">MarkBuilder Purchase Protection</h3>
+            <span class="text-[11px] text-gray-500 font-medium">100% Buyer Guarantee &amp; Delivery Policy</span>
+          </div>
+        </div>
+        <button onclick="closeProtectionModal()" class="w-8 h-8 rounded-full hover:bg-gray-200 flex items-center justify-center text-gray-600 font-bold transition cursor-pointer" title="Close Policy">
+          ✕
+        </button>
+      </div>
+
+      <!-- Policy Body -->
+      <div class="p-5 sm:p-6 overflow-y-auto space-y-4 text-xs sm:text-sm text-gray-700 leading-relaxed flex-1 custom-scrollbar">
+        <div class="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-950">
+          <strong class="block font-bold text-xs uppercase tracking-wider text-emerald-800">Founder's Personal Promise</strong>
+          <p class="text-xs mt-1">"When you buy a MarkBuilder publication, you get direct founder support. If a download fails, link expires, or you lose your file, I will personally ensure it reaches your inbox within 4 hours." — <em>Priyanshu Mishra, Founder</em></p>
+        </div>
+
+        <div class="space-y-3 pt-1">
+          <div class="flex items-start gap-3">
+            <span class="text-base text-blue-600">⚡</span>
+            <div>
+              <strong class="text-gray-900 block font-semibold text-xs sm:text-sm">Instant Download &amp; Receipt Guarantee</strong>
+              <p class="text-[11px] sm:text-xs text-gray-500 mt-0.5">Your PDF download starts immediately on checkout. In addition, an automated invoice and access receipt is dispatched to your email address.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <span class="text-base text-amber-600">🔄</span>
+            <div>
+              <strong class="text-gray-900 block font-semibold text-xs sm:text-sm">Missing File or Broken Download?</strong>
+              <p class="text-[11px] sm:text-xs text-gray-500 mt-0.5">Network drop? Closed tab too quickly? Simply reach out with your payment transaction ID or registered email. We will instantly dispatch a secure direct copy.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <span class="text-base text-emerald-600">💳</span>
+            <div>
+              <strong class="text-gray-900 block font-semibold text-xs sm:text-sm">Bank-Grade 256-Bit Encryption</strong>
+              <p class="text-[11px] sm:text-xs text-gray-500 mt-0.5">Domestic payments are processed via RBI-licensed Razorpay (UPI, RuPay, Netbanking). International payments are processed via PCI-DSS Level 1 certified Gumroad (Stripe/PayPal/Apple Pay).</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <span class="text-base text-purple-600">🤝</span>
+            <div>
+              <strong class="text-gray-900 block font-semibold text-xs sm:text-sm">Replacement &amp; Refund Assistance</strong>
+              <p class="text-[11px] sm:text-xs text-gray-500 mt-0.5">If the digital file format is corrupted or content does not match the product description, contact our support team for an immediate resolution or refund.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-3 bg-gray-50 rounded-xl border border-gray-200 text-[11px] text-gray-600 space-y-1">
+          <div><strong class="text-gray-900">Direct Founder Email:</strong> <a href="mailto:priyanshumishra880460@gmail.com" class="text-blue-600 hover:underline">priyanshumishra880460@gmail.com</a></div>
+          <div><strong class="text-gray-900">Store Support:</strong> <a href="mailto:support@markbuilder.in" class="text-blue-600 hover:underline">support@markbuilder.in</a></div>
+          <div><strong class="text-gray-900">WhatsApp Assistance:</strong> <span class="font-mono text-gray-800">+91 6388046065</span></div>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 border-t border-gray-200 bg-[#FAFAFA] flex items-center justify-end">
+        <button onclick="closeProtectionModal()" class="px-5 py-2 bg-[#222222] hover:bg-black text-white rounded-full text-xs font-bold transition cursor-pointer">
+          Understood, Close
         </button>
       </div>
     </div>
@@ -1283,6 +1402,216 @@
       }
     };
 
+    // Free Sample Blueprints / Teasers Data (Feedback by Maverick Liberty)
+    const samplePreviews = {
+      saas: {
+        title: "Blueprint #01: Automated Compliance Tracker for Niche Contractors",
+        badge: "Free Sample • Blueprint #01 of 50",
+        category: "No-Code & SaaS Blueprints (40-Page Field Guide)",
+        btnText: "Unlock All 50 Micro-SaaS Blueprints (40 Pages) →",
+        html: `
+          <div class="space-y-4">
+            <div class="p-3.5 bg-amber-50/80 rounded-xl border border-amber-200/80 text-amber-950 text-xs">
+              <strong class="block font-bold uppercase tracking-wider text-amber-800 text-[10px]">Sample Blueprint #01 Breakdown</strong>
+              <p class="mt-1">This is an unredacted preview of the first complete blueprint from the 40-page guide. Each of the 50 ideas follows this exact structured blueprint.</p>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-sm text-gray-900 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-blue-600"></span> 1. The Concrete Niche Problem
+              </h4>
+              <p class="text-xs text-gray-600 mt-1 leading-relaxed">
+                General contractors and roofing/HVAC firms manage 10–50 subcontractors at any given time. Subcontractor general liability insurance, worker's compensation policies, and state trade licenses expire on rolling dates. If an unlicensed or uninsured sub causes damage on a job site, the general contractor is held personally liable for six-figure claims. Existing enterprise tools (like Procore) cost ₹30,000–₹50,000/month and are too bloated for 5-person subcontractor crews.
+              </p>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-sm text-gray-900 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-600"></span> 2. Lean No-Code Solution Architecture
+              </h4>
+              <p class="text-xs text-gray-600 mt-1 leading-relaxed">
+                Build a self-serve subcontractor compliance portal. Subcontractors receive an automated SMS/email link to upload certificates of insurance (COI). Optical character recognition (OCR) extracts expiration dates and alerts both parties 30, 15, and 3 days before expiration.
+              </p>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-sm text-gray-900 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-purple-600"></span> 3. The 100% Visual Tool Stack (Zero Code)
+              </h4>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-2">
+                <div class="p-2.5 rounded-lg border border-gray-200 bg-gray-50 text-center">
+                  <span class="block font-bold text-xs text-gray-900">Softr</span>
+                  <span class="text-[10px] text-gray-500">Client Portal UI</span>
+                </div>
+                <div class="p-2.5 rounded-lg border border-gray-200 bg-gray-50 text-center">
+                  <span class="block font-bold text-xs text-gray-900">Airtable</span>
+                  <span class="text-[10px] text-gray-500">Relational DB</span>
+                </div>
+                <div class="p-2.5 rounded-lg border border-gray-200 bg-gray-50 text-center">
+                  <span class="block font-bold text-xs text-gray-900">Make.com</span>
+                  <span class="text-[10px] text-gray-500">Automated Webhooks</span>
+                </div>
+                <div class="p-2.5 rounded-lg border border-gray-200 bg-gray-50 text-center">
+                  <span class="block font-bold text-xs text-gray-900">Twilio / Postmark</span>
+                  <span class="text-[10px] text-gray-500">SMS &amp; Email Alerts</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-sm text-gray-900 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-amber-600"></span> 4. Monetization &amp; Buyer Willingness to Pay
+              </h4>
+              <p class="text-xs text-gray-600 mt-1 leading-relaxed">
+                <strong>Target Buyer:</strong> Commercial General Contractors, Property Managers, and Construction Subcontractor Coordinators.<br>
+                <strong>Pricing Model:</strong> ₹1,999/month (or $49/mo) for up to 25 active contractors; ₹4,999/month ($129/mo) for unlimited contractors.<br>
+                <strong>Path to ₹1,00,000/mo MRR:</strong> Only 20 active contractor firms needed at ₹4,999/mo.
+              </p>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-sm text-gray-900 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-indigo-600"></span> 5. 30-Day Execution Roadmap
+              </h4>
+              <div class="space-y-1.5 mt-2 text-xs text-gray-600">
+                <div class="flex items-start gap-2">
+                  <span class="font-bold text-gray-900 min-w-[55px]">Days 1–7:</span>
+                  <span>Set up Airtable base with 3 tables (General Contractors, Subcontractors, Policies) and Softr magic-link authentication.</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="font-bold text-gray-900 min-w-[55px]">Days 8–15:</span>
+                  <span>Configure Make.com daily webhook schedule checking for policies expiring in &lt;= 30 days and sending automated SMS.</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="font-bold text-gray-900 min-w-[55px]">Days 16–22:</span>
+                  <span>Reach out to 30 local construction firms on LinkedIn / Google Maps offering a free 14-day compliance audit.</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="font-bold text-gray-900 min-w-[55px]">Days 23–30:</span>
+                  <span>Convert 2–3 audit participants into recurring paying accounts with automated Stripe billing.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 bg-gray-100 rounded-xl text-center text-xs text-gray-600 border border-gray-200">
+              <strong class="text-gray-900">49 more validated blueprints</strong> across 10 categories (AI workflows, B2B CRM, developer tooling, niche client portals) await you in the complete edition.
+            </div>
+          </div>
+        `
+      },
+      brain: {
+        title: "Trick #01: The Anchoring Trap (How Price Tags Hack Your Brain)",
+        badge: "Free Sample • Trick #01 of 30",
+        category: "Psychology & Behavioral Science (75-Page Master Guide)",
+        btnText: "Unlock All 30 Cognitive Traps (75 Pages) →",
+        html: `
+          <div class="space-y-4">
+            <div class="p-3.5 bg-purple-50/80 rounded-xl border border-purple-200/80 text-purple-950 text-xs">
+              <strong class="block font-bold uppercase tracking-wider text-purple-800 text-[10px]">Sample Module Preview</strong>
+              <p class="mt-1">From Chapter 1: The Valuation Engine. Discover how the human brain calculates value and why the first number heard locks the mind into submission.</p>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-sm text-gray-900 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-blue-600"></span> 1. The Real-World Incident
+              </h4>
+              <p class="text-xs text-gray-600 mt-1 leading-relaxed">
+                In January 2010, Steve Jobs stood on stage in San Francisco to introduce the original iPad. He projected a giant "$999" price tag onto the keynote screen, talking about how industry analysts said it should cost a thousand dollars. He paused for 20 seconds as the audience absorbed the sticker shock. Then, a virtual stamp smashed the $999 into pieces, revealing "$499". The entire auditorium erupted in applause. People didn't buy a $499 gadget—they felt they had just pocketed a $500 gift.
+              </p>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-sm text-gray-900 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-red-600"></span> 2. The Cognitive Glitch: Anchoring Bias
+              </h4>
+              <p class="text-xs text-gray-600 mt-1 leading-relaxed">
+                The human brain is physically incapable of calculating absolute worth. Our prefrontal cortex evolved to compare, not calculate. When presented with any unknown quantity (product price, salary offer, repair quote), the brain grips the first numerical anchor it receives as an objective reference point and adjusts relative to it.
+              </p>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-sm text-gray-900 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-amber-600"></span> 3. Where It Costs You Daily
+              </h4>
+              <ul class="list-disc pl-5 text-xs text-gray-600 space-y-1 mt-1">
+                <li><strong>Crossed-Out MSRPs:</strong> "<s>₹1,999</s> Now ₹799" causes your dopamine receptors to spike because your brain registers an ₹800 surplus rather than a ₹799 expenditure.</li>
+                <li><strong>Salary Negotiations:</strong> The party who utters the first figure defines the negotiation envelope for the entire meeting.</li>
+                <li><strong>Menu Decoys:</strong> A ₹3,500 steak at the top of a restaurant menu exists only to make the ₹1,400 pasta look like a responsible budget choice.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-sm text-gray-900 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-600"></span> 4. The Counter-Anchor Protocol
+              </h4>
+              <p class="text-xs text-gray-600 mt-1 leading-relaxed">
+                Whenever you encounter a high anchor, never counter-offer from within that anchor's gravitational pull. Explicitly reset the baseline: <em>"We need to disregard that initial figure entirely because our objective unit economics are based on X."</em> Resetting the frame breaks the cognitive spell.
+              </p>
+            </div>
+
+            <div class="p-3 bg-gray-100 rounded-xl text-center text-xs text-gray-600 border border-gray-200">
+              <strong class="text-gray-900">29 more behavioral hacks</strong> covering Sunk Cost Fallacy, The Scarcity Loop, Social Proof Exploits, and Dopamine Hijacking inside the 75-page Master Edition.
+            </div>
+          </div>
+        `
+      },
+      vault: {
+        title: "Script #01: High-Converting Website Speed Teardown Pitch",
+        badge: "Free Sample • Script #01 of 44",
+        category: "Client Acquisition & Contract Vault (28-Page Luxury Dossier)",
+        btnText: "Unlock All 44 Outreach Scripts & 4 Contracts →",
+        html: `
+          <div class="space-y-4">
+            <div class="p-3.5 bg-emerald-50/80 rounded-xl border border-emerald-200/80 text-emerald-950 text-xs">
+              <strong class="block font-bold uppercase tracking-wider text-emerald-800 text-[10px]">Sample Outreach Script Preview</strong>
+              <p class="mt-1">Tested across 150+ cold campaigns with a verified 42% reply rate. Designed specifically for web developers, Shopify experts, and performance specialists.</p>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-sm text-gray-900 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-blue-600"></span> 1. Outreach Context &amp; Channel
+              </h4>
+              <p class="text-xs text-gray-600 mt-1 leading-relaxed">
+                <strong>Channel:</strong> Personalized Cold Email or LinkedIn InMail.<br>
+                <strong>Target:</strong> Founders of Direct-to-Consumer (D2C) brands, SaaS companies running paid ads, or local business owners.<br>
+                <strong>Pre-Requisite:</strong> Run their domain through Google PageSpeed Insights (takes 30 seconds).
+              </p>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-sm text-gray-900 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-600"></span> 2. Word-for-Word Tested Script
+              </h4>
+              <div class="p-3.5 bg-gray-900 text-gray-100 rounded-xl font-mono text-xs leading-relaxed space-y-2 mt-2 select-all">
+                <p><strong>Subject:</strong> Quick observation on {{Website}} mobile load time</p>
+                <p>Hey {{FirstName}},</p>
+                <p>Noticed your mobile hero image on {{Website}} takes 4.2 seconds to render on 4G LTE (flagged by PageSpeed Insights).</p>
+                <p>Because you're actively running paid ads, roughly 20% to 30% of your visitors are bouncing before your core offer even loads.</p>
+                <p>I recorded a quick 45-second screen recording showing the 2 uncompressed WebP images and render-blocking scripts causing the delay, and how to get this under 1.2s without changing your visual design.</p>
+                <p>Mind if I drop the video link over here?</p>
+                <p>Best,<br>{{YourName}}</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-sm text-gray-900 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-purple-600"></span> 3. Psychological Breakdown (Why It Converts at 42%)
+              </h4>
+              <ul class="list-disc pl-5 text-xs text-gray-600 space-y-1 mt-1">
+                <li><strong>No Sales Pitch:</strong> Doesn't ask for a 30-minute call or pitch pricing upfront.</li>
+                <li><strong>Hard Data:</strong> Specifies exact seconds (4.2s), proving it's not a generic automated blast.</li>
+                <li><strong>Permission-First:</strong> Asks for permission to share free value ("Mind if I drop the link?"), which triggers an intuitive 'Yes'.</li>
+              </ul>
+            </div>
+
+            <div class="p-3 bg-gray-100 rounded-xl text-center text-xs text-gray-600 border border-gray-200">
+              <strong class="text-gray-900">43 more niche scripts</strong> (AI workflows, Webflow, UI/UX, video editing) + 5 follow-up sequences + 4 master legal agreements await inside the Vault.
+            </div>
+          </div>
+        `
+      }
+    };
+
     // State Management
     let activeCurrency = 'INR';
     let cart = [];
@@ -1494,6 +1823,20 @@
       // Bind CTAs
       document.getElementById('btn-listing-add-cart').onclick = () => addToCart(prodId);
       document.getElementById('btn-listing-buy-now').onclick = () => quickBuy(prodId);
+
+      // Update sample button teaser label based on current active product
+      const btnSampleText = document.getElementById('btn-sample-text');
+      if (btnSampleText) {
+        if (prodId === 'saas') {
+          btnSampleText.innerText = 'Read Free Sample (Blueprint #01 Teaser)';
+        } else if (prodId === 'brain') {
+          btnSampleText.innerText = 'Read Free Sample (Trick #01 Teaser)';
+        } else if (prodId === 'vault') {
+          btnSampleText.innerText = 'Read Free Sample (Script #01 Teaser)';
+        } else {
+          btnSampleText.innerText = 'Read Free Sample Preview';
+        }
+      }
 
       renderPrices();
 
@@ -2398,6 +2741,63 @@
       updateLightboxDisplay(true);
     }
 
+    // ================= FREE SAMPLE BLUEPRINT MODAL CONTROLLER =================
+    function openSamplePreview() {
+      const prodId = activeListingId || 'saas';
+      const sample = samplePreviews[prodId] || samplePreviews.saas;
+
+      document.getElementById('sample-modal-title').innerText = sample.title;
+      document.getElementById('sample-modal-badge').innerText = sample.badge;
+      document.getElementById('sample-modal-category').innerText = sample.category;
+      document.getElementById('sample-modal-body').innerHTML = sample.html;
+
+      const buyBtn = document.getElementById('sample-modal-buy-btn');
+      if (buyBtn) {
+        buyBtn.innerHTML = `<span>${sample.btnText}</span>`;
+        buyBtn.onclick = () => {
+          closeSamplePreview();
+          quickBuy(prodId);
+        };
+      }
+
+      document.getElementById('sample-modal').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeSamplePreview(e) {
+      if (e && e.target && e.target !== document.getElementById('sample-modal') && e.target.tagName !== 'BUTTON') {
+        return;
+      }
+      document.getElementById('sample-modal').style.display = 'none';
+      const lightboxModal = document.getElementById('lightbox-modal');
+      const isLightboxOpen = lightboxModal && lightboxModal.style.display === 'flex';
+      const protectionModal = document.getElementById('protection-modal');
+      const isProtectionOpen = protectionModal && protectionModal.style.display === 'flex';
+      if (!isLightboxOpen && !isProtectionOpen) {
+        document.body.style.overflow = '';
+      }
+    }
+
+    // ================= PURCHASE PROTECTION & POLICY MODAL CONTROLLER =================
+    function openProtectionModal() {
+      document.getElementById('protection-modal').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeProtectionModal(e) {
+      if (e && e.target && e.target !== document.getElementById('protection-modal') && e.target.tagName !== 'BUTTON') {
+        return;
+      }
+      document.getElementById('protection-modal').style.display = 'none';
+      const lightboxModal = document.getElementById('lightbox-modal');
+      const isLightboxOpen = lightboxModal && lightboxModal.style.display === 'flex';
+      const sampleModal = document.getElementById('sample-modal');
+      const isSampleOpen = sampleModal && sampleModal.style.display === 'flex';
+      if (!isLightboxOpen && !isSampleOpen) {
+        document.body.style.overflow = '';
+      }
+    }
+
     // Keyboard listener (Escape, ArrowLeft, ArrowRight)
     document.addEventListener('keydown', (e) => {
       const modal = document.getElementById('lightbox-modal');
@@ -2406,6 +2806,8 @@
       if (e.key === 'Escape') {
         if (isLightboxOpen) closeLightbox();
         closeFavoritesModal();
+        closeSamplePreview();
+        closeProtectionModal();
       } else if (e.key === 'ArrowRight' && isLightboxOpen) {
         nextLightboxSlide();
       } else if (e.key === 'ArrowLeft' && isLightboxOpen) {
