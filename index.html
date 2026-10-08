@@ -825,6 +825,11 @@
           <button id="btn-listing-buy-now" class="w-full py-3.5 px-6 rounded-full bg-[#222222] hover:bg-black text-white font-bold text-sm transition shadow-md flex items-center justify-center gap-2 hover:scale-[1.01] cursor-pointer">
             <span>⚡ Buy it now (1-Click Instant Checkout)</span>
           </button>
+          <div class="pt-0.5 text-center">
+            <button id="btn-alt-checkout" onclick="toggleAlternateCheckout()" class="text-[11px] text-gray-500 hover:text-black transition underline cursor-pointer inline-flex items-center gap-1 font-medium">
+              <span id="alt-checkout-text">🌍 Outside India? Pay via Gumroad (PayPal / Global Card) →</span>
+            </button>
+          </div>
           <button onclick="openSamplePreview()" class="w-full py-2.5 px-4 rounded-full border border-amber-300 hover:border-amber-500 bg-amber-50/70 hover:bg-amber-100 text-amber-950 font-semibold text-xs transition flex items-center justify-center gap-2 shadow-xs cursor-pointer">
             <span class="text-amber-600 text-sm">📖</span>
             <span id="btn-sample-text">Read Free Sample (Blueprint #01 Teaser)</span>
@@ -978,6 +983,138 @@
 
     </div>
 
+  </main>
+
+  <!-- ================================================================= -->
+  <!-- =================== VIEW 4: VERIFIED ORDER DOWNLOAD PAGE ================== -->
+  <!-- ================================================================= -->
+  <main id="view-download" class="hidden flex-1 max-w-xl mx-auto px-4 sm:px-6 py-6 w-full">
+    <div class="bg-white rounded-3xl shadow-xl border border-gray-200/90 overflow-hidden">
+      
+      <!-- Top Success Ribbon -->
+      <div class="bg-gradient-to-r from-emerald-600 to-teal-700 text-white p-6 sm:p-8 text-center relative overflow-hidden">
+        <div class="absolute -right-8 -top-8 w-32 h-32 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
+        <div class="absolute -left-8 -bottom-8 w-32 h-32 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
+
+        <!-- Success Icon -->
+        <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-3 shadow-md">
+          <svg class="w-9 h-9 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+
+        <h1 class="font-serif-title text-2xl sm:text-3xl font-bold tracking-tight">Payment Successful!</h1>
+        <p class="text-emerald-100 text-xs sm:text-sm mt-1">Your publication has been unlocked and is ready to download.</p>
+      </div>
+
+      <!-- Content Body -->
+      <div class="p-6 sm:p-8">
+
+        <!-- Product Preview Box -->
+        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-5 p-4 sm:p-5 rounded-2xl bg-[#FAFAFA] border border-gray-200">
+          <!-- 3D Book Mockup -->
+          <div class="w-24 sm:w-28 flex-shrink-0 bg-white p-2 rounded-xl border border-gray-200 shadow-xs flex items-center justify-center">
+            <img id="dl-cover-img" src="vibe-coding-mockup.png" alt="Book Mockup" class="w-full h-auto object-contain drop-shadow-sm">
+          </div>
+
+          <!-- Product Details -->
+          <div class="flex-1 text-center sm:text-left">
+            <span id="dl-edition-badge" class="inline-block px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-cyan-100 text-cyan-800 mb-1">
+              Official 2026 Master Edition
+            </span>
+            <h2 id="dl-title-text" class="text-sm sm:text-base font-bold text-gray-900 leading-snug">
+              The Non-Coder's Vibe Coding Playbook
+            </h2>
+            <p id="dl-subtitle-text" class="text-xs text-gray-500 mt-1">From First Prompt to Live Razorpay Checkout in 24 Hours</p>
+            
+            <div class="mt-3 flex items-center justify-center sm:justify-start gap-3 text-[11px] text-gray-600 font-medium">
+              <span id="dl-pages-stat" class="flex items-center gap-1">📄 22 Pages</span>
+              <span>•</span>
+              <span id="dl-size-stat" class="flex items-center gap-1">⚡ 2.1 MB PDF</span>
+              <span>•</span>
+              <span class="flex items-center gap-1 text-emerald-700 font-bold">✓ Full License</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Download Action Buttons -->
+        <div class="mt-6 space-y-3">
+          <!-- Main Forced Download Button -->
+          <a 
+            id="dl-main-download-btn"
+            href="vibe-playbook-mb-ffef44be315c8f.pdf" 
+            download="The-Non-Coders-Vibe-Coding-Playbook-2026.pdf"
+            class="w-full py-4 px-6 rounded-2xl bg-[#222222] hover:bg-black text-white font-bold text-sm sm:text-base transition shadow-lg hover:shadow-xl flex items-center justify-center gap-2 cursor-pointer hover:scale-[1.01]"
+          >
+            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+            </svg>
+            <span id="dl-main-btn-text">Download PDF to Device (2.1 MB)</span>
+          </a>
+
+          <!-- Read in Browser Button -->
+          <a 
+            id="dl-browser-read-btn"
+            href="vibe-playbook-mb-ffef44be315c8f.pdf" 
+            target="_blank"
+            class="w-full py-3 px-6 rounded-2xl bg-white hover:bg-gray-50 border border-gray-300 text-gray-800 font-semibold text-xs sm:text-sm transition flex items-center justify-center gap-2 cursor-pointer shadow-xs"
+          >
+            <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+            <span>Open &amp; Read in Browser Tab</span>
+          </a>
+        </div>
+
+        <!-- Auto-Download Notification Banner -->
+        <div id="dl-auto-status" class="mt-4 p-3 bg-emerald-50 rounded-xl border border-emerald-200 text-center text-xs text-emerald-900 font-medium">
+          <span class="inline-block animate-bounce mr-1">📥</span>
+          <span>Your download will start automatically in <strong id="dl-countdown">2</strong> seconds...</span>
+        </div>
+
+        <!-- Helpful Device Instructions -->
+        <div class="mt-6 pt-5 border-t border-gray-100 space-y-2.5 text-xs text-gray-500">
+          <div class="flex items-start gap-2">
+            <span class="text-sm">💾</span>
+            <p><strong>Where does it save?</strong> On computer, check your <em>Downloads</em> folder. On mobile, check your <em>Files</em> or <em>Downloads</em> app.</p>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="text-sm">✉️</span>
+            <p><strong>Need help or lost your file?</strong> Contact founder support anytime at <a href="mailto:support@markbuilder.in" class="text-black font-semibold underline">support@markbuilder.in</a>.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Card Footer -->
+      <div class="bg-gray-50 border-t border-gray-100 p-4 text-center">
+        <a href="/" onclick="navigateTo('home'); return false;" class="text-xs text-gray-600 hover:text-black font-medium transition inline-flex items-center gap-1 cursor-pointer">
+          <span>← Return to MarkBuilder Marketplace</span>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Invalid Token Error State -->
+  <main id="view-download-error" class="hidden flex-1 max-w-lg mx-auto px-4 sm:px-6 py-16 w-full text-center">
+    <div class="bg-white rounded-3xl shadow-xl border border-gray-200 p-8">
+      <div class="w-16 h-16 bg-red-50 text-red-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+        ⚠️
+      </div>
+      <h2 class="font-serif-title text-xl font-bold text-gray-900">Access Link Invalid or Expired</h2>
+      <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+        We could not verify this digital access token. If you recently completed a payment, please check your receipt email or reach out to our team with your payment ID.
+      </p>
+      <div class="mt-6 flex flex-col gap-2">
+        <a href="mailto:support@markbuilder.in" class="px-5 py-2.5 bg-[#222222] hover:bg-black text-white text-xs font-bold rounded-full transition">
+          Contact Founder Support (support@markbuilder.in)
+        </a>
+        <a href="/" onclick="navigateTo('home'); return false;" class="text-xs text-gray-500 hover:text-black py-2 cursor-pointer">
+          ← Return to Marketplace
+        </a>
+      </div>
+    </div>
   </main>
 
   <!-- ================================================================= -->
@@ -1831,6 +1968,134 @@
       return null;
     }
 
+    // ================= VERIFIED SECURE ORDER DELIVERY REGISTRY =================
+    const deliveryTokens = {
+      'vibe-playbook-mb-ffef44be315c8f': {
+        id: 'vibe',
+        title: "The Non-Coder's Vibe Coding Playbook",
+        edition: "Official 2026 Master Edition",
+        subtitle: "From First Prompt to Live Razorpay Checkout in 24 Hours",
+        cover: 'vibe-coding-mockup.png',
+        file: 'vibe-playbook-mb-ffef44be315c8f.pdf',
+        downloadName: 'The-Non-Coders-Vibe-Coding-Playbook-2026.pdf',
+        pages: '22 Pages',
+        size: '2.1 MB PDF'
+      },
+      'vault-dossier-mb-8f92a4c107e3b9': {
+        id: 'vault',
+        title: "The Client Acquisition & Contract Vault",
+        edition: "Official 2026 Master Toolkit",
+        subtitle: "30+ Battle-Tested Outreach Scripts, Proposals & Legal Agreements",
+        cover: 'vault-mockup.png',
+        file: 'vault-dossier-mb-8f92a4c107e3b9.pdf',
+        downloadName: 'The-Client-Acquisition-And-Contract-Vault.pdf',
+        pages: '44 Scripts + 4 Agreements',
+        size: '1.9 MB PDF'
+      },
+      'saas-blueprints-mb-4b8c91a02e5f3d': {
+        id: 'saas',
+        title: "50 Micro-SaaS You Can Build Without Coding",
+        edition: "Official 2026 Edition",
+        subtitle: "Validated Startup Opportunities Across 10 Visual Tech Niches",
+        cover: 'micro-saas-mockup.png',
+        file: 'saas-blueprints-mb-4b8c91a02e5f3d.pdf',
+        downloadName: '50-Micro-SaaS-You-Can-Build-Without-Coding-2026.pdf',
+        pages: '40 Pages',
+        size: '73 KB PDF'
+      },
+      'brain-tricks-mb-3e91d8b72c4a5f': {
+        id: 'brain',
+        title: "The Hidden Tricks Your Brain Plays On You",
+        edition: "Official 2026 Master Edition",
+        subtitle: "Cognitive Biases, Decision Heuristics & Mental Defense Protocols",
+        cover: 'brain-tricks-thumbnail.jpg',
+        file: 'brain-tricks-mb-3e91d8b72c4a5f.pdf',
+        downloadName: 'The-Hidden-Tricks-Your-Brain-Plays-on-You-2026.pdf',
+        pages: 'Illustrated Guide',
+        size: '978 KB PDF'
+      }
+    };
+
+    let downloadTimer = null;
+
+    function renderDownloadPage(token) {
+      const data = deliveryTokens[token];
+      const vDl = document.getElementById('view-download');
+      const vDlErr = document.getElementById('view-download-error');
+      const vCat = document.getElementById('view-catalog');
+      const vList = document.getElementById('view-listing');
+      const vCart = document.getElementById('view-cart');
+
+      if (vCat) { vCat.style.display = 'none'; vCat.classList.add('hidden'); }
+      if (vList) { vList.style.display = 'none'; vList.classList.add('hidden'); }
+      if (vCart) { vCart.style.display = 'none'; vCart.classList.add('hidden'); }
+
+      const stickyBar = document.getElementById('mobile-sticky-buy-bar');
+      if (stickyBar) { stickyBar.classList.add('hidden'); stickyBar.classList.remove('flex'); }
+
+      if (!data) {
+        if (vDl) { vDl.style.display = 'none'; vDl.classList.add('hidden'); }
+        if (vDlErr) { vDlErr.style.display = 'block'; vDlErr.classList.remove('hidden'); }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+
+      if (vDlErr) { vDlErr.style.display = 'none'; vDlErr.classList.add('hidden'); }
+      if (vDl) { vDl.style.display = 'block'; vDl.classList.remove('hidden'); }
+
+      document.getElementById('dl-cover-img').src = data.cover;
+      document.getElementById('dl-edition-badge').innerText = data.edition;
+      document.getElementById('dl-title-text').innerText = data.title;
+      document.getElementById('dl-subtitle-text').innerText = data.subtitle;
+      document.getElementById('dl-pages-stat').innerText = '📄 ' + data.pages;
+      document.getElementById('dl-size-stat').innerText = '⚡ ' + data.size;
+
+      const mainBtn = document.getElementById('dl-main-download-btn');
+      mainBtn.href = data.file;
+      mainBtn.setAttribute('download', data.downloadName);
+      document.getElementById('dl-main-btn-text').innerText = `Download PDF to Device (${data.size})`;
+
+      const readBtn = document.getElementById('dl-browser-read-btn');
+      readBtn.href = data.file;
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Auto-trigger download countdown
+      if (downloadTimer) clearInterval(downloadTimer);
+      let secondsLeft = 2;
+      const countdownEl = document.getElementById('dl-countdown');
+      const statusBox = document.getElementById('dl-auto-status');
+      if (countdownEl) countdownEl.innerText = '2';
+      if (statusBox) statusBox.innerHTML = '<span class="inline-block animate-bounce mr-1">📥</span><span>Your download will start automatically in <strong id="dl-countdown">2</strong> seconds...</span>';
+
+      downloadTimer = setInterval(() => {
+        secondsLeft--;
+        const cEl = document.getElementById('dl-countdown');
+        if (cEl) cEl.innerText = secondsLeft;
+        if (secondsLeft <= 0) {
+          clearInterval(downloadTimer);
+          const sBox = document.getElementById('dl-auto-status');
+          if (sBox) {
+            sBox.innerHTML = '<span>✓ Download initiated! If your file didn\'t start, click the black <strong>Download PDF</strong> button above.</span>';
+          }
+          mainBtn.click();
+        }
+      }, 1000);
+    }
+
+    function toggleAlternateCheckout() {
+      const item = catalog[activeListingId] || catalog.saas;
+      if (activeCurrency === 'INR') {
+        if (item.links && item.links.international) {
+          window.open(item.links.international, '_blank');
+        }
+      } else {
+        if (item.links && item.links.domestic) {
+          window.open(item.links.domestic, '_blank');
+        }
+      }
+    }
+
     function isCartUrl() {
       const p = (window.location.pathname || '').toLowerCase();
       const h = (window.location.hash || '').toLowerCase();
@@ -1843,7 +2108,26 @@
       loadCartFromStorage();
       loadFavoritesFromStorage();
 
-      // 1. Initial Route Detection
+      // Auto-detect foreign visitors and set USD
+      try {
+        const savedCurr = localStorage.getItem('markbuilder_currency');
+        if (!savedCurr) {
+          const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+          if (tz && !tz.includes('Calcutta') && !tz.includes('Kolkata')) {
+            setCurrency('USD', '🇺🇸', '$');
+          }
+        }
+      } catch(e) {}
+
+      // 1. Check for /download/ route
+      const currentPath = window.location.pathname || '';
+      if (currentPath.includes('/download/')) {
+        const token = currentPath.split('/download/')[1].replace(/\/+$/, '');
+        renderDownloadPage(token);
+        return;
+      }
+
+      // 2. Initial Route Detection
       const prodId = getProdIdFromCurrentUrl();
       const urlParams = new URLSearchParams(window.location.search);
       const previewParam = urlParams.get('preview');
@@ -1917,6 +2201,12 @@
       } else if (e.state && e.state.view === 'home') {
         navigateTo('home', false);
       } else {
+        const currentPath = window.location.pathname || '';
+        if (currentPath.includes('/download/')) {
+          const token = currentPath.split('/download/')[1].replace(/\/+$/, '');
+          renderDownloadPage(token);
+          return;
+        }
         const prodId = getProdIdFromCurrentUrl();
         if (prodId && catalog[prodId]) {
           openListing(prodId, false);
@@ -1972,6 +2262,11 @@
       const vCat = document.getElementById('view-catalog');
       const vList = document.getElementById('view-listing');
       const vCart = document.getElementById('view-cart');
+      const vDl = document.getElementById('view-download');
+      const vDlErr = document.getElementById('view-download-error');
+
+      if (vDl) { vDl.style.display = 'none'; vDl.classList.add('hidden'); }
+      if (vDlErr) { vDlErr.style.display = 'none'; vDlErr.classList.add('hidden'); }
 
       if (vCat) {
         vCat.style.display = view === 'home' ? 'block' : 'none';
@@ -2096,9 +2391,13 @@
       const vCat = document.getElementById('view-catalog');
       const vList = document.getElementById('view-listing');
       const vCart = document.getElementById('view-cart');
+      const vDl = document.getElementById('view-download');
+      const vDlErr = document.getElementById('view-download-error');
 
       if (vCat) { vCat.style.display = 'none'; vCat.classList.add('hidden'); }
       if (vCart) { vCart.style.display = 'none'; vCart.classList.add('hidden'); }
+      if (vDl) { vDl.style.display = 'none'; vDl.classList.add('hidden'); }
+      if (vDlErr) { vDlErr.style.display = 'none'; vDlErr.classList.add('hidden'); }
       if (vList) { vList.style.display = 'block'; vList.classList.remove('hidden'); }
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -2472,6 +2771,15 @@
         const mOrig = document.getElementById('mobile-sticky-orig');
         if (mPrice) mPrice.innerText = `${cur.symbol}${cur.price}`;
         if (mOrig) mOrig.innerText = `${cur.symbol}${cur.orig}`;
+
+        const altBtnText = document.getElementById('alt-checkout-text');
+        if (altBtnText) {
+          if (activeCurrency === 'INR') {
+            altBtnText.innerText = '🌍 Outside India? Pay via Gumroad (PayPal / Global Card) →';
+          } else {
+            altBtnText.innerText = '🇮🇳 In India? Pay via Razorpay (UPI / GPay / PhonePe) →';
+          }
+        }
       }
     }
 
