@@ -300,10 +300,11 @@
     <!-- Category Sub-Nav (Etsy Style Clean Text Links) -->
     <div class="border-t border-gray-100 bg-white">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center gap-4 sm:gap-6 overflow-x-auto py-2.5 text-xs font-medium text-gray-700 whitespace-nowrap" style="-webkit-overflow-scrolling: touch; scrollbar-width: none;">
-        <button onclick="filterCat('all')" id="tab-all" class="text-black font-bold border-b-2 border-black pb-1 cursor-pointer">All Publications (3)</button>
+        <button onclick="filterCat('all')" id="tab-all" class="text-black font-bold border-b-2 border-black pb-1 cursor-pointer">All Publications (4)</button>
         <button onclick="filterCat('saas')" id="tab-saas" class="text-gray-600 hover:text-black transition pb-1 cursor-pointer">No-Code &amp; Micro-SaaS</button>
-        <button onclick="filterCat('psychology')" id="tab-psychology" class="text-gray-600 hover:text-black transition pb-1 cursor-pointer">Psychology &amp; Brain Hacks</button>
+        <button onclick="filterCat('vibe')" id="tab-vibe" class="text-gray-600 hover:text-black transition pb-1 cursor-pointer">AI &amp; Vibe Coding</button>
         <button onclick="filterCat('vault')" id="tab-vault" class="text-gray-600 hover:text-black transition pb-1 cursor-pointer">Freelance &amp; Agency Toolkits</button>
+        <button onclick="filterCat('psychology')" id="tab-psychology" class="text-gray-600 hover:text-black transition pb-1 cursor-pointer">Psychology &amp; Brain Hacks</button>
         <span class="text-gray-300">|</span>
         <button onclick="navigateTo('cart')" id="tab-cart" class="text-gray-600 hover:text-black transition pb-1 cursor-pointer">Shopping Cart</button>
         <span class="text-gray-300">|</span>
@@ -361,8 +362,8 @@
       </div>
     </div>
 
-    <!-- ================= 3-COLUMN ETSY GRID ================= -->
-    <div id="products-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-6 max-w-5xl mx-auto">
+    <!-- ================= 4-PRODUCT STOREFRONT GRID ================= -->
+    <div id="products-grid" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 max-w-6xl mx-auto">
       
       <!-- ============ CARD 1: 50 MICRO-SAAS ============ -->
       <div id="card-saas" class="group flex flex-col justify-between cursor-pointer" onclick="openListing('saas')">
@@ -520,6 +521,58 @@
         </div>
       </div>
 
+      <!-- ============ CARD 4: THE NON-CODER'S VIBE CODING PLAYBOOK ============ -->
+      <div id="card-vibe" class="group flex flex-col justify-between cursor-pointer" onclick="openListing('vibe')">
+        <!-- Photo Container: Clean White Studio Frame with Badge at Bottom Left -->
+        <div class="relative bg-white rounded-xl sm:rounded-2xl aspect-square overflow-hidden flex items-center justify-center p-2.5 sm:p-5 border border-gray-200 group-hover:border-gray-400 group-hover:shadow-md transition">
+          <span class="absolute bottom-2.5 left-2.5 z-10 bg-cyan-600 text-white text-[9px] sm:text-[10px] font-bold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md sm:rounded-lg uppercase tracking-wider shadow-xs">
+            2026 Edition
+          </span>
+          <button 
+            id="fav-btn-vibe" 
+            onclick="event.stopPropagation(); toggleFavorite('vibe');" 
+            class="absolute top-2 right-2 z-10 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/90 hover:bg-white text-gray-600 hover:text-red-500 flex items-center justify-center shadow-xs transition"
+            title="Save to Favorites"
+          >
+            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+          </button>
+          
+          <!-- Full-Size Book Mockup (3D Embossed Spine & Clean Front) -->
+          <img 
+            src="vibe-coding-mockup.png" 
+            alt="The Non-Coder's Vibe Coding Playbook" 
+            class="w-full h-full object-contain p-1 sm:p-2 transform group-hover:scale-105 transition duration-300 drop-shadow-md" 
+          />
+        </div>
+
+        <!-- Metadata Block (Etsy 1:1 Layout) -->
+        <div class="pt-2 sm:pt-3">
+          <div class="text-[10px] sm:text-[11px] text-gray-500 font-normal">
+            Digital field guide • 22 pages
+          </div>
+          <h3 class="font-medium text-xs sm:text-base text-[#222222] group-hover:underline mt-0.5 line-clamp-2 leading-snug">
+            The Non-Coder's Vibe Coding Playbook (2026 Master Edition)
+          </h3>
+          <div class="text-[11px] sm:text-xs text-gray-800 mt-1 flex items-center gap-1">
+            <span class="font-bold text-black" id="home-rating-vibe">5.0 ★</span>
+            <span class="text-gray-400" id="home-reviews-vibe">(42)</span>
+          </div>
+          <div class="mt-1 flex items-baseline gap-1.5 sm:gap-2">
+            <span id="price-card-vibe" class="text-sm sm:text-lg font-bold text-gray-900">₹99</span>
+            <span id="orig-card-vibe" class="text-[10px] sm:text-xs text-gray-400 line-through">₹499</span>
+            <span class="text-[9px] sm:text-xs font-semibold text-cyan-700 bg-cyan-50 px-1 sm:px-1.5 py-0.5 rounded">80% off</span>
+          </div>
+          <p class="text-[10px] sm:text-xs text-gray-400 mt-0.5">MarkBuilder Labs Official</p>
+
+          <!-- Desktop Quick Action -->
+          <div class="mt-2.5 hidden sm:flex items-center gap-2" onclick="event.stopPropagation()">
+            <button onclick="addToCart('vibe')" class="px-3.5 py-1.5 rounded-full border border-gray-300 hover:border-black hover:bg-gray-50 text-xs font-semibold text-gray-900 transition flex items-center gap-1 shadow-xs">
+              <span>+ Add to cart</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <!-- Empty Search State -->
@@ -546,7 +599,7 @@
       </button>
       <div class="text-xs text-gray-400 hidden sm:block">
         <span class="hover:underline cursor-pointer" onclick="navigateTo('home')">Home</span> &gt;
-        <span id="crumb-category" class="hover:underline cursor-pointer" onclick="filterCat(activeListingId === 'saas' ? 'saas' : (activeListingId === 'vault' ? 'vault' : 'psychology'))">Digital Products</span> &gt;
+        <span id="crumb-category" class="hover:underline cursor-pointer" onclick="filterCat(activeListingId === 'saas' ? 'saas' : (activeListingId === 'vault' ? 'vault' : (activeListingId === 'vibe' ? 'vibe' : 'psychology')))">Digital Products</span> &gt;
         <span id="crumb-title" class="text-gray-900 font-medium truncate max-w-md">Product Title</span>
       </div>
     </div>
@@ -1401,6 +1454,101 @@
             helpfulDown: 0
           }
         ]
+      },
+      vibe: {
+        id: 'vibe',
+        title: "The Non-Coder's Vibe Coding Playbook (2026 Master Edition) — From First Prompt to Live Razorpay Checkout in 24 Hours",
+        category: 'AI Tools & Vibe Coding',
+        rating: '5.0',
+        reviewsCount: 42,
+        mainPhoto: 'vibe-coding-mockup.png',
+        photos: [
+          'vibe-coding-mockup.png',
+          'vibe-slide-modules.png',
+          'vibe-slide-stack.png',
+          'slide-devices.png'
+        ],
+        prices: {
+          INR: { price: 99, orig: 499, symbol: '₹' },
+          USD: { price: 9.99, orig: 49.99, symbol: '$' },
+          EUR: { price: 8.99, orig: 44.99, symbol: '€' },
+          GBP: { price: 7.99, orig: 39.99, symbol: '£' },
+          CAD: { price: 13.99, orig: 64.99, symbol: 'CA$' },
+          AUD: { price: 14.99, orig: 69.99, symbol: 'AU$' },
+          AED: { price: 36.99, orig: 180.00, symbol: 'AED ' },
+          SGD: { price: 13.50, orig: 65.00, symbol: 'S$' },
+          JPY: { price: 1490, orig: 7500, symbol: '¥' }
+        },
+        links: {
+          domestic: 'https://rzp.io/rzp/vibe-coding-playbook',
+          international: 'https://mishrapriyan34.gumroad.com/l/vibe-coding-playbook?wanted=true'
+        },
+        description: `
+          <p><strong>Stop studying syntax and algorithmic theory. Start shipping revenue-generating software in 24 hours.</strong></p>
+          <p>In 2026, frontier AI models have severed the link between knowing programming syntax and building production software. <strong>The Non-Coder's Vibe Coding Playbook</strong> is a 22-page, zero-fluff master publication by <strong>MarkBuilder Labs</strong> designed to take you from a blank screen to a live internet checkout with zero terminal commands.</p>
+          <h4 class="font-bold text-sm text-[#222222] mt-3">What's Inside the 22-Page Field Guide:</h4>
+          <ul class="list-disc pl-5 space-y-1">
+            <li><strong>The 4-Layer Master Prompting Framework:</strong> How to write prompt architectures that eliminate AI hallucinations and generate bug-free React code on the first attempt.</li>
+            <li><strong>10-Minute Visual Supabase Database &amp; Auth:</strong> Visual table editors, user authentication, and 5 universal SaaS production schemas.</li>
+            <li><strong>Ironclad Row Level Security (RLS) &amp; API Key Masking:</strong> Prevent data leaks and secure OpenAI/Claude secrets using Supabase Edge Functions.</li>
+            <li><strong>1-Click Razorpay UPI &amp; Stripe Checkout:</strong> Zero-backend payment buttons, UPI QR codes, GPay/PhonePe support, and instant automated digital fulfillment.</li>
+            <li><strong>Master Production Debugging Playbook (25 Errors Solved):</strong> Word-for-word solutions for React hydration mismatches, CORS errors, RLS recursion, and Vercel build failures.</li>
+            <li><strong>The Master SaaS Prompt Vault (20 Ready-to-Build Tools):</strong> Production prompts, SQL schemas, and monetization models for 20 lucrative micro-SaaS applications.</li>
+            <li><strong>The First ₹10,000 in 14 Days Launch Engine:</strong> Organic 5-day Build in Public scripts, cold DM templates, and community seeding protocols.</li>
+          </ul>
+        `,
+        aspects: [
+          { name: 'Zero-Code Architecture', score: '5.0' },
+          { name: 'Razorpay UPI Integration', score: '5.0' },
+          { name: 'Production SaaS Prompts', score: '4.9' },
+          { name: 'Instant PDF Delivery', score: '5.0' }
+        ],
+        reviews: [
+          {
+            id: 'vibe-1',
+            name: "Aman Gupta, Indie Founder",
+            rating: 5,
+            headline: "Shipped my first tool in 14 hours flat!",
+            date: "Today",
+            comment: "I have zero coding background. Followed Module 3 (4-Layer Prompting) and Module 7 (Razorpay Button) and launched an invoice generator with UPI checkout in 14 hours. Already made 3 sales!",
+            verified: true,
+            helpfulUp: 34,
+            helpfulDown: 0
+          },
+          {
+            id: 'vibe-2',
+            name: "Jason Miller, Austin TX",
+            rating: 5,
+            headline: "The Supabase & RLS section alone is worth $100",
+            date: "Yesterday",
+            comment: "Most YouTube vibe coding tutorials ignore security and leak database keys. This playbook teaches proper Row Level Security and Edge Function proxies simply. Phenomenal guide.",
+            verified: true,
+            helpfulUp: 21,
+            helpfulDown: 0
+          },
+          {
+            id: 'vibe-3',
+            name: "Ritik Sharma, New Delhi",
+            rating: 5,
+            headline: "Pure gold for non-tech founders",
+            date: "3 days ago",
+            comment: "The 25-error debugging playbook saved me when I hit a React hydration mismatch on Vercel. One prompt copy-pasted and it was fixed in 10 seconds.",
+            verified: true,
+            helpfulUp: 17,
+            helpfulDown: 0
+          },
+          {
+            id: 'vibe-4',
+            name: "Chloe Vance, UK",
+            rating: 5,
+            headline: "The 20 SaaS prompts are insanely detailed",
+            date: "5 days ago",
+            comment: "Each of the 20 tool prompts comes with exact SQL schemas and edge case rules. Building Tool #4 (Micro-CRM) this weekend. Highly recommended!",
+            verified: true,
+            helpfulUp: 12,
+            helpfulDown: 0
+          }
+        ]
       }
     };
 
@@ -1611,6 +1759,49 @@
             </div>
           </div>
         `
+      },
+      vibe: {
+        title: "Module 3: The 4-Layer Master Prompting Framework (The Vibe Formula)",
+        badge: "Free Sample • Executive Blueprint",
+        category: "AI & Vibe Coding (22-Page Field Guide)",
+        btnText: "Unlock The Full Vibe Coding Playbook (22 Pages) →",
+        html: `
+          <div class="space-y-4">
+            <div class="p-3.5 bg-cyan-50/80 rounded-xl border border-cyan-200/80 text-cyan-950 text-xs">
+              <strong class="block font-bold uppercase tracking-wider text-cyan-800 text-[10px]">Unredacted Blueprint Preview</strong>
+              <p class="mt-1">This is an unredacted preview of the 4-Layer Master Prompting Architecture from Module 3 of the 22-page Master Edition.</p>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-sm text-gray-900 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-cyan-600"></span> 1. Why 99% of AI Prompts Fail
+              </h4>
+              <p class="text-xs text-gray-600 mt-1 leading-relaxed">
+                Beginners prompt with vague requests: <em>"Build me an invoice generator app"</em>. The AI guesses the framework, state management, and schema simultaneously, producing broken code. The 4-Layer Framework eliminates guesswork completely.
+              </p>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-sm text-gray-900 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-600"></span> 2. The Universal 4-Layer Prompt Template
+              </h4>
+              <div class="p-3.5 bg-gray-900 text-gray-100 rounded-xl font-mono text-xs leading-relaxed space-y-2 mt-2 select-all">
+                <p class="text-amber-400 font-bold">[LAYER 1: PERSONA &amp; ARCHITECTURE]</p>
+                <p>Act as a Principal Frontend Architect. Build a clean single-page web application with React 18, Tailwind CSS, and Lucide icons.</p>
+                <p class="text-amber-400 font-bold mt-2">[LAYER 2: WORKFLOW &amp; STATE]</p>
+                <p>1. Input: User enters business name, currency symbol, and line items (Qty, Price, Description).<br>2. Compute: Calculate Subtotal, Tax (configurable %), and Final Total in real time.<br>3. Output: Render a live A4 preview with a 1-click 'Export PDF' button.</p>
+                <p class="text-amber-400 font-bold mt-2">[LAYER 3: DATA &amp; PERSISTENCE]</p>
+                <p>Persist state in localStorage under key 'vibe_invoice_data_v1'. Load on page refresh.</p>
+                <p class="text-amber-400 font-bold mt-2">[LAYER 4: NEGATIVE GUARDRAILS]</p>
+                <p>Dark mode default with slate-950 background and cyan accents. Do NOT use placeholder code like '// rest of code here'. Return full, unredacted files.</p>
+              </div>
+            </div>
+
+            <div class="p-3 bg-gray-100 rounded-xl text-center text-xs text-gray-600 border border-gray-200">
+              <strong class="text-gray-900">14 more comprehensive modules</strong> including Supabase Visual DB, Row Level Security (RLS), Razorpay UPI Buttons, 25 Error Debugging Fixes, and 20 Production SaaS Prompts await inside the 22-page Playbook.
+            </div>
+          </div>
+        `
       }
     };
 
@@ -1624,7 +1815,8 @@
     const routeSlugs = {
       saas: '/50-micro-saas',
       brain: '/the-hidden-tricks-your-brain-plays-on-you',
-      vault: '/client-acquisition-vault'
+      vault: '/client-acquisition-vault',
+      vibe: '/vibe-coding-playbook'
     };
 
     function getProdIdFromCurrentUrl() {
@@ -1635,6 +1827,7 @@
       if (p.includes('saas') || p.includes('50-micro') || h.includes('saas') || s.includes('saas')) return 'saas';
       if (p.includes('brain') || p.includes('trick') || h.includes('brain') || s.includes('brain')) return 'brain';
       if (p.includes('vault') || p.includes('acquisition') || p.includes('contract') || h.includes('vault') || s.includes('vault')) return 'vault';
+      if (p.includes('vibe') || p.includes('coding') || p.includes('playbook') || h.includes('vibe') || s.includes('vibe')) return 'vibe';
       return null;
     }
 
@@ -1743,6 +1936,7 @@
       const tabMap = {
         all: 'tab-all',
         saas: 'tab-saas',
+        vibe: 'tab-vibe',
         psychology: 'tab-psychology',
         vault: 'tab-vault',
         cart: 'tab-cart'
@@ -1877,6 +2071,8 @@
           btnSampleText.innerText = 'Read Free Sample (Trick #01 Teaser)';
         } else if (prodId === 'vault') {
           btnSampleText.innerText = 'Read Free Sample (Script #01 Teaser)';
+        } else if (prodId === 'vibe') {
+          btnSampleText.innerText = 'Read Free Sample (Module 3 Framework Teaser)';
         } else {
           btnSampleText.innerText = 'Read Free Sample Preview';
         }
@@ -1887,6 +2083,8 @@
       // Update Category Sub-Nav active tab based on product
       if (prodId === 'saas') {
         updateActiveNavTab('saas');
+      } else if (prodId === 'vibe') {
+        updateActiveNavTab('vibe');
       } else if (prodId === 'brain') {
         updateActiveNavTab('psychology');
       } else if (prodId === 'vault') {
@@ -2210,7 +2408,7 @@
     }
 
     function updateHomeReviewCounts() {
-      ['saas', 'brain', 'vault'].forEach(id => {
+      ['saas', 'brain', 'vault', 'vibe'].forEach(id => {
         const item = catalog[id];
         if (!item) return;
         let userRevs = [];
@@ -2255,7 +2453,7 @@
     }
 
     function renderPrices() {
-      ['saas', 'brain', 'vault'].forEach(id => {
+      ['saas', 'brain', 'vault', 'vibe'].forEach(id => {
         const item = catalog[id];
         const pData = item.prices[activeCurrency] || item.prices['USD'];
         const priceEl = document.getElementById(`price-card-${id}`);
@@ -2299,7 +2497,7 @@
     }
 
     function updateFavUI() {
-      ['saas', 'brain', 'vault'].forEach(id => {
+      ['saas', 'brain', 'vault', 'vibe'].forEach(id => {
         const btn = document.getElementById(`fav-btn-${id}`);
         if (btn) {
           if (favorites.includes(id)) {
@@ -2542,9 +2740,10 @@
       // Update Action URL
       if (pushHistory) {
         let catUrl = '/';
-        if (cat === 'saas') catUrl = '/?category=no-code';
+        if (cat === 'saas' || cat === 'no-code') catUrl = '/?category=no-code';
+        if (cat === 'vibe' || cat === 'vibe-coding') catUrl = '/?category=vibe-coding';
         if (cat === 'psychology') catUrl = '/?category=psychology';
-        if (cat === 'vault') catUrl = '/?category=toolkits';
+        if (cat === 'vault' || cat === 'toolkits') catUrl = '/?category=toolkits';
         history.pushState({ view: 'home', category: cat }, '', catUrl);
       }
 
@@ -2559,34 +2758,51 @@
       const noResults = document.getElementById('search-no-results');
       if (noResults) noResults.classList.add('hidden');
 
+      // Normalize cat parameter if needed
+      let activeCatKey = cat || 'all';
+      if (activeCatKey === 'no-code') activeCatKey = 'saas';
+      if (activeCatKey === 'vibe-coding') activeCatKey = 'vibe';
+      if (activeCatKey === 'toolkits') activeCatKey = 'vault';
+
       // 3. Reset and apply tab styles
-      updateActiveNavTab(cat || 'all');
+      updateActiveNavTab(activeCatKey);
 
       const cardSaas = document.getElementById('card-saas');
       const cardBrain = document.getElementById('card-brain');
       const cardVault = document.getElementById('card-vault');
+      const cardVibe = document.getElementById('card-vibe');
       const countEl = document.getElementById('catalog-count');
 
-      if (cat === 'saas') {
+      if (activeCatKey === 'saas') {
         if (cardSaas) cardSaas.style.display = 'flex';
         if (cardBrain) cardBrain.style.display = 'none';
         if (cardVault) cardVault.style.display = 'none';
+        if (cardVibe) cardVibe.style.display = 'none';
         if (countEl) countEl.innerText = '1 product';
-      } else if (cat === 'psychology') {
+      } else if (activeCatKey === 'vibe') {
+        if (cardSaas) cardSaas.style.display = 'none';
+        if (cardBrain) cardBrain.style.display = 'none';
+        if (cardVault) cardVault.style.display = 'none';
+        if (cardVibe) cardVibe.style.display = 'flex';
+        if (countEl) countEl.innerText = '1 product';
+      } else if (activeCatKey === 'psychology') {
         if (cardSaas) cardSaas.style.display = 'none';
         if (cardBrain) cardBrain.style.display = 'flex';
         if (cardVault) cardVault.style.display = 'none';
+        if (cardVibe) cardVibe.style.display = 'none';
         if (countEl) countEl.innerText = '1 product';
-      } else if (cat === 'vault') {
+      } else if (activeCatKey === 'vault') {
         if (cardSaas) cardSaas.style.display = 'none';
         if (cardBrain) cardBrain.style.display = 'none';
         if (cardVault) cardVault.style.display = 'flex';
+        if (cardVibe) cardVibe.style.display = 'none';
         if (countEl) countEl.innerText = '1 product';
       } else {
         if (cardSaas) cardSaas.style.display = 'flex';
         if (cardBrain) cardBrain.style.display = 'flex';
         if (cardVault) cardVault.style.display = 'flex';
-        if (countEl) countEl.innerText = '3 products';
+        if (cardVibe) cardVibe.style.display = 'flex';
+        if (countEl) countEl.innerText = '4 products';
       }
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -2659,11 +2875,12 @@
 
       const searchableKeywords = {
         saas: '50 micro saas you can build without coding no-code nocode saas software startup business ideas ai tools apps tech 2026 digital download edition book ebook guide',
+        vibe: 'the non-coder vibe coding playbook 2026 master edition ai cursor v0 replit claude bolt chatgpt prompt to razorpay checkout 24 hours react supabase rls stripe micro-saas indiemaker guide',
         brain: 'the hidden tricks your brain plays on you psychology cognitive biases mental models thinking behavioral science mind hacks decisions human behavior 2026 digital download edition book ebook guide',
         vault: 'the client acquisition contract vault markbuilder labs 30 outreach scripts proposals legal agreements freelance agency agreements contracts cold pitch email dms web dev ui ux video editing templates commercial license'
       };
 
-      ['saas', 'brain', 'vault'].forEach(id => {
+      ['saas', 'brain', 'vault', 'vibe'].forEach(id => {
         const item = catalog[id];
         const card = document.getElementById(`card-${id}`);
         if (!card) return;

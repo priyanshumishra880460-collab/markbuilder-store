@@ -1,0 +1,9 @@
+# Python & scripts
+*.py
+__pycache__/
+
+# Scratch previews & temporary renders
+preview_*.png
+client-acquisition-vault-print.html
+reddit-avatar-256.png
+vault-thumbnail-square.png
